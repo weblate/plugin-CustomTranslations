@@ -28,6 +28,11 @@ class DashboardEntity extends TranslationType
         return 'Translates the name of dashboard entities';
     }
 
+    public function getTranslationKeys()
+    {
+        // we access raw DB here
+    }
+
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'Dashboard.getDashboards' && is_array($returnedValue)) {

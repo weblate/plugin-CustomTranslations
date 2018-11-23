@@ -32,7 +32,7 @@ class CustomDimensionEntity extends TranslationType
 
     public function getTranslationKeys()
     {
-
+        // we access raw DB here
     }
 
     public function translate($returnedValue, $method, $extraInfo)

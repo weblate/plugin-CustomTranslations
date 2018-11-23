@@ -30,6 +30,11 @@ class EventLabel extends TranslationType
         return 'Translates the name of tracked event values';
     }
 
+    public function getTranslationKeys()
+    {
+        // we access raw DB here
+    }
+
     public function translate($returnedValue, $method, $extraInfo)
     {
         if (strpos($method, 'Events.') === 0 && $returnedValue instanceof DataTableInterface) {

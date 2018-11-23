@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 use Piwik\Container\StaticContainer;
+use Piwik\Plugin\Manager;
 use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
 use Piwik\Translate;
 
@@ -52,12 +53,20 @@ abstract class TranslationType
      */
     public static function getAllTranslationTypes()
     {
-        return [
-            StaticContainer::get(CustomDimensionEntity::class),
-            StaticContainer::get(CustomDimensionLabel::class),
-            StaticContainer::get(CustomReportEntity::class),
-            StaticContainer::get(DashboardEntity::class),
-            StaticContainer::get(EventLabel::class),
-        ];
+        $types = array();
+        $typeToPlugin = array(
+            CustomDimensionEntity::class => 'CustomDimensions',
+            CustomDimensionLabel::class => 'CustomDimensions',
+            CustomReportEntity::class => 'CustomReports',
+            DashboardEntity::class => 'Dashboards',
+            EventLabel::class => 'Events',
+        );
+        $pluginManager = Manager::getInstance();
+        foreach ($typeToPlugin as $type => $plugin) {
+            if ($pluginManager->isPluginActivated($plugin)) {
+                $types[] = StaticContainer::get($type);
+            }
+        }
+        return $types;
     }
 }

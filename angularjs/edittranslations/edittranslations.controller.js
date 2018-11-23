@@ -40,6 +40,11 @@
                     if (translations) {
                         self.translations[translationType.id] = translations;
                     }
+                    angular.forEach(translationType.translationKeys, function (translationKey) {
+                        if (!translations[translationKey]) {
+                            self.translations[translationType.id][translationKey] = '';
+                        }
+                    });
                     self.isLoadingTranslation[translationType.id] = true;
                 });
             });

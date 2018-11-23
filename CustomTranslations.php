@@ -14,6 +14,7 @@
  */
 namespace Piwik\Plugins\CustomTranslations;
 
+use Piwik\API\Request;
 use Piwik\Piwik;
 use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationType;
 
@@ -29,8 +30,8 @@ class CustomTranslations extends \Piwik\Plugin
 
     public function getJsFiles(&$jsFiles)
     {
-        $jsFiles[] = "CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
-        $jsFiles[] = "CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
+        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
+        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
     }
 
     public function updateEvents(&$returnedValue, $extraInfo)
@@ -40,6 +41,11 @@ class CustomTranslations extends \Piwik\Plugin
         }
 
         if (!Piwik::isUserHasSomeViewAccess()) {
+            return;
+        }
+
+        if (Request::getRootApiRequestMethod() === 'CustomTranslations.getTranslatableTypes') {
+            // we need to make sure to return the raw words here
             return;
         }
 

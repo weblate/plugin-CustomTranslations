@@ -16,9 +16,14 @@
             <p>{{translationType.description}}</p>
 
             <div piwik-activity-indicator loading="editTranslations.isLoadingTranslation[translationType.id]"></div>
-            <div ng-repeat="translationKey in translationType.translationKeys" ng-show="!editTranslations.isLoadingTranslation[translationType.id]">
 
+            <div piwik-field uicontrol="multituple" name="multitupletext"
+                 title="Multiple values"
+                 ng-model="translationType.translations[translationType.id]"
+                 inline-help="Multi Tuple text and text"
+                 ui-control-attributes='{"field1":{"key":"index","title":"Index","uiControl":"text","availableValues":null},"field2":{"key":"value","title":"Value","uiControl":"text","availableValues":null}}'>
             </div>
+
 
             <div piwik-save-button
                  saving="editTranslations.isUpdating[translationType.id]"

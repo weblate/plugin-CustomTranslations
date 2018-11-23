@@ -30,6 +30,11 @@ class CustomDimensionLabel extends TranslationType
         return 'Translates the name of tracked Custom Dimension values';
     }
 
+    public function getTranslationKeys()
+    {
+        // we access raw DB here
+    }
+
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'CustomDimensions.getCustomDimension' && $returnedValue instanceof DataTableInterface) {
