@@ -47,7 +47,7 @@ class CustomReportEntity extends TranslationType
 
     public function getDescription()
     {
-        return 'Translates the name of Custom Report entities';
+        return 'Translate the name of Custom Report entities';
     }
 
     public function getTranslationKeys()

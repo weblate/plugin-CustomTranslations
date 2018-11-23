@@ -19,55 +19,74 @@
     function CustomTranslationsEdit(piwikApi, piwik) {
 
         var self = this;
-        this.language = piwik.language || 'en';
+        this.languageCode = piwik.language || 'en';
         this.translationTypes = [];
         this.languageOptions = [];
-        this.translations = {};
         this.isUpdating = {};
-        this.isLoadingTranslation = {};
-        this.isLoading = true;
 
-        piwikApi.fetch({method: 'CustomTranslations.getTranslatableTypes'}).then(function (translationTypes) {
-            self.translations = {};
-            self.translationTypes = translationTypes;
-            angular.forEach(translationTypes, function (translationType) {
-                self.isLoading = false;
-                self.isLoadingTranslation[translationType.id] = false;
-                piwikApi.fetch({
-                    method: 'CustomTranslations.getTranslations',
-                    idType: translationType.id,
-                    languageCode: this.language}).then(function (translations) {
-                    if (translations) {
-                        self.translations[translationType.id] = translations;
-                    }
-                    angular.forEach(translationType.translationKeys, function (translationKey) {
-                        if (!translations[translationKey]) {
-                            self.translations[translationType.id][translationKey] = '';
+        var translationTypesPromise = piwikApi.fetch({method: 'CustomTranslations.getTranslatableTypes'});
+
+        this.loadLanguage = function () {
+            this.isLoadingTranslation = {};
+            this.translations = {};
+            this.isLoading = true;
+
+            translationTypesPromise.then(function (translationTypes) {
+                self.translations = {};
+                self.translationTypes = translationTypes;
+                angular.forEach(translationTypes, function (translationType) {
+                    var idType = translationType.id;
+                    self.isLoading = false;
+                    self.isLoadingTranslation[idType] = true;
+                    piwikApi.fetch({
+                        method: 'CustomTranslations.getTranslationsForType',
+                        idType: idType,
+                        languageCode: self.languageCode}
+                    ).then(function (translations) {
+                        self.translations[idType] = [];
+
+                        if (translations) {
+                            angular.forEach(translationType.translations, function (translation, key) {
+                                self.translations[idType].push({key: key, value: translation});
+                            });
                         }
+                        angular.forEach(translationType.translationKeys, function (translationKey) {
+                            if (!translations[translationKey]) {
+                                self.translations[idType].push({key: translationKey, value: ''});
+                            }
+                        });
+                        self.isLoadingTranslation[idType] = false;
                     });
-                    self.isLoadingTranslation[translationType.id] = true;
                 });
             });
-        });
+        }
 
         piwikApi.fetch({method: 'LanguagesManager.getAvailableLanguagesInfo'}).then(function (languages) {
             self.languageOptions = [];
             angular.forEach(languages, function (language) {
-               self.languageOptions.push({key: language.code, value: language.name});
+               self.languageOptions.push({key: language.code, value: (language.english_name + ' (' + language.name+ ')')});
             });
         });
 
         this.update = function (idType) {
-            this.isUpdating[idType] = false;
-            piwikApi.fetch({
+            this.isUpdating[idType] = true;
+            var translations = {};
+            angular.forEach(this.translations[idType], function (translation) {
+                if (translation.value !== '' && translation.value !== false && translation.value !== null) {
+                    translations[translation.key] = translation.value;
+                }
+            });
+            piwikApi.post({
                 method: 'CustomTranslations.updateTranslations',
                 idType: idType,
-                languageCode: this.language,
-            }, {translations:this.translations[idType]}).then(function (languages) {
+                languageCode: this.languageCode,
+            }, {translations:translations}).then(function (languages) {
+                self.isUpdating[idType] = false;
+            }, function () {
                 self.isUpdating[idType] = false;
             });
+        };
 
-        }
-
+        this.loadLanguage();
     }
 })();

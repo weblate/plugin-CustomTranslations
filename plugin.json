@@ -1,7 +1,7 @@
 {
   "name": "CustomTranslations",
   "description": "Translate entities such as custom dimensions, and some tracked values such as event names, or custom dimension values.",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "theme": false,
   "require": {
     "piwik": ">=3.7.0-rc1,<4.0.0-b1"

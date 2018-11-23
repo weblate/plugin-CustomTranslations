@@ -28,12 +28,12 @@ class DashboardEntity extends TranslationType
 
     public function getDescription()
     {
-        return 'Translates the name of dashboard entities';
+        return 'Translate the name of dashboard entities';
     }
 
     public function getTranslationKeys()
     {
-        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('user_dashboard') . ' where active = 1');
+        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('user_dashboard'));
         return array_unique(array_column($rows, 'name'));
     }
 

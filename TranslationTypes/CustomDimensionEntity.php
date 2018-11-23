@@ -29,7 +29,7 @@ class CustomDimensionEntity extends TranslationType
 
     public function getDescription()
     {
-        return 'Translates the name of Custom Dimension entities';
+        return 'Translate the name of Custom Dimension entities';
     }
 
     public function getTranslationKeys()

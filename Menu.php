@@ -23,7 +23,7 @@ class Menu extends \Piwik\Plugin\Menu
     public function configureAdminMenu(MenuAdmin $menu)
     {
         if (Piwik::hasUserSuperUserAccess()) {
-            $menu->addSystemItem('Translations', $this->urlForAction('manage'));
+            $menu->addSystemItem('Custom Translations', $this->urlForAction('manage'));
         }
     }
 }

@@ -22,12 +22,12 @@ class EventLabel extends TranslationType
 
     public function getName()
     {
-        return 'Tracked Event Value';
+        return 'Events Tracked Value';
     }
 
     public function getDescription()
     {
-        return 'Translates the name of tracked event values';
+        return 'Translate the name of tracked event values';
     }
 
     public function getTranslationKeys()

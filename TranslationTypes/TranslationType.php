@@ -58,7 +58,7 @@ abstract class TranslationType
             CustomDimensionEntity::class => 'CustomDimensions',
             CustomDimensionLabel::class => 'CustomDimensions',
             CustomReportEntity::class => 'CustomReports',
-            DashboardEntity::class => 'Dashboards',
+            DashboardEntity::class => 'Dashboard',
             EventLabel::class => 'Events',
         );
         $pluginManager = Manager::getInstance();

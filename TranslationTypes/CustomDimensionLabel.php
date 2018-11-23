@@ -14,10 +14,7 @@
  */
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
-use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
-use Piwik\Db;
-use Piwik\Plugins\CustomDimensions\CustomDimensions;
 
 class CustomDimensionLabel extends TranslationType
 {
@@ -25,12 +22,12 @@ class CustomDimensionLabel extends TranslationType
 
     public function getName()
     {
-        return 'Tracked Custom Dimension Value';
+        return 'Custom Dimension Tracked Value';
     }
 
     public function getDescription()
     {
-        return 'Translates the name of tracked Custom Dimension values';
+        return 'Translate the name of tracked Custom Dimension values';
     }
 
     public function getTranslationKeys()

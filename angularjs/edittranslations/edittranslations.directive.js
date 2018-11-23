@@ -27,7 +27,7 @@
             restrict: 'A',
             scope: {},
             templateUrl: 'plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.html?cb=' + piwik.cacheBuster,
-            controller: 'EdittranslationsController',
+            controller: 'CustomTranslationsEdit',
             controllerAs: 'editTranslations'
         };
     }

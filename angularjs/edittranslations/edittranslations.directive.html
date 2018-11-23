@@ -1,31 +1,38 @@
 <div class="editCustomTranslations">
 
-    <div piwik-field uicontrol="select" name="language"
-         title="Language"
-         ng-model="editTranslations.language"
-         value="1"
-         inline-help="Select the language you want to translate"
-         options='editTranslations.languageOptions'>
-    </div>
-
     <div piwik-content-block content-title="Custom Translations">
+        <div piwik-field uicontrol="select" name="language"
+             title="Language"
+             ng-change="editTranslations.loadLanguage();"
+             ng-model="editTranslations.languageCode"
+             inline-help="Select the language you want to translate"
+             options='editTranslations.languageOptions'>
+        </div>
+
+        <ul>
+            <li ng-repeat="translationType in editTranslations.translationTypes">
+                <a href="#idType{{translationType.id}}">{{translationType.name}}</a>
+            </li>
+        </ul>
+
         <div piwik-activity-indicator loading="editTranslations.isLoading"></div>
         <div ng-repeat="translationType in editTranslations.translationTypes">
+            <a name="idType{{translationType.id}}"></a>
 
             <h3>{{translationType.name}}</h3>
-            <p>{{translationType.description}}</p>
 
             <div piwik-activity-indicator loading="editTranslations.isLoadingTranslation[translationType.id]"></div>
 
             <div piwik-field uicontrol="multituple" name="multitupletext"
-                 title="Multiple values"
-                 ng-model="translationType.translations[translationType.id]"
-                 inline-help="Multi Tuple text and text"
-                 ui-control-attributes='{"field1":{"key":"index","title":"Index","uiControl":"text","availableValues":null},"field2":{"key":"value","title":"Value","uiControl":"text","availableValues":null}}'>
+                 title="{{translationType.description}}"
+                 full-width="true"
+                 ng-model="editTranslations.translations[translationType.id]"
+                 ui-control-attributes='{"field1":{"key":"key","title":"Translation key","uiControl":"text","availableValues":null},"field2":{"key":"value","title":"Translation","uiControl":"text","availableValues":null}}'>
             </div>
 
 
             <div piwik-save-button
+                 onconfirm="editTranslations.update(translationType.id)"
                  saving="editTranslations.isUpdating[translationType.id]"
                  disabled="editTranslations.isUpdating[translationType.id]"></div>
         </div>
