@@ -44,7 +44,7 @@ class CustomTranslations extends \Piwik\Plugin
             return;
         }
 
-        if (Request::getRootApiRequestMethod() === 'CustomTranslations.getTranslatableTypes') {
+        if (Request::getRootApiRequestMethod() === 'API.getSuggestedValuesForSegment') {
             // we need to make sure to return the raw words here
             return;
         }

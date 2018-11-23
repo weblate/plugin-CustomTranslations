@@ -15,7 +15,9 @@
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\API\Request;
+use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
+use Piwik\Db;
 use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
 
 class CustomReportEntity extends TranslationType
@@ -50,7 +52,8 @@ class CustomReportEntity extends TranslationType
 
     public function getTranslationKeys()
     {
-        // we access raw DB here
+        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_reports') . ' where status = "active"');
+        return array_unique(array_column($rows, 'name'));
     }
 
     public function translate($returnedValue, $method, $extraInfo)

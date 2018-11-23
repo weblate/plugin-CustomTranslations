@@ -14,6 +14,9 @@
  */
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
+use Piwik\Common;
+use Piwik\Db;
+
 class DashboardEntity extends TranslationType
 {
     const ID = 'dashboardEntity';
@@ -30,7 +33,8 @@ class DashboardEntity extends TranslationType
 
     public function getTranslationKeys()
     {
-        // we access raw DB here
+        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('user_dashboard') . ' where active = 1');
+        return array_unique(array_column($rows, 'name'));
     }
 
     public function translate($returnedValue, $method, $extraInfo)

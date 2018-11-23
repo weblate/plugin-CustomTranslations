@@ -32,7 +32,7 @@ class EventLabel extends TranslationType
 
     public function getTranslationKeys()
     {
-        // we access raw DB here
+        return [];
     }
 
     public function translate($returnedValue, $method, $extraInfo)

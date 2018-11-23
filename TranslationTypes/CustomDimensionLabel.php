@@ -14,7 +14,10 @@
  */
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
+use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
+use Piwik\Db;
+use Piwik\Plugins\CustomDimensions\CustomDimensions;
 
 class CustomDimensionLabel extends TranslationType
 {
@@ -32,7 +35,7 @@ class CustomDimensionLabel extends TranslationType
 
     public function getTranslationKeys()
     {
-        // we access raw DB here
+        return [];
     }
 
     public function translate($returnedValue, $method, $extraInfo)

@@ -15,6 +15,8 @@
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\API\Request;
+use Piwik\Common;
+use Piwik\Db;
 
 class CustomDimensionEntity extends TranslationType
 {
@@ -32,7 +34,8 @@ class CustomDimensionEntity extends TranslationType
 
     public function getTranslationKeys()
     {
-        // we access raw DB here
+        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_dimension') . ' where active = 1');
+        return array_unique(array_column($rows, 'name'));
     }
 
     public function translate($returnedValue, $method, $extraInfo)
