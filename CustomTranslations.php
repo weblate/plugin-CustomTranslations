@@ -25,7 +25,13 @@ class CustomTranslations extends \Piwik\Plugin
         return array(
             'API.Request.dispatch.end' => 'updateEvents',
             'AssetManager.getJavaScriptFiles' => 'getJsFiles',
+            'AssetManager.getStylesheetFiles' => 'getStylesheetFiles',
         );
+    }
+
+    public function getStylesheetFiles(&$stylesheets)
+    {
+        $stylesheets[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.less";
     }
 
     public function getJsFiles(&$jsFiles)

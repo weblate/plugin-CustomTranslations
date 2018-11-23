@@ -46,7 +46,7 @@
                         self.translations[idType] = [];
 
                         if (translations) {
-                            angular.forEach(translationType.translations, function (translation, key) {
+                            angular.forEach(translations, function (translation, key) {
                                 self.translations[idType].push({key: key, value: translation});
                             });
                         }
