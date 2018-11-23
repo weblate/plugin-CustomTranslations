@@ -22,8 +22,15 @@ class CustomTranslations extends \Piwik\Plugin
     public function registerEvents()
     {
         return array(
-            'API.Request.dispatch.end' => 'updateEvents'
+            'API.Request.dispatch.end' => 'updateEvents',
+            'AssetManager.getJavaScriptFiles' => 'getJsFiles',
         );
+    }
+
+    public function getJsFiles(&$jsFiles)
+    {
+        $jsFiles[] = "CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
+        $jsFiles[] = "CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
     }
 
     public function updateEvents(&$returnedValue, $extraInfo)

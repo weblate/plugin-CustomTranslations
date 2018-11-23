@@ -18,11 +18,6 @@ use Piwik\Piwik;
 use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
 use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationType;
 
-/**
- * API for plugin CustomTranslations
- *
- * @method static \Piwik\Plugins\CustomTranslations\API getInstance()
- */
 class API extends \Piwik\Plugin\API
 {
     private $storage;
@@ -32,11 +27,18 @@ class API extends \Piwik\Plugin\API
         $this->storage = $storage;
     }
 
-    public function updateTranslations($type, $language, $translations)
+    public function updateTranslations($idType, $languageCode, $translations)
     {
         Piwik::checkUserHasSuperUserAccess();
 
-        $this->storage->set($type, $language, $translations);
+        $this->storage->set($idType, $languageCode, $translations);
+    }
+
+    public function getTranslationsForType($idType, $languageCode)
+    {
+        Piwik::checkUserHasSuperUserAccess();
+
+        return $this->storage->get($idType, $languageCode);
     }
 
     public function getTranslatableTypes()
@@ -49,17 +51,11 @@ class API extends \Piwik\Plugin\API
                 'id' => $type->getId(),
                 'name' => $type->getName(),
                 'description' => $type->getDescription(),
-                'suggestedValues' => $type->getSuggestedValues(),
+                'translationKeys' => $type->getTranslationKeys(),
             );
         }
 
         return $types;
     }
 
-    public function getTranslationsForType($type, $language)
-    {
-        Piwik::checkUserHasSuperUserAccess();
-
-        return $this->storage->get($type, $language);
-    }
 }

@@ -1,0 +1,28 @@
+<div class="editCustomTranslations">
+
+    <div piwik-field uicontrol="select" name="language"
+         title="Language"
+         ng-model="editTranslations.language"
+         value="1"
+         inline-help="Select the language you want to translate"
+         options='editTranslations.languageOptions'>
+    </div>
+
+    <div piwik-content-block content-title="Custom Translations">
+        <div piwik-activity-indicator loading="editTranslations.isLoading"></div>
+        <div ng-repeat="translationType in editTranslations.translationTypes">
+
+            <h3>{{translationType.name}}</h3>
+            <p>{{translationType.description}}</p>
+
+            <div piwik-activity-indicator loading="editTranslations.isLoadingTranslation[translationType.id]"></div>
+            <div ng-repeat="translationKey in translationType.translationKeys" ng-show="!editTranslations.isLoadingTranslation[translationType.id]">
+
+            </div>
+
+            <div piwik-save-button
+                 saving="editTranslations.isUpdating[translationType.id]"
+                 disabled="editTranslations.isUpdating[translationType.id]"></div>
+        </div>
+    </div>
+</div>

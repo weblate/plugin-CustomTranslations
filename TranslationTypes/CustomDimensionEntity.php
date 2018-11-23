@@ -30,6 +30,11 @@ class CustomDimensionEntity extends TranslationType
         return 'Translates the name of Custom Dimension entities';
     }
 
+    public function getTranslationKeys()
+    {
+
+    }
+
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'CustomDimensions.getConfiguredCustomDimensions'

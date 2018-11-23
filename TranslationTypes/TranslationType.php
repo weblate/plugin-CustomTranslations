@@ -42,7 +42,7 @@ abstract class TranslationType
         return $this->storage->get($this->getId(), Translate::getLanguageLoaded());
     }
 
-    public function getSuggestedValues()
+    public function getTranslationKeys()
     {
         return array();
     }
