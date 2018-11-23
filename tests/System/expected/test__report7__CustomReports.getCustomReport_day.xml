@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<label>8</label>
+		<nb_visits>1</nb_visits>
+		<level>1</level>
+		<segment>actions==8</segment>
+	</row>
+</result>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<label>actionDim222 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>2</level>
+	</row>
+	<row>
+		<label>RenameDimension2 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>2</level>
+	</row>
+</result>

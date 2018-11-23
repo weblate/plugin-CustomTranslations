@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<label>actionDim222</label>
+		<nb_visits>1</nb_visits>
+		<level>1</level>
+		<segment>dimension4==actionDim222</segment>
+		<subtable>
+			<row>
+				<label>visitDim2</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+			</row>
+		</subtable>
+	</row>
+	<row>
+		<label>RenameDimension2</label>
+		<nb_visits>1</nb_visits>
+		<level>1</level>
+		<segment>dimension4==genericValue2</segment>
+		<subtable>
+			<row>
+				<label>visitDim2</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+			</row>
+		</subtable>
+	</row>
+</result>

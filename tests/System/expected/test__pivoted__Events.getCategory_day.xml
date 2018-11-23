@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<col name="label">MyCategory2</col>
+		<col name="1. MyAction3">0</col>
+		<col name="2. RenamedAction">0</col>
+		<col name="3. genericValue2">1</col>
+	</row>
+	<row>
+		<col name="label">MyCategory3</col>
+		<col name="1. MyAction3">2</col>
+		<col name="2. RenamedAction">0</col>
+		<col name="3. genericValue2">0</col>
+	</row>
+	<row>
+		<col name="label">RenamedCategory</col>
+		<col name="1. MyAction3">0</col>
+		<col name="2. RenamedAction">1</col>
+		<col name="3. genericValue2">0</col>
+	</row>
+</result>
