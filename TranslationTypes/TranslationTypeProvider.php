@@ -32,6 +32,15 @@ class TranslationTypeProvider
     }
 
     /**
+     * @ignore
+     * @internal  tests only
+     */
+    public function clearCache()
+    {
+        $this->instances = [];
+    }
+
+    /**
      * @return TranslationType[]
      */
     public function getAllTranslationTypes()
@@ -43,6 +52,13 @@ class TranslationTypeProvider
             foreach ($typeClassNames as $typeClassName) {
                 $type = StaticContainer::getContainer()->make($typeClassName);
                 $this->instances[$type->getId()] = $type;
+            }
+
+            if (!$pluginManager->isPluginActivated('CustomReports')) {
+                // ideally we would move CustomReportEntity to the custom reports plugin, but this way it will be easier
+                // testable for now as it needs to integrate with customdimensions and events etc
+                // also for now we don't move dashboard entity to dashboards plugin etc
+                unset($this->instances[CustomReportEntity::ID]);
             }
         }
 

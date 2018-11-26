@@ -76,4 +76,53 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->assertSame($de2, $this->dao->get('type2', 'de'));
     }
 
+
+    public function test_set_overwritesValue()
+    {
+        $nz = array('nz1' => 'nz2');
+        $de = array('de1' => 'de2');
+
+        $this->dao->set($this->typeId, 'nz', $nz);
+        $this->assertSame($nz, $this->dao->get($this->typeId, 'nz'));
+
+        $this->dao->set($this->typeId, 'nz', $de);
+        $this->assertSame($de, $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_canClearValueWithEmptyArray()
+    {
+        $nz = array('nz1' => 'nz2');
+
+        $this->dao->set($this->typeId, 'nz', $nz);
+        $this->assertNotEmpty($nz, $this->dao->get($this->typeId, 'nz'));
+
+        // clear value with empty array
+        $this->dao->set($this->typeId, 'nz', array());
+        $this->assertSame(array(), $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_canClearValueWithEmptyArrayFalse()
+    {
+        $nz = array('nz1' => 'nz2');
+
+        $this->dao->set($this->typeId, 'nz', $nz);
+        $this->dao->set($this->typeId, 'fr', $nz);
+        $this->assertNotEmpty($this->dao->get($this->typeId, 'nz'));
+        $this->assertNotEmpty($this->dao->get($this->typeId, 'fr'));
+
+        $this->dao->set($this->typeId, 'nz', false);
+        $this->assertSame(array(), $this->dao->get($this->typeId, 'nz'));
+        // others still exist
+        $this->assertNotEmpty($this->dao->get($this->typeId, 'fr'));
+    }
+
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage $translations needs to be an array
+     */
+    public function test_set_throwsExceptionWhenInvalidValues()
+    {
+        $this->dao->set($this->typeId, 'nz', 'test');
+    }
+
 }

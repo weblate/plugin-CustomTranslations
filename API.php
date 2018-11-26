@@ -63,7 +63,7 @@ class API extends \Piwik\Plugin\API
         $languageAvailable = Request::processRequest('LanguagesManager.isLanguageAvailable', $params);
 
         if (!$languageAvailable) {
-            throw new \Exception('Language not available');
+            throw new \Exception('Invalid language code');
         }
     }
 

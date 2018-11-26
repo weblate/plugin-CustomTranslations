@@ -35,7 +35,7 @@ class DashboardEntity extends TranslationType
     public function getTranslationKeys()
     {
         $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('user_dashboard'));
-        return array_unique(array_column($rows, 'name'));
+        return array_filter(array_unique(array_column($rows, 'name')));
     }
 
     public function translate($returnedValue, $method, $extraInfo)

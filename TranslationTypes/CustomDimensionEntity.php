@@ -34,8 +34,8 @@ class CustomDimensionEntity extends TranslationType
 
     public function getTranslationKeys()
     {
-        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_dimension') . ' where active = 1');
-        return array_unique(array_column($rows, 'name'));
+        $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_dimensions') . ' where active = 1');
+        return array_filter(array_unique(array_column($rows, 'name')));
     }
 
     public function translate($returnedValue, $method, $extraInfo)

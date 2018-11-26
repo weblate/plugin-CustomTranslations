@@ -54,7 +54,7 @@ class CustomReportEntity extends TranslationType
     public function getTranslationKeys()
     {
         $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_reports') . ' where status = "active"');
-        return array_unique(array_column($rows, 'name'));
+        return array_filter(array_unique(array_column($rows, 'name')));
     }
 
     public function translate($returnedValue, $method, $extraInfo)
@@ -91,21 +91,24 @@ class CustomReportEntity extends TranslationType
             && $returnedValue instanceof DataTableInterface) {
             $params = ['idSite' => $extraInfo['parameters']['idSite'], 'idCustomReport' => $extraInfo['parameters']['idCustomReport']];
             $customReport = Request::processRequest('CustomReports.getConfiguredReport', $params, []);
-            $dimensions = $customReport['dimensions'];
-            $renameMap = array();
-            foreach ($dimensions as $level => $dimension) {
-                if (strpos($dimension, 'CustomDimension') === 0) {
-                    // rename custom dimension values
-                    $renameMap[$level + 1] = $this->customDimensionLabel;
+            if ($customReport['report_type'] === 'table') {
+                $dimensions = $customReport['dimensions'];
+                $renameMap = array();
+                foreach ($dimensions as $level => $dimension) {
+                    if (strpos($dimension, 'CustomDimension') === 0) {
+                        // rename custom dimension values
+                        $renameMap[$level + 1] = $this->customDimensionLabel;
+                    }
+                    if (strpos($dimension, 'Events') === 0) {
+                        // rename event values
+                        $renameMap[$level + 1] = $this->eventLabel;
+                    }
                 }
-                if (strpos($dimension, 'Events') === 0) {
-                    // rename event values
-                    $renameMap[$level + 1] = $this->eventLabel;
-                }
-            }
 
-            $returnedValue->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
+                $returnedValue->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
+            }
         }
+
         return $returnedValue;
     }
 

@@ -36,8 +36,15 @@ class TranslationsDao
 
     public function set($typeId, $lang, $values)
     {
-        $values = json_encode($values);
-        Option::set($this->makeId($typeId, $lang), $values);
+        if (empty($values)) {
+            Option::delete($this->makeId($typeId, $lang));
+        } else {
+            if (!is_array($values)) {
+                throw new \Exception('$translations needs to be an array');
+            }
+
+            Option::set($this->makeId($typeId, $lang), json_encode($values));
+        }
     }
 
     private function makeId($typeId, $lang)

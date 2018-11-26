@@ -18,6 +18,7 @@ use Piwik\API\Request;
 use Piwik\Container\StaticContainer;
 use Piwik\Piwik;
 use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
+use Piwik\SettingsServer;
 
 class CustomTranslation extends \Piwik\Plugin
 {
@@ -41,9 +42,22 @@ class CustomTranslation extends \Piwik\Plugin
         $jsFiles[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.js";
     }
 
+    public function isTrackerPlugin()
+    {
+        return false;
+    }
+
     public function updateEvents(&$returnedValue, $extraInfo)
     {
         if (empty($extraInfo['module']) || empty($extraInfo['action'])) {
+            return;
+        }
+
+        if (SettingsServer::isTrackerApiRequest()) {
+            return;
+        }
+
+        if (SettingsServer::isArchivePhpTriggered()) {
             return;
         }
 
