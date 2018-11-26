@@ -1,4 +1,4 @@
-<div class="editCustomTranslations">
+<div class="editCustomTranslation">
 
     <div piwik-content-block content-title="Custom Translations">
         <div piwik-field uicontrol="select" name="language"
@@ -9,11 +9,10 @@
              options='editTranslations.languageOptions'>
         </div>
 
-        <ul>
-            <li ng-repeat="translationType in editTranslations.translationTypes">
-                <a href="#idType{{translationType.id}}">{{translationType.name}}</a>
-            </li>
-        </ul>
+        <p>Go to <span ng-repeat="translationType in editTranslations.translationTypes">
+                <a href="#idType{{translationType.id}}">{{translationType.name}}</a><span ng-show="!$last"> | </span>
+            </span>
+        </p>
 
         <div piwik-activity-indicator loading="editTranslations.isLoading"></div>
         <div ng-repeat="translationType in editTranslations.translationTypes" class="translationType">

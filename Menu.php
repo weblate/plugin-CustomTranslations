@@ -12,7 +12,7 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations;
+namespace Piwik\Plugins\CustomTranslation;
 
 use Piwik\Menu\MenuAdmin;
 use Piwik\Piwik;

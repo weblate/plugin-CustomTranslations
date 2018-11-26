@@ -12,13 +12,14 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations;
+namespace Piwik\Plugins\CustomTranslation;
 
 use Piwik\API\Request;
+use Piwik\Container\StaticContainer;
 use Piwik\Piwik;
-use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationType;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
 
-class CustomTranslations extends \Piwik\Plugin
+class CustomTranslation extends \Piwik\Plugin
 {
     public function registerEvents()
     {
@@ -31,13 +32,13 @@ class CustomTranslations extends \Piwik\Plugin
 
     public function getStylesheetFiles(&$stylesheets)
     {
-        $stylesheets[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.less";
+        $stylesheets[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.less";
     }
 
     public function getJsFiles(&$jsFiles)
     {
-        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
-        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
+        $jsFiles[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.controller.js";
+        $jsFiles[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.js";
     }
 
     public function updateEvents(&$returnedValue, $extraInfo)
@@ -59,7 +60,9 @@ class CustomTranslations extends \Piwik\Plugin
         $action = $extraInfo['action'];
         $method = $module . '.' . $action;
 
-        foreach (TranslationType::getAllTranslationTypes() as $type) {
+        $provider = StaticContainer::get(TranslationTypeProvider::class);
+
+        foreach ($provider->getAllTranslationTypes() as $type) {
             $returnedValue = $type->translate($returnedValue, $method, $extraInfo);
         }
     }

@@ -12,9 +12,10 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\DataTable\DataTableInterface;
+use Piwik\Piwik;
 
 class CustomDimensionLabel extends TranslationType
 {
@@ -22,12 +23,12 @@ class CustomDimensionLabel extends TranslationType
 
     public function getName()
     {
-        return 'Custom Dimension Tracked Value';
+        return Piwik::translate('CustomTranslation_CustomDimensionValue');
     }
 
     public function getDescription()
     {
-        return 'Translate the name of tracked Custom Dimension values';
+        return Piwik::translate('CustomTranslation_CustomDimensionValueDescription');
     }
 
     public function getTranslationKeys()
@@ -39,7 +40,7 @@ class CustomDimensionLabel extends TranslationType
     {
         if ($method === 'CustomDimensions.getCustomDimension' && $returnedValue instanceof DataTableInterface) {
             $renameMap = array('all' => $this->getTranslations());
-            $returnedValue->filter('Piwik\Plugins\CustomTranslations\DataTable\Filter\RenameLabelFilter', array($renameMap));
+            $returnedValue->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
         }
         return $returnedValue;
     }

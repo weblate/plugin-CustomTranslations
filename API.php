@@ -12,24 +12,37 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations;
+namespace Piwik\Plugins\CustomTranslation;
 
+use Piwik\API\Request;
 use Piwik\Piwik;
-use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
-use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationType;
+use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationType;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
 
 class API extends \Piwik\Plugin\API
 {
+    /**
+     * @var TranslationsDao
+     */
     private $storage;
+    /**
+     * @var TranslationTypeProvider
+     */
+    private $provider;
 
-    public function __construct(CustomTranslationStorage $storage)
+    public function __construct(TranslationsDao $storage, TranslationTypeProvider $provider)
     {
         $this->storage = $storage;
+        $this->provider = $provider;
     }
 
     public function updateTranslations($idType, $languageCode, $translations)
     {
         Piwik::checkUserHasSuperUserAccess();
+
+        $this->provider->checkTypeExists($idType);
+        $this->checkLanguageAvailable($languageCode);
 
         $this->storage->set($idType, $languageCode, $translations);
     }
@@ -38,16 +51,36 @@ class API extends \Piwik\Plugin\API
     {
         Piwik::checkUserHasSuperUserAccess();
 
+        $this->provider->checkTypeExists($idType);
+        $this->checkLanguageAvailable($languageCode);
+
         return $this->storage->get($idType, $languageCode);
+    }
+
+    private function checkLanguageAvailable($languageCode)
+    {
+        $params = array('languageCode' => $languageCode);
+        $languageAvailable = Request::processRequest('LanguagesManager.isLanguageAvailable', $params);
+
+        if (!$languageAvailable) {
+            throw new \Exception('Language not available');
+        }
     }
 
     public function getTranslatableTypes()
     {
         Piwik::checkUserHasSuperUserAccess();
 
-        $types = array();
-        foreach (TranslationType::getAllTranslationTypes() as $type) {
-            $types[] = array(
+        $types = $this->provider->getAllTranslationTypes();
+        usort($types, function ($a, $b) {
+            /** @var TranslationType $a */
+            /** @var TranslationType $b */
+            return strcmp($a->getName(), $b->getName());
+        });
+
+        $metadata = array();
+        foreach ($types as $type) {
+            $metadata[] = array(
                 'id' => $type->getId(),
                 'name' => $type->getName(),
                 'description' => $type->getDescription(),
@@ -55,7 +88,7 @@ class API extends \Piwik\Plugin\API
             );
         }
 
-        return $types;
+        return $metadata;
     }
 
 }

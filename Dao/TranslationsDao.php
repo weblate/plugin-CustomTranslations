@@ -12,13 +12,13 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations\Dao;
+namespace Piwik\Plugins\CustomTranslation\Dao;
 
 use Piwik\Option;
 
-class CustomTranslationStorage
+class TranslationsDao
 {
-    CONST OPTION_LANG_PREFIX = 'CustomTranslations_lang_';
+    CONST OPTION_LANG_PREFIX = 'CustomTranslation_lang_';
 
     public function get($typeId, $lang)
     {
@@ -28,6 +28,8 @@ class CustomTranslationStorage
         }
         if (empty($translations) || !is_array($translations)) {
             $translations = array();
+        } else {
+            $translations = array_filter($translations);
         }
         return $translations;
     }
@@ -40,6 +42,6 @@ class CustomTranslationStorage
 
     private function makeId($typeId, $lang)
     {
-        return sprintf('CustomTranslations_lang_%s_%s', $typeId, $lang);
+        return sprintf('CustomTranslation_lang_%s_%s', $typeId, $lang);
     }
 }

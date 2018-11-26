@@ -12,13 +12,14 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\API\Request;
 use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Db;
-use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
+use Piwik\Piwik;
+use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
 
 class CustomReportEntity extends TranslationType
 {
@@ -33,7 +34,7 @@ class CustomReportEntity extends TranslationType
      */
     private $eventLabel;
 
-    public function __construct(CustomTranslationStorage $storage, CustomDimensionLabel $customDimensionLabel, EventLabel $eventLabel)
+    public function __construct(TranslationsDao $storage, CustomDimensionLabel $customDimensionLabel, EventLabel $eventLabel)
     {
         parent::__construct($storage);
         $this->customDimensionLabel = $customDimensionLabel;
@@ -42,12 +43,12 @@ class CustomReportEntity extends TranslationType
 
     public function getName()
     {
-        return 'Custom Report Entity';
+        return Piwik::translate('CustomTranslation_CustomReportName');
     }
 
     public function getDescription()
     {
-        return 'Translate the name of Custom Report entities';
+        return Piwik::translate('CustomTranslation_CustomReportDescription');
     }
 
     public function getTranslationKeys()
@@ -59,8 +60,13 @@ class CustomReportEntity extends TranslationType
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'CustomReports.getConfiguredReports'
-            && Request::getRootApiRequestMethod() !== 'CustomReports.getConfiguredReports'
             && is_array($returnedValue)) {
+
+            if ($this->isRequestingAPIwithinUI('CustomReports.getConfiguredReports')) {
+                // make sure in manage reports screen we show original name... but not when API is called independently
+                return $returnedValue;
+            }
+
             $translations = $this->getTranslations();
             foreach ($returnedValue as &$value) {
                 if (isset($translations[$value['name']])) {
@@ -70,8 +76,11 @@ class CustomReportEntity extends TranslationType
         }
 
         if ($method === 'CustomReports.getConfiguredReport'
-            && Request::getRootApiRequestMethod() !== 'CustomReports.getConfiguredReport'
             && is_array($returnedValue)) {
+            if ($this->isRequestingAPIwithinUI('CustomReports.getConfiguredReport')) {
+                return $returnedValue;
+            }
+
             $translations = $this->getTranslations();
             if (isset($translations[$returnedValue['name']])) {
                 $returnedValue['name'] = $translations[$returnedValue['name']];
@@ -95,7 +104,7 @@ class CustomReportEntity extends TranslationType
                 }
             }
 
-            $returnedValue->filter('Piwik\Plugins\CustomTranslations\DataTable\Filter\RenameLabelFilter', array($renameMap));
+            $returnedValue->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
         }
         return $returnedValue;
     }

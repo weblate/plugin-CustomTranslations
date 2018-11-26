@@ -1,5 +1,5 @@
 {
-  "name": "CustomTranslations",
+  "name": "CustomTranslation",
   "description": "Translate entities such as custom dimensions, and some tracked values such as event names, or custom dimension values.",
   "version": "3.0.0",
   "theme": false,

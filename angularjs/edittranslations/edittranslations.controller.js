@@ -12,11 +12,11 @@
  * @license For license details see https://www.innocraft.com/license
  */
 (function () {
-    angular.module('piwikApp').controller('CustomTranslationsEdit', CustomTranslationsEdit);
+    angular.module('piwikApp').controller('CustomTranslationEdit', CustomTranslationEdit);
 
-    CustomTranslationsEdit.$inject = ['piwikApi', 'piwik'];
+    CustomTranslationEdit.$inject = ['piwikApi', 'piwik'];
 
-    function CustomTranslationsEdit(piwikApi, piwik) {
+    function CustomTranslationEdit(piwikApi, piwik) {
 
         var self = this;
         this.languageCode = piwik.language || 'en';
@@ -24,7 +24,12 @@
         this.languageOptions = [];
         this.isUpdating = {};
 
-        var translationTypesPromise = piwikApi.fetch({method: 'CustomTranslations.getTranslatableTypes'});
+        function hasTranslationValue(value)
+        {
+            return value !== '' && value !== false && value !== null;
+        }
+
+        var translationTypesPromise = piwikApi.fetch({method: 'CustomTranslation.getTranslatableTypes'});
 
         this.loadLanguage = function () {
             this.isLoadingTranslation = {};
@@ -39,7 +44,7 @@
                     self.isLoading = false;
                     self.isLoadingTranslation[idType] = true;
                     piwikApi.fetch({
-                        method: 'CustomTranslations.getTranslationsForType',
+                        method: 'CustomTranslation.getTranslationsForType',
                         idType: idType,
                         languageCode: self.languageCode}
                     ).then(function (translations) {
@@ -47,7 +52,9 @@
 
                         if (translations) {
                             angular.forEach(translations, function (translation, key) {
-                                self.translations[idType].push({key: key, value: translation});
+                                if (hasTranslationValue(translation)) {
+                                    self.translations[idType].push({key: key, value: translation});
+                                }
                             });
                         }
                         angular.forEach(translationType.translationKeys, function (translationKey) {
@@ -72,12 +79,12 @@
             this.isUpdating[idType] = true;
             var translations = {};
             angular.forEach(this.translations[idType], function (translation) {
-                if (translation.value !== '' && translation.value !== false && translation.value !== null) {
+                if (hasTranslationValue(translation.value)) {
                     translations[translation.key] = translation.value;
                 }
             });
             piwikApi.post({
-                method: 'CustomTranslations.updateTranslations',
+                method: 'CustomTranslation.updateTranslations',
                 idType: idType,
                 languageCode: this.languageCode,
             }, {translations:translations}).then(function (languages) {

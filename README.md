@@ -1,4 +1,4 @@
-# Matomo CustomTranslations Plugin
+# Matomo CustomTranslation Plugin
 
 ## Description
 

@@ -1,0 +1,16 @@
+{
+  "CustomTranslation": {
+    "PluginDescription": "Translate entities and report values into different languages",
+    "TranslationType": "Translation Type",
+    "CustomReportName": "Custom Report Name",
+    "CustomReportDescription": "Translate the name of custom report entities",
+    "CustomDimensionName": "Custom Dimension Name",
+    "CustomDimensionDescription": "Translate the name of custom dimension entities",
+    "CustomDimensionValue": "Custom Dimension Value",
+    "CustomDimensionValueDescription": "Translate the name of tracked event values",
+    "EventValue": "Event Value",
+    "EventValueDescription": "Translate the name of tracked event values",
+    "DashboardName": "Dashboard Name",
+    "DashboardDescription": "Translate the name of dashboard entities"
+  }
+}

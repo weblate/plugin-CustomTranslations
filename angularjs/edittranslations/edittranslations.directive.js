@@ -17,17 +17,17 @@
  * <div matomo-edit-custom-translations>
  */
 (function () {
-    angular.module('piwikApp').directive('matomoEditCustomTranslations', matomoEditCustomTranslations);
+    angular.module('piwikApp').directive('matomoEditCustomTranslation', matomoEditCustomTranslation);
 
-    matomoEditCustomTranslations.$inject = ['piwik'];
+    matomoEditCustomTranslation.$inject = ['piwik'];
 
-    function matomoEditCustomTranslations(piwik){
+    function matomoEditCustomTranslation(piwik){
 
         return {
             restrict: 'A',
             scope: {},
-            templateUrl: 'plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.html?cb=' + piwik.cacheBuster,
-            controller: 'CustomTranslationsEdit',
+            templateUrl: 'plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.html?cb=' + piwik.cacheBuster,
+            controller: 'CustomTranslationEdit',
             controllerAs: 'editTranslations'
         };
     }

@@ -12,10 +12,11 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\Common;
 use Piwik\Db;
+use Piwik\Piwik;
 
 class DashboardEntity extends TranslationType
 {
@@ -23,12 +24,12 @@ class DashboardEntity extends TranslationType
 
     public function getName()
     {
-        return 'Dashboard Entity';
+        return Piwik::translate('CustomTranslation_DashboardName');
     }
 
     public function getDescription()
     {
-        return 'Translate the name of dashboard entities';
+        return Piwik::translate('CustomTranslation_DashboardDescription');
     }
 
     public function getTranslationKeys()
@@ -40,6 +41,13 @@ class DashboardEntity extends TranslationType
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'Dashboard.getDashboards' && is_array($returnedValue)) {
+
+            if ($this->isRequestingAPIwithinUI('Dashboard.getDashboards')) {
+                // we make sure that when using renaming Dashboard feature, to show the original dashboard name, and also
+                // that when moving around a dashboard, to keep the original name
+                return $returnedValue;
+            }
+
             $translations = $this->getTranslations();
             foreach ($returnedValue as &$value) {
                 if (isset($translations[$value['name']])) {

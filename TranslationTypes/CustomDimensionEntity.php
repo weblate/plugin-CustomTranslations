@@ -12,11 +12,11 @@
  * @link https://www.innocraft.com/
  * @license For license details see https://www.innocraft.com/license
  */
-namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
-use Piwik\API\Request;
 use Piwik\Common;
 use Piwik\Db;
+use Piwik\Piwik;
 
 class CustomDimensionEntity extends TranslationType
 {
@@ -24,12 +24,12 @@ class CustomDimensionEntity extends TranslationType
 
     public function getName()
     {
-        return 'Custom Dimension Entity';
+        return Piwik::translate('CustomTranslation_CustomDimensionName');
     }
 
     public function getDescription()
     {
-        return 'Translate the name of Custom Dimension entities';
+        return Piwik::translate('CustomTranslation_CustomDimensionDescription');
     }
 
     public function getTranslationKeys()
@@ -41,8 +41,13 @@ class CustomDimensionEntity extends TranslationType
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'CustomDimensions.getConfiguredCustomDimensions'
-            && Request::getRootApiRequestMethod() !== 'CustomDimensions.getConfiguredCustomDimensions'
             && is_array($returnedValue)) {
+
+            if ($this->isRequestingAPIwithinUI('CustomDimensions.getConfiguredCustomDimensions')) {
+                // make sure in manage custom dimensions the correct names are shown
+                return $returnedValue;
+            }
+
             $translations = $this->getTranslations();
 
             foreach ($returnedValue as &$value) {

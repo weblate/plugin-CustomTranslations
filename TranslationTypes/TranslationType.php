@@ -1,15 +1,21 @@
 <?php
 /**
- * Piwik - free/libre analytics platform
+ * Copyright (C) InnoCraft Ltd - All rights reserved.
  *
- * @link http://piwik.org
- * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
+ * NOTICE:  All information contained herein is, and remains the property of InnoCraft Ltd.
+ * The intellectual and technical concepts contained herein are protected by trade secret or copyright law.
+ * Redistribution of this information or reproduction of this material is strictly forbidden
+ * unless prior written permission is obtained from InnoCraft Ltd.
+ *
+ * You shall use this code only in accordance with the license agreement obtained from InnoCraft Ltd.
+ *
+ * @link https://www.innocraft.com/
+ * @license For license details see https://www.innocraft.com/license
  */
+namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
-namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
-use Piwik\Container\StaticContainer;
-use Piwik\Plugin\Manager;
-use Piwik\Plugins\CustomTranslations\Dao\CustomTranslationStorage;
+use Piwik\API\Request;
+use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
 use Piwik\Translate;
 
 abstract class TranslationType
@@ -17,11 +23,11 @@ abstract class TranslationType
     const ID = '';
 
     /**
-     * @var CustomTranslationStorage
+     * @var TranslationsDao
      */
     private $storage;
 
-    public function __construct(CustomTranslationStorage $storage)
+    public function __construct(TranslationsDao $storage)
     {
         $this->storage = $storage;
     }
@@ -48,25 +54,18 @@ abstract class TranslationType
         return array();
     }
 
-    /**
-     * @return TranslationType[]
-     */
-    public static function getAllTranslationTypes()
+    protected function isRequestingAPIwithinUI($method)
     {
-        $types = array();
-        $typeToPlugin = array(
-            CustomDimensionEntity::class => 'CustomDimensions',
-            CustomDimensionLabel::class => 'CustomDimensions',
-            CustomReportEntity::class => 'CustomReports',
-            DashboardEntity::class => 'Dashboard',
-            EventLabel::class => 'Events',
-        );
-        $pluginManager = Manager::getInstance();
-        foreach ($typeToPlugin as $type => $plugin) {
-            if ($pluginManager->isPluginActivated($plugin)) {
-                $types[] = StaticContainer::get($type);
+        if (Request::getRootApiRequestMethod() === $method) {
+            if (!empty($_SERVER['HTTP_REFERER'])
+                && strpos($_SERVER['HTTP_REFERER'], 'module=') !== false
+                && strpos($_SERVER['HTTP_REFERER'], 'action=') !== false) {
+                // the API method was requested from within the UI... in this case we usually don't want to apply
+                // the renamings... but we want to apply it when the API was requested directly
+                return true;
             }
         }
-        return $types;
+
+        return false;
     }
 }
