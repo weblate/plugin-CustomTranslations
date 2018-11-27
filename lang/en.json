@@ -2,6 +2,8 @@
   "CustomTranslation": {
     "PluginDescription": "Translate entities and report values into different languages",
     "CustomTranslation": "Custom Translations",
+    "LanguageInlineHelp": "Select the language you want to translate.",
+    "Translation": "Translation",
     "TranslationType": "Translation Type",
     "CustomReportName": "Custom Report Name",
     "CustomReportDescription": "Translate the name of custom report entities",

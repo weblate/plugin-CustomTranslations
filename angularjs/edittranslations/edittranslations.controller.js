@@ -14,15 +14,17 @@
 (function () {
     angular.module('piwikApp').controller('CustomTranslationEdit', CustomTranslationEdit);
 
-    CustomTranslationEdit.$inject = ['piwikApi', 'piwik'];
+    CustomTranslationEdit.$inject = ['piwikApi', 'piwik', '$filter'];
 
-    function CustomTranslationEdit(piwikApi, piwik) {
+    function CustomTranslationEdit(piwikApi, piwik, $filter) {
+        var translate = $filter('translate');
 
         var self = this;
         this.languageCode = piwik.language || 'en';
         this.translationTypes = [];
         this.languageOptions = [];
         this.isUpdating = {};
+        this.uiControlAttributes = {"field1":{"key":"key","title":translate('General_Value'),"uiControl":"text","availableValues":null},"field2":{"key":"value","title":translate('CustomTranslation_Translation'),"uiControl":"text","availableValues":null}};
 
         function hasTranslationValue(value)
         {

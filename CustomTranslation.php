@@ -28,7 +28,18 @@ class CustomTranslation extends \Piwik\Plugin
             'API.Request.dispatch.end' => 'updateEvents',
             'AssetManager.getJavaScriptFiles' => 'getJsFiles',
             'AssetManager.getStylesheetFiles' => 'getStylesheetFiles',
+            'Translate.getClientSideTranslationKeys' => 'getClientSideTranslationKeys',
         );
+    }
+
+    public function getClientSideTranslationKeys(&$result)
+    {
+        $result[] = 'General_Language';
+        $result[] = 'General_Value';
+        $result[] = 'General_GoTo2';
+        $result[] = 'CustomTranslation_Translation';
+        $result[] = 'CustomTranslation_LanguageInlineHelp';
+        $result[] = 'CustomTranslation_CustomTranslation';
     }
 
     public function getStylesheetFiles(&$stylesheets)

@@ -35,10 +35,10 @@ class APITest extends SystemTestCase
 
         if (CustomTranslationFixture::hasCustomReports()) {
             $pluginsToLoad[] = 'CustomReports';
+            TestingEnvironmentManipulator::$extraPluginsToLoad = $pluginsToLoad;
+            self::$fixture->extraPluginsToLoad = $pluginsToLoad;
         }
 
-        TestingEnvironmentManipulator::$extraPluginsToLoad = $pluginsToLoad;
-        self::$fixture->extraPluginsToLoad = $pluginsToLoad;
 
         parent::setUpBeforeClass();
 
@@ -50,10 +50,16 @@ class APITest extends SystemTestCase
         }
     }
 
-    public function test_getTranslatableTypes()
+    /**
+     * @dataProvider getTestsToRunWithAndWithoutCustomReports
+     */
+    public function test_getTranslatableTypes($api)
     {
-        $api = 'CustomTranslation.getTranslatableTypes';
-        $params = array();
+        $params = array(
+            'idSite' => 1,
+            'date' => substr(self::$fixture->dateTime,0 ,10),
+            'period' => 'day',
+        );
 
         if (CustomTranslationFixture::hasCustomReports()) {
             Plugin\Manager::getInstance()->deactivatePlugin('CustomReports');
@@ -61,10 +67,23 @@ class APITest extends SystemTestCase
             $this->clearCaches();
         }
 
-        $this->runAnyApiTest($api, '', $params, array('testSuffix' => ''));
+        $this->runAnyApiTest($api, '', $params, array('testSuffix' => '', 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 
-    public function test_getTranslatableTypes_withCustomReports()
+    public function getTestsToRunWithAndWithoutCustomReports()
+    {
+        return array(
+            array('CustomTranslation.getTranslatableTypes'),
+            array('API.getReportMetadata'),
+            array('API.getWidgetMetadata'),
+            array('API.getReportPagesMetadata'),
+        );
+    }
+
+    /**
+     * @dataProvider getTestsToRunWithAndWithoutCustomReports
+     */
+    public function test_getTranslatableTypes_withCustomReports($api)
     {
         if (!CustomTranslationFixture::hasCustomReports()) {
             $this->markTestSkipped('Custom reports plugin is not available, we skip it');
@@ -72,14 +91,143 @@ class APITest extends SystemTestCase
         }
 
         $this->clearCaches();
-        $env = self::$fixture->getTestEnvironment();
-        $env->pluginsToLoad = array('CustomReports');
-        $env->save();
+        $this->makeSureToLoadCustomReports();
 
-        $api = 'CustomTranslation.getTranslatableTypes';
-        $params = array();
+        $params = array(
+            'idSite' => 1,
+            'date' => substr(self::$fixture->dateTime,0 ,10),
+            'period' => 'day',
+        );
 
-        $this->runAnyApiTest($api, '', $params, array('testSuffix' => 'withCustomReports'));
+        $this->runAnyApiTest($api, '', $params, array('testSuffix' => 'withCustomReports', 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
+    }
+
+    private function makeSureToLoadCustomReports()
+    {
+        if (CustomTranslationFixture::hasCustomReports()) {
+            Plugin\Manager::getInstance()->loadPlugin('CustomReports');
+            Plugin\Manager::getInstance()->activatePlugin('CustomReports');
+            $this->clearCaches();
+            $env = self::$fixture->getTestEnvironment();
+            if (empty($env->pluginsToLoad)) {
+                $env->pluginsToLoad = array('CustomReports');
+            } elseif (is_array($env->pluginsToLoad) && !in_array('CustomReports', $env->pluginsToLoad)) {
+                $env->pluginsToLoad[] = array('CustomReports');
+            }
+            $env->save();
+        }
+    }
+
+    /**
+     * @dataProvider getApiForTesting
+     */
+    public function testApi($api, $params)
+    {
+        $this->clearCaches();
+        $this->makeSureToLoadCustomReports();
+        $this->runApiTests($api, $params);
+    }
+
+    public function getApiForTesting()
+    {
+        $apiToTest = array();
+
+        foreach (range(1,4) as $idDimension) {
+            $apiToTest[] = array(
+                array('CustomDimensions.getCustomDimension'),
+                array(
+                    'idSite' => 1,
+                    'date' => self::$fixture->dateTime,
+                    'period' => 'day',
+                    'otherRequestParameters' => array(
+                        'idDimension' => $idDimension
+                    ),
+                    'testSuffix' => '_dim' . $idDimension,
+                )
+            );
+        }
+
+        $apiToTest[] = array(array('API.getProcessedReport'), array(
+            'idSite' => self::$fixture->idSite,
+            'testSuffix' => '_getCustomDimensionProcessedReport',
+            'otherRequestParameters' => array(
+                'apiModule' => 'CustomDimensions',
+                'apiAction' => 'getCustomDimension',
+                'idDimension' => 1
+            ),
+            'date'       => self::$fixture->dateTime,
+            'period' => 'day',
+        ));
+
+        $apiToTest[] = array(
+            array('Events.getAction', 'Events.getName', 'Events.getCategory'),
+            array(
+                'idSite' => 1,
+                'date' => self::$fixture->dateTime,
+                'periods' => array('day'),
+            )
+        );
+
+        $apiToTest[] = array(
+            array('Dashboard.getDashboards'),
+            array(
+                'idSite' => 1,
+                'date' => self::$fixture->dateTime,
+                'periods' => array('day'),
+            )
+        );
+
+        $apiToTest[] = array(array('API.getProcessedReport'), array(
+            'idSite' => self::$fixture->idSite,
+            'testSuffix' => '_eventsProcessedReport',
+            'otherRequestParameters' => array(
+                'apiModule' => 'Events',
+                'apiAction' => 'getAction',
+            ),
+            'date'       => self::$fixture->dateTime,
+            'periods'    => array('day'),));
+
+        $apiToTest[] = array(
+            array('Events.getAction', 'Events.getName', 'Events.getCategory'),
+            array(
+                'idSite' => 1,
+                'date' => self::$fixture->dateTime,
+                'periods' => array('day'),
+                'otherRequestParameters' => array('flat' => '1'),
+                'testSuffix' => '_flat',
+            )
+        );
+
+        if (CustomTranslationFixture::hasCustomReports()) {
+            foreach (range(1,7) as $idCustomReport) {
+                $apiToTest[] = array(
+                    array('CustomReports.getCustomReport'),
+                    array(
+                        'idSite' => 1,
+                        'date' => self::$fixture->dateTime,
+                        'periods' => array('day'),
+                        'otherRequestParameters' => array(
+                            'idCustomReport' => $idCustomReport
+                        ),
+                        'testSuffix' => '_report' . $idCustomReport,
+                    )
+                );
+                $apiToTest[] = array(
+                    array('CustomReports.getCustomReport'),
+                    array(
+                        'idSite' => 1,
+                        'date' => self::$fixture->dateTime,
+                        'periods' => array('day'),
+                        'otherRequestParameters' => array(
+                            'idCustomReport' => $idCustomReport,
+                            'flat' => '1'
+                        ),
+                        'testSuffix' => '_report' . $idCustomReport . '_flat',
+                    )
+                );
+            }
+        }
+        return $apiToTest;
     }
 
     private function clearCaches()

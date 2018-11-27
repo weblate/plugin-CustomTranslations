@@ -1,21 +1,21 @@
 <div class="editCustomTranslation">
 
-    <div piwik-content-block content-title="Custom Translations">
+    <div piwik-content-block content-title="{{ 'CustomTranslation_CustomTranslation'|translate }}">
         <div piwik-field uicontrol="select" name="language"
-             title="Language"
+             title="{{'General_Language'|translate}}"
              ng-change="editTranslations.loadLanguage();"
              ng-model="editTranslations.languageCode"
-             inline-help="Select the language you want to translate"
+             inline-help="{{ 'CustomTranslation_LanguageInlineHelp'|translate }}"
              options='editTranslations.languageOptions'>
         </div>
 
-        <p>Go to <span ng-repeat="translationType in editTranslations.translationTypes">
+        <p>{{ 'General_GoTo2'|translate }} <span ng-repeat="translationType in editTranslations.translationTypes">
                 <a href="#idType{{translationType.id}}">{{translationType.name}}</a><span ng-show="!$last"> | </span>
             </span>
         </p>
 
         <div piwik-activity-indicator loading="editTranslations.isLoading"></div>
-        <div ng-repeat="translationType in editTranslations.translationTypes" class="translationType">
+        <div ng-repeat="translationType in editTranslations.translationTypes" class="translationType translationType{{translationType.id}}">
             <a name="idType{{translationType.id}}"></a>
 
             <h3>{{translationType.name}}</h3>
@@ -26,9 +26,8 @@
                  title="{{translationType.description}}"
                  full-width="true"
                  ng-model="editTranslations.translations[translationType.id]"
-                 ui-control-attributes='{"field1":{"key":"key","title":"Translation key","uiControl":"text","availableValues":null},"field2":{"key":"value","title":"Translation","uiControl":"text","availableValues":null}}'>
+                 ui-control-attributes='editTranslations.uiControlAttributes'>
             </div>
-
 
             <div piwik-save-button
                  onconfirm="editTranslations.update(translationType.id)"

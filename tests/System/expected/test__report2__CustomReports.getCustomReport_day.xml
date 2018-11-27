@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<label>8</label>
+		<nb_visits>1</nb_visits>
+		<level>1</level>
+		<segment>actions==8</segment>
+		<subtable>
+			<row>
+				<label>genericValue1</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+				<subtable>
+					<row>
+						<label>visitDim2</label>
+						<nb_visits>1</nb_visits>
+						<level>3</level>
+					</row>
+				</subtable>
+			</row>
+			<row>
+				<label>MyName2</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+				<subtable>
+					<row>
+						<label>visitDim2</label>
+						<nb_visits>1</nb_visits>
+						<level>3</level>
+					</row>
+				</subtable>
+			</row>
+			<row>
+				<label>MyName3</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+				<subtable>
+					<row>
+						<label>visitDim2</label>
+						<nb_visits>1</nb_visits>
+						<level>3</level>
+					</row>
+				</subtable>
+			</row>
+		</subtable>
+	</row>
+</result>

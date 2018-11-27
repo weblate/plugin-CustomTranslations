@@ -16,8 +16,14 @@ namespace Piwik\Plugins\CustomTranslation\tests\Fixtures;
 
 use Piwik\API\Request;
 use Piwik\Date;
+use Piwik\Filesystem;
+use Piwik\Plugin;
 use Piwik\Plugins\CustomTranslation\API;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomDimensionEntity;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomDimensionLabel;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomReportEntity;
 use Piwik\Plugins\CustomTranslation\TranslationTypes\DashboardEntity;
+use Piwik\Plugins\CustomTranslation\TranslationTypes\EventLabel;
 use Piwik\Tests\Framework\Fixture;
 
 class CustomTranslationFixture extends Fixture
@@ -25,17 +31,25 @@ class CustomTranslationFixture extends Fixture
     public $dateTime = '2013-01-23 01:23:45';
     public $idSite = 1;
     public $idSite2 = 2;
+    public $idSite3 = 3;
 
     public function setUp()
     {
         Fixture::createSuperUser();
 
+        if (self::hasCustomReports()) {
+            Plugin\Manager::getInstance()->loadPlugin('CustomReports');
+            Plugin\Manager::getInstance()->installLoadedPlugins();
+            Plugin\Manager::getInstance()->activatePlugin('CustomReports');
+        }
+
         $this->setUpWebsite();
-        $this->trackFirstVisit();
         $this->setTranslations();
         $this->createDashboards();
         $this->createCustomDimensions();
         $this->createCustomReports();
+
+        $this->trackFirstVisit();
     }
 
     public function tearDown()
@@ -45,7 +59,7 @@ class CustomTranslationFixture extends Fixture
 
     private function setUpWebsite()
     {
-        foreach (array($this->idSite, $this->idSite2) as $idSite) {
+        foreach (array($this->idSite, $this->idSite2, $this->idSite3) as $idSite) {
             if (!self::siteCreated($idSite)) {
                 $idSiteCreated = self::createWebsite($this->dateTime, $ecommerce = 1);
                 $this->assertSame($idSite, $idSiteCreated);
@@ -73,23 +87,36 @@ class CustomTranslationFixture extends Fixture
         if (!self::hasCustomReports()) {
             return;
         }
+        Filesystem::deleteAllCacheOnUpdate(); // make sure custom dimensions are not cached etc
         foreach (array($this->idSite, $this->idSite2) as $idSite) {
-            $this->addCustomReport($idSite, 'CustomReport1');
-            $this->addCustomReport($idSite, 'CustomReport2');
-            $this->addCustomReport($idSite, 'CustomReport3');
+            $this->addCustomReportEvolution($idSite, 'CustomReport1');
+            $this->addCustomReportTable($idSite, 'CustomReport2', ["Actions.VisitTotalActions","Events.EventName","CustomDimension.CustomDimension2"]);
+            $this->addCustomReportTable($idSite, 'CustomReport3', ["Events.EventName","CustomDimension.CustomDimension2"]);
+            $this->addCustomReportTable($idSite, 'CustomReport4', ["CustomDimension.CustomDimension2","Events.EventName"]);
+            $this->addCustomReportTable($idSite, 'CustomReport5', ["CustomDimension.CustomDimension4","CustomDimension.CustomDimension2"]);
+            $this->addCustomReportTable($idSite, 'CustomReport6', ["Events.EventName","CustomDimension.CustomDimension4"]);
+            $this->addCustomReportTable($idSite, 'CustomReport7', $dimensions = array("Actions.VisitTotalActions"));
         }
     }
 
-    private function addCustomReport($idSite, $name)
+    private function addCustomReportEvolution($idSite, $name)
     {
         return Request::processRequest('CustomReports.addCustomReport', array(
             'idSite' => $idSite, 'name' => $name, 'reportType' => 'evolution', 'metricIds' => array('nb_visits')
         ));
     }
 
+    private function addCustomReportTable($idSite, $name, $dimensions)
+    {
+        return Request::processRequest('CustomReports.addCustomReport', array(
+            'idSite' => $idSite, 'name' => $name, 'reportType' => 'table', 'metricIds' => array('nb_visits'), 'dimensionIds' => $dimensions
+        ));
+    }
+
     private function createCustomDimensions()
     {
         foreach (array($this->idSite, $this->idSite2) as $idSite) {
+            // we create entries for multiple sites to make sure the translation types fetch the names distinct
             Request::processRequest('CustomDimensions.configureNewCustomDimension', array(
                 'idSite' => $idSite, 'name' => 'DimensionVisit1', 'scope' => 'visit', 'active' => '1'
             ));
@@ -107,27 +134,65 @@ class CustomTranslationFixture extends Fixture
 
     private function setTranslations()
     {
-        API::getInstance()->updateTranslations(DashboardEntity::ID, 'de', array(
-            'Dashboard' => 'BoardDash',
-            'ecommerce' => 'Shop'
+        API::getInstance()->updateTranslations(DashboardEntity::ID, 'en', array(
+            'Dashboard1' => 'RenamedDash1',
+            'Dashboard3' => 'RenamedDash3',
+            'foobar' => 'baz'
+        ));
+        API::getInstance()->updateTranslations(CustomDimensionLabel::ID, 'en', array(
+            'genericValue1' => 'RenamedDimension1',
+            'genericValue2' => 'RenameDimension2',
+            'actionDim1' => 'RenameDimension3',
+            'foobar' => 'baz'
+        ));
+        API::getInstance()->updateTranslations(CustomDimensionEntity::ID, 'en', array(
+            'DimensionVisit1' => 'RenamedDimVisit1',
+            'DimensionAction2' => 'RenamedDimAction2',
+            'foobar' => 'baz'
+        ));
+        API::getInstance()->updateTranslations(EventLabel::ID, 'en', array(
+            'genericValue1' => 'RenamedEvent1',
+            'actionDim1111' => 'RenamedEvent11111111',
+            'visitDim2' => 'RenamedVisitDim2',
+            'MyAction' => 'RenamedAction',
+            'MyCategory' => 'RenamedCategory',
+            'foobar' => 'baz',
+        ));
+        API::getInstance()->updateTranslations(CustomReportEntity::ID, 'en', array(
+            'CustomReport1' => 'RenamedReport1',
+            'CustomReport3' => 'RenamedReport3',
+            'foobar' => 'baz'
         ));
     }
 
     protected function trackFirstVisit()
     {
         $t = self::getTracker($this->idSite, $this->dateTime, $defaultInit = true);
-
         $t->setForceVisitDateTime(Date::factory($this->dateTime)->addHour(0.1)->getDatetime());
         $t->setUrl('http://example.com/');
+
+        $t->setCustomTrackingParameter('dimension1', 'genericValue1');
+        $t->setCustomTrackingParameter('dimension2', 'visitDim2');
+
+        $t->setCustomTrackingParameter('dimension3', 'actionDim1');
+        $t->setCustomTrackingParameter('dimension4', 'genericValue2');
         self::checkResponse($t->doTrackPageView('Viewing homepage'));
+
+        $t->setCustomTrackingParameter('dimension3', 'actionDim1');
+        self::checkResponse($t->doTrackPageView('Viewisimulng homepage 1'));
+
+        $t->setCustomTrackingParameter('dimension3', 'actionDim1111');
+        self::checkResponse($t->doTrackPageView('Viewing homepage 2'));
+
+        $t->setCustomTrackingParameter('dimension4', 'actionDim222');
+        self::checkResponse($t->doTrackPageView('Viewing homepage 3'));
 
         $t->setForceVisitDateTime(Date::factory($this->dateTime)->addHour(0.2)->getDatetime());
         $t->setUrl('http://example.com/sub/page');
-        self::checkResponse($t->doTrackPageView('Second page view'));
-
-        $t->setForceVisitDateTime(Date::factory($this->dateTime)->addHour(0.25)->getDatetime());
-        $t->addEcommerceItem($sku = 'SKU_ID', $name = 'Test item!', $category = 'Test & Category', $price = 777, $quantity = 33);
-        self::checkResponse($t->doTrackEcommerceOrder('TestingOrder', $grandTotal = 33 * 77));
+        self::checkResponse($t->doTrackEvent('MyCategory', 'MyAction', 'genericValue1', 5));
+        self::checkResponse($t->doTrackEvent('MyCategory2', 'genericValue2', 'MyName2', 2));
+        self::checkResponse($t->doTrackEvent('MyCategory3', 'MyAction3', 'MyName3', 7));
+        self::checkResponse($t->doTrackEvent('MyCategory3', 'MyAction3', 'MyName3', 7));
     }
 
     public static function hasCustomReports()

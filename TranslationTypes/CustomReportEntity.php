@@ -97,11 +97,11 @@ class CustomReportEntity extends TranslationType
                 foreach ($dimensions as $level => $dimension) {
                     if (strpos($dimension, 'CustomDimension') === 0) {
                         // rename custom dimension values
-                        $renameMap[$level + 1] = $this->customDimensionLabel;
+                        $renameMap[$level + 1] = $this->customDimensionLabel->getTranslations();
                     }
                     if (strpos($dimension, 'Events') === 0) {
                         // rename event values
-                        $renameMap[$level + 1] = $this->eventLabel;
+                        $renameMap[$level + 1] = $this->eventLabel->getTranslations();
                     }
                 }
 

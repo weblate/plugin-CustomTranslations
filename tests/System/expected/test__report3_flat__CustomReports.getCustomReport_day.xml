@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<result>
+	<row>
+		<label>genericValue1 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>2</level>
+	</row>
+	<row>
+		<label>MyName2 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>2</level>
+	</row>
+	<row>
+		<label>MyName3 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>2</level>
+	</row>
+</result>
