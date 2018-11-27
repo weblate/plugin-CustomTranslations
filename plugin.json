@@ -15,7 +15,7 @@
   ],
   "support": {
 	    "email": "contact@innocraft.com",
-	    "issues": "",
+        "issues": "https://github.com/innocraft/plugin-CustomTranslation/issues",
 	    "forum": "https://forum.matomo.org"
   },
   "homepage": "https://innocraft.com",

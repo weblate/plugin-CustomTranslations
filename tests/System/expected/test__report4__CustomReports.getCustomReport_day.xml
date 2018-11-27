@@ -7,17 +7,17 @@
 		<segment>dimension2==visitDim2</segment>
 		<subtable>
 			<row>
-				<label>genericValue1</label>
-				<nb_visits>1</nb_visits>
-				<level>2</level>
-			</row>
-			<row>
 				<label>MyName2</label>
 				<nb_visits>1</nb_visits>
 				<level>2</level>
 			</row>
 			<row>
 				<label>MyName3</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+			</row>
+			<row>
+				<label>RenamedEvent1</label>
 				<nb_visits>1</nb_visits>
 				<level>2</level>
 			</row>

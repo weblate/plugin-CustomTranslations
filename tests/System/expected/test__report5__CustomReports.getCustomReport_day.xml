@@ -14,7 +14,7 @@
 		</subtable>
 	</row>
 	<row>
-		<label>genericValue2</label>
+		<label>RenameDimension2</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
 		<segment>dimension4==genericValue2</segment>

@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <result>
 	<row>
-		<label>genericValue1</label>
-		<nb_visits>1</nb_visits>
-		<level>1</level>
-		<segment>eventName==genericValue1</segment>
-		<subtable>
-			<row>
-				<label>visitDim2</label>
-				<nb_visits>1</nb_visits>
-				<level>2</level>
-			</row>
-		</subtable>
-	</row>
-	<row>
 		<label>MyName2</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
@@ -31,6 +18,19 @@
 		<nb_visits>1</nb_visits>
 		<level>1</level>
 		<segment>eventName==MyName3</segment>
+		<subtable>
+			<row>
+				<label>visitDim2</label>
+				<nb_visits>1</nb_visits>
+				<level>2</level>
+			</row>
+		</subtable>
+	</row>
+	<row>
+		<label>RenamedEvent1</label>
+		<nb_visits>1</nb_visits>
+		<level>1</level>
+		<segment>eventName==genericValue1</segment>
 		<subtable>
 			<row>
 				<label>visitDim2</label>

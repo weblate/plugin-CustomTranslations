@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <result>
 	<row>
-		<label>8 - genericValue1 - visitDim2</label>
-		<nb_visits>1</nb_visits>
-		<level>3</level>
-	</row>
-	<row>
 		<label>8 - MyName2 - visitDim2</label>
 		<nb_visits>1</nb_visits>
 		<level>3</level>
 	</row>
 	<row>
 		<label>8 - MyName3 - visitDim2</label>
+		<nb_visits>1</nb_visits>
+		<level>3</level>
+	</row>
+	<row>
+		<label>8 - RenamedEvent1 - visitDim2</label>
 		<nb_visits>1</nb_visits>
 		<level>3</level>
 	</row>

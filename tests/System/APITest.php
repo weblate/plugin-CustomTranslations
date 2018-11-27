@@ -1,10 +1,11 @@
 <?php
 /**
- * Matomo - free/libre analytics platform
+ * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
- * @link https://matomo.org
+ * @link https://www.innocraft.com
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
+
 
 namespace Piwik\Plugins\CustomTranslation\tests\System;
 
@@ -165,6 +166,33 @@ class APITest extends SystemTestCase
                 'idSite' => 1,
                 'date' => self::$fixture->dateTime,
                 'periods' => array('day'),
+            )
+        );
+
+        $apiToTest[] = array(
+            array('Events.getName'),
+            array(
+                'idSite' => 1,
+                'date' => self::$fixture->dateTime,
+                'periods' => array('day'),
+                'otherRequestParameters' => array(
+                    'filter_pattern' => 'RenamedEvent1',
+                ),
+                'testSuffix' => '_filterPattern',
+            )
+        );
+        $apiToTest[] = array(
+            array('Events.getCategory'),
+            array(
+                'idSite' => 1,
+                'date' => self::$fixture->dateTime,
+                'periods' => array('day'),
+                'otherRequestParameters' => array(
+                    'secondaryDimension' => 'eventAction',
+                    'pivotBy' => 'Events.EventAction',
+                    'pivotByColumn' => 'nb_events'
+                ),
+                'testSuffix' => '_pivoted',
             )
         );
 

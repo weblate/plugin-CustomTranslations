@@ -41,12 +41,12 @@
 		</category>
 		<subcategory>
 			<id>customdimension4</id>
-			<name>DimensionAction2</name>
+			<name>RenamedDimAction2</name>
 			<order>73</order>
 		</subcategory>
 		<widgets>
 			<row>
-				<name>DimensionAction2</name>
+				<name>RenamedDimAction2</name>
 				<module>CustomDimensions</module>
 				<action>getCustomDimension</action>
 				<order>204</order>
@@ -560,12 +560,12 @@
 		</category>
 		<subcategory>
 			<id>customdimension1</id>
-			<name>DimensionVisit1</name>
+			<name>RenamedDimVisit1</name>
 			<order>70</order>
 		</subcategory>
 		<widgets>
 			<row>
-				<name>DimensionVisit1</name>
+				<name>RenamedDimVisit1</name>
 				<module>CustomDimensions</module>
 				<action>getCustomDimension</action>
 				<order>201</order>
@@ -1304,7 +1304,7 @@
 		</category>
 		<subcategory>
 			<id>1</id>
-			<name>Dashboard1</name>
+			<name>RenamedDash1</name>
 			<order>0</order>
 		</subcategory>
 		<widgets>
@@ -1362,7 +1362,7 @@
 		</category>
 		<subcategory>
 			<id>3</id>
-			<name>Dashboard3</name>
+			<name>RenamedDash3</name>
 			<order>2</order>
 		</subcategory>
 		<widgets>
@@ -1802,7 +1802,7 @@
 						<isReport>1</isReport>
 					</row>
 					<row>
-						<name>DimensionVisit1</name>
+						<name>RenamedDimVisit1</name>
 						<category>
 							<id>Goals by User attribute</id>
 							<name>Goals by User attribute</name>
@@ -2616,7 +2616,7 @@
 						<isReport>1</isReport>
 					</row>
 					<row>
-						<name>DimensionVisit1</name>
+						<name>RenamedDimVisit1</name>
 						<category>
 							<id>Sales by User attribute</id>
 							<name>Sales by User attribute</name>
@@ -3324,37 +3324,6 @@
 		</widgets>
 	</row>
 	<row>
-		<uniqueId>CustomReports_CustomReports.1</uniqueId>
-		<category>
-			<id>CustomReports_CustomReports</id>
-			<name>Custom Reports</name>
-			<order>65</order>
-			<icon>icon-business</icon>
-		</category>
-		<subcategory>
-			<id>1</id>
-			<name>CustomReport1</name>
-			<order>100</order>
-		</subcategory>
-		<widgets>
-			<row>
-				<name>CustomReport1</name>
-				<module>CustomReports</module>
-				<action>getEvolutionGraph</action>
-				<order>199</order>
-				<parameters>
-					<module>CustomReports</module>
-					<action>getEvolutionGraph</action>
-					<idCustomReport>1</idCustomReport>
-				</parameters>
-				<uniqueId>widgetCustomReportsgetEvolutionGraphidCustomReport1</uniqueId>
-				<isWide>0</isWide>
-				<viewDataTable>graphEvolution</viewDataTable>
-				<isReport>1</isReport>
-			</row>
-		</widgets>
-	</row>
-	<row>
 		<uniqueId>CustomReports_CustomReports.2</uniqueId>
 		<category>
 			<id>CustomReports_CustomReports</id>
@@ -3365,7 +3334,7 @@
 		<subcategory>
 			<id>2</id>
 			<name>CustomReport2</name>
-			<order>101</order>
+			<order>100</order>
 		</subcategory>
 		<widgets>
 			<row>
@@ -3386,37 +3355,6 @@
 		</widgets>
 	</row>
 	<row>
-		<uniqueId>CustomReports_CustomReports.3</uniqueId>
-		<category>
-			<id>CustomReports_CustomReports</id>
-			<name>Custom Reports</name>
-			<order>65</order>
-			<icon>icon-business</icon>
-		</category>
-		<subcategory>
-			<id>3</id>
-			<name>CustomReport3</name>
-			<order>102</order>
-		</subcategory>
-		<widgets>
-			<row>
-				<name>CustomReport3</name>
-				<module>CustomReports</module>
-				<action>getCustomReport</action>
-				<order>199</order>
-				<parameters>
-					<module>CustomReports</module>
-					<action>getCustomReport</action>
-					<idCustomReport>3</idCustomReport>
-				</parameters>
-				<uniqueId>widgetCustomReportsgetCustomReportidCustomReport3</uniqueId>
-				<isWide>0</isWide>
-				<viewDataTable>table</viewDataTable>
-				<isReport>1</isReport>
-			</row>
-		</widgets>
-	</row>
-	<row>
 		<uniqueId>CustomReports_CustomReports.4</uniqueId>
 		<category>
 			<id>CustomReports_CustomReports</id>
@@ -3427,7 +3365,7 @@
 		<subcategory>
 			<id>4</id>
 			<name>CustomReport4</name>
-			<order>103</order>
+			<order>101</order>
 		</subcategory>
 		<widgets>
 			<row>
@@ -3458,7 +3396,7 @@
 		<subcategory>
 			<id>5</id>
 			<name>CustomReport5</name>
-			<order>104</order>
+			<order>102</order>
 		</subcategory>
 		<widgets>
 			<row>
@@ -3489,7 +3427,7 @@
 		<subcategory>
 			<id>6</id>
 			<name>CustomReport6</name>
-			<order>105</order>
+			<order>103</order>
 		</subcategory>
 		<widgets>
 			<row>
@@ -3520,7 +3458,7 @@
 		<subcategory>
 			<id>7</id>
 			<name>CustomReport7</name>
-			<order>106</order>
+			<order>104</order>
 		</subcategory>
 		<widgets>
 			<row>
@@ -3534,6 +3472,68 @@
 					<idCustomReport>7</idCustomReport>
 				</parameters>
 				<uniqueId>widgetCustomReportsgetCustomReportidCustomReport7</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+		</widgets>
+	</row>
+	<row>
+		<uniqueId>CustomReports_CustomReports.1</uniqueId>
+		<category>
+			<id>CustomReports_CustomReports</id>
+			<name>Custom Reports</name>
+			<order>65</order>
+			<icon>icon-business</icon>
+		</category>
+		<subcategory>
+			<id>1</id>
+			<name>RenamedReport1</name>
+			<order>105</order>
+		</subcategory>
+		<widgets>
+			<row>
+				<name>RenamedReport1</name>
+				<module>CustomReports</module>
+				<action>getEvolutionGraph</action>
+				<order>199</order>
+				<parameters>
+					<module>CustomReports</module>
+					<action>getEvolutionGraph</action>
+					<idCustomReport>1</idCustomReport>
+				</parameters>
+				<uniqueId>widgetCustomReportsgetEvolutionGraphidCustomReport1</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>graphEvolution</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+		</widgets>
+	</row>
+	<row>
+		<uniqueId>CustomReports_CustomReports.3</uniqueId>
+		<category>
+			<id>CustomReports_CustomReports</id>
+			<name>Custom Reports</name>
+			<order>65</order>
+			<icon>icon-business</icon>
+		</category>
+		<subcategory>
+			<id>3</id>
+			<name>RenamedReport3</name>
+			<order>106</order>
+		</subcategory>
+		<widgets>
+			<row>
+				<name>RenamedReport3</name>
+				<module>CustomReports</module>
+				<action>getCustomReport</action>
+				<order>199</order>
+				<parameters>
+					<module>CustomReports</module>
+					<action>getCustomReport</action>
+					<idCustomReport>3</idCustomReport>
+				</parameters>
+				<uniqueId>widgetCustomReportsgetCustomReportidCustomReport3</uniqueId>
 				<isWide>0</isWide>
 				<viewDataTable>table</viewDataTable>
 				<isReport>1</isReport>

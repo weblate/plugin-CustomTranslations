@@ -52,15 +52,6 @@
 			<avg_event_value>2</avg_event_value>
 		</row>
 		<row>
-			<label>MyAction</label>
-			<nb_events>1</nb_events>
-			<nb_events_with_value>1</nb_events_with_value>
-			<sum_event_value>5</sum_event_value>
-			<min_event_value>5</min_event_value>
-			<max_event_value>5</max_event_value>
-			<avg_event_value>5</avg_event_value>
-		</row>
-		<row>
 			<label>MyAction3</label>
 			<nb_events>2</nb_events>
 			<nb_events_with_value>2</nb_events_with_value>
@@ -68,6 +59,15 @@
 			<min_event_value>7</min_event_value>
 			<max_event_value>7</max_event_value>
 			<avg_event_value>7</avg_event_value>
+		</row>
+		<row>
+			<label>RenamedAction</label>
+			<nb_events>1</nb_events>
+			<nb_events_with_value>1</nb_events_with_value>
+			<sum_event_value>5</sum_event_value>
+			<min_event_value>5</min_event_value>
+			<max_event_value>5</max_event_value>
+			<avg_event_value>5</avg_event_value>
 		</row>
 	</reportData>
 	<reportMetadata>
@@ -78,13 +78,13 @@
 		</row>
 		<row>
 			
-			<segment>eventAction==MyAction</segment>
-			<idsubdatatable>2</idsubdatatable>
+			<segment>eventAction==MyAction3</segment>
+			<idsubdatatable>4</idsubdatatable>
 		</row>
 		<row>
 			
-			<segment>eventAction==MyAction3</segment>
-			<idsubdatatable>4</idsubdatatable>
+			<segment>eventAction==MyAction</segment>
+			<idsubdatatable>2</idsubdatatable>
 		</row>
 	</reportMetadata>
 	<reportTotal>

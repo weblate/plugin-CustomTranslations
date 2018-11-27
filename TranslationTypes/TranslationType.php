@@ -1,17 +1,11 @@
 <?php
 /**
- * Copyright (C) InnoCraft Ltd - All rights reserved.
+ * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
- * NOTICE:  All information contained herein is, and remains the property of InnoCraft Ltd.
- * The intellectual and technical concepts contained herein are protected by trade secret or copyright law.
- * Redistribution of this information or reproduction of this material is strictly forbidden
- * unless prior written permission is obtained from InnoCraft Ltd.
- *
- * You shall use this code only in accordance with the license agreement obtained from InnoCraft Ltd.
- *
- * @link https://www.innocraft.com/
- * @license For license details see https://www.innocraft.com/license
+ * @link https://www.innocraft.com
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
+
 namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\API\Request;
@@ -73,16 +67,8 @@ abstract class TranslationType
 
     protected function translateReportLabel(DataTableInterface $dataTable, $translationMap)
     {
-        if (Common::getRequestVar('flat', 0, 'int')) {
-            // we need to make sure to filter directly because flattening is done before queued filters are executed and
-            // while the flattener applies the queued filters before flattening for subtables, it is done not for the root table
-            // luckly, flatten tables don't seem to have the segment metadata so this is why filtering directly works
-            $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
-        } else {
-            // we need to delay the filter to make sure the correct segment metadata is added using the original label
-            // also it is faster since we possibly need to iterate over less rows maybe
-            $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
-        }
-
+        // we cannot delay the filter cause it would break like `filter_pattern` (search in reports),
+        // possibly pivoting etc
+        $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
     }
 }

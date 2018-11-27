@@ -5,13 +5,13 @@
 	<metadata>
 		<category>Visitors</category>
 		<subcategory>customdimension1</subcategory>
-		<name>DimensionVisit1</name>
+		<name>RenamedDimVisit1</name>
 		<module>CustomDimensions</module>
 		<action>getCustomDimension</action>
 		<parameters>
 			<idDimension>1</idDimension>
 		</parameters>
-		<dimension>DimensionVisit1</dimension>
+		<dimension>RenamedDimVisit1</dimension>
 		<metrics>
 			<nb_visits>Visits</nb_visits>
 			<nb_actions>Actions</nb_actions>
@@ -34,7 +34,7 @@
 		<uniqueId>CustomDimensions_getCustomDimension_idDimension--1</uniqueId>
 	</metadata>
 	<columns>
-		<label>DimensionVisit1</label>
+		<label>RenamedDimVisit1</label>
 		<nb_visits>Visits</nb_visits>
 		<nb_actions>Actions</nb_actions>
 		<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
@@ -43,7 +43,7 @@
 	</columns>
 	<reportData>
 		<row>
-			<label>genericValue1</label>
+			<label>RenamedDimension1</label>
 			<nb_visits>1</nb_visits>
 			<nb_actions>8</nb_actions>
 			<nb_actions_per_visit>8</nb_actions_per_visit>

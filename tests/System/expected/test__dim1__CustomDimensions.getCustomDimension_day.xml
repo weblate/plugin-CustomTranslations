@@ -13,6 +13,6 @@
 		<avg_time_on_site>361</avg_time_on_site>
 		<bounce_rate>0%</bounce_rate>
 		<nb_actions_per_visit>8</nb_actions_per_visit>
-		<segment>dimension1==RenamedDimension1</segment>
+		<segment>dimension1==genericValue1</segment>
 	</row>
 </result>
