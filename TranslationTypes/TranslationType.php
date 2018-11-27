@@ -15,6 +15,8 @@
 namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\API\Request;
+use Piwik\Common;
+use Piwik\DataTable\DataTableInterface;
 use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
 use Piwik\Translate;
 
@@ -67,5 +69,20 @@ abstract class TranslationType
         }
 
         return false;
+    }
+
+    protected function translateReportLabel(DataTableInterface $dataTable, $translationMap)
+    {
+        if (Common::getRequestVar('flat', 0, 'int')) {
+            // we need to make sure to filter directly because flattening is done before queued filters are executed and
+            // while the flattener applies the queued filters before flattening for subtables, it is done not for the root table
+            // luckly, flatten tables don't seem to have the segment metadata so this is why filtering directly works
+            $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
+        } else {
+            // we need to delay the filter to make sure the correct segment metadata is added using the original label
+            // also it is faster since we possibly need to iterate over less rows maybe
+            $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
+        }
+
     }
 }

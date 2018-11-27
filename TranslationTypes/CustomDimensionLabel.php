@@ -40,7 +40,7 @@ class CustomDimensionLabel extends TranslationType
     {
         if ($method === 'CustomDimensions.getCustomDimension' && $returnedValue instanceof DataTableInterface) {
             $renameMap = array('all' => $this->getTranslations());
-            $returnedValue->queueFilter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
+            $this->translateReportLabel($returnedValue, $renameMap);
         }
         return $returnedValue;
     }

@@ -62,6 +62,7 @@ class RenameLabelFilter extends BaseFilter
             $label = $row->getColumn('label');
             if ($label && isset($map[$label])) {
                 $row->setColumn('label', $map[$label]);
+                // $row->setMetadata('originalLabel', $label);
                 $table->setLabelsHaveChanged();
             }
 

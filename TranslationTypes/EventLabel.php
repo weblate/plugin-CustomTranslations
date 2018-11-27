@@ -40,7 +40,7 @@ class EventLabel extends TranslationType
     {
         if (strpos($method, 'Events.') === 0 && $returnedValue instanceof DataTableInterface) {
             $renameMap = array('all' => $this->getTranslations());
-            $returnedValue->queueFilter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
+            $this->translateReportLabel($returnedValue, $renameMap);
         }
         return $returnedValue;
     }

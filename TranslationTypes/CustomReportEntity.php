@@ -105,7 +105,7 @@ class CustomReportEntity extends TranslationType
                     }
                 }
 
-                $returnedValue->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($renameMap));
+                $this->translateReportLabel($returnedValue, $renameMap);
             }
         }
 
