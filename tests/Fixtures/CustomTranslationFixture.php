@@ -128,31 +128,31 @@ class CustomTranslationFixture extends Fixture
 
     private function setTranslations()
     {
-        API::getInstance()->updateTranslations(DashboardEntity::ID, 'en', array(
+        API::getInstance()->setTranslations(DashboardEntity::ID, 'en', array(
             'Dashboard1' => 'RenamedDash1',
             'Dashboard3' => 'RenamedDash3',
             'foobar' => 'baz'
         ));
-        API::getInstance()->updateTranslations(CustomDimensionLabel::ID, 'en', array(
+        API::getInstance()->setTranslations(CustomDimensionLabel::ID, 'en', array(
             'genericValue1' => 'RenamedDimension1',
             'genericValue2' => 'RenameDimension2',
             'actionDim1' => 'RenameDimension3',
             'foobar' => 'baz'
         ));
-        API::getInstance()->updateTranslations(CustomDimensionEntity::ID, 'en', array(
+        API::getInstance()->setTranslations(CustomDimensionEntity::ID, 'en', array(
             'DimensionVisit1' => 'RenamedDimVisit1',
             'DimensionAction2' => 'RenamedDimAction2',
             'foobar' => 'baz'
         ));
-        API::getInstance()->updateTranslations(EventLabel::ID, 'en', array(
+        API::getInstance()->setTranslations(EventLabel::ID, 'en', array(
             'genericValue1' => 'RenamedEvent1',
-            'actionDim1111' => 'RenamedEvent11111111',
-            'visitDim2' => 'RenamedVisitDim2',
+            'actionDim1111' => 'RenamedEvent11111111', // shouldn't be renamed cause not used in events
+            'visitDim2' => 'RenamedVisitDim2', // shouldn't be renamed cause not used in events
             'MyAction' => 'RenamedAction',
             'MyCategory' => 'RenamedCategory',
             'foobar' => 'baz',
         ));
-        API::getInstance()->updateTranslations(CustomReportEntity::ID, 'en', array(
+        API::getInstance()->setTranslations(CustomReportEntity::ID, 'en', array(
             'CustomReport1' => 'RenamedReport1',
             'CustomReport3' => 'RenamedReport3',
             'foobar' => 'baz'

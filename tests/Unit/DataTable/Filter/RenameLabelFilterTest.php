@@ -10,7 +10,6 @@ namespace Piwik\Plugins\CustomTranslation\tests\Unit\DataTable\Filter;
 
 use Piwik\DataTable;
 use Piwik\DataTable\Row;
-use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
  * @group CustomTranslation

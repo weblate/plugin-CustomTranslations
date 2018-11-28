@@ -9,7 +9,6 @@
 namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
 
 use Piwik\API\Request;
-use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
 use Piwik\Translate;

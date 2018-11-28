@@ -11,10 +11,9 @@ describe("CustomTranslationReporting", function () {
     this.fixture = "Piwik\\Plugins\\CustomTranslation\\tests\\Fixtures\\CustomTranslationFixture";
 
     var fs = require('fs');
-    var path = require('./path');
-    var customReportsPath = path.join(PIWIK_INCLUDE_PATH, 'plugins/CustomReports/CustomReports.php');
+    var customReportsPath = PIWIK_INCLUDE_PATH + '/plugins/CustomReports/CustomReports.php';
     var hasCustomReports = fs.exists(customReportsPath);
-
+    
     var generalParams = 'idSite=1&period=month&date=2013-01-23',
         urlBase = 'module=CoreHome&action=index&' + generalParams,
         reportBase = "?" + urlBase + "#?" + generalParams + '&',
@@ -64,8 +63,8 @@ describe("CustomTranslationReporting", function () {
     {
         var selector = '#secondNavBar .navbar a:contains('+ menuItem + '):first';
         page.click(selector);
-        if (menuItem === 'CustomReports') {
-            page.click(selector + ' .menuDropdown .title');
+        if (menuItem === 'Custom Reports') {
+            page.click('#secondNavBar .navbar .menuTab.active .menuDropdown .title');
         }
     }
 
@@ -89,9 +88,9 @@ describe("CustomTranslationReporting", function () {
 
     if (hasCustomReports) {
         it('should load the custom reports menu correctly with translations', function (done) {
-            captureMenu(done, 'menu_loaded_customreports', function (page) {
+            captureSelector(done, 'menu_loaded_customreports', function (page) {
                 openMenuItem(page, 'Custom Reports');
-            });
+            }, '#secondNavBar .menuTab.active,#secondNavBar .navbar .menuTab.active .menuDropdown .items');
         });
     }
 
@@ -113,16 +112,20 @@ describe("CustomTranslationReporting", function () {
         {onlyBasicCheck: true, testName: 'visitDimension2', 'moduleToWidgetize':'CustomDimensions','actionToWidgetize':'getCustomDimension', 'idDimension': '2'},
         {onlyBasicCheck: false, testName: 'actionDimension3', 'moduleToWidgetize':'CustomDimensions','actionToWidgetize':'getCustomDimension', 'idDimension': '3'},
         {onlyBasicCheck: true, testName: 'actionDimension4', 'moduleToWidgetize':'CustomDimensions','actionToWidgetize':'getCustomDimension', 'idDimension': '4'},
-        {onlyBasicCheck: false, testName: 'customReports1', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '1'},
-        {onlyBasicCheck: true, testName: 'customReports2', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '2'},
-        {onlyBasicCheck: true, testName: 'customReports3', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '3'},
-        {onlyBasicCheck: true, testName: 'customReports4', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '4'},
+        {onlyBasicCheck: true, testName: 'customReports1', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '1'},
+        {onlyBasicCheck: true, testName: 'customReports2', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '2', 'flat': 1},
+        {onlyBasicCheck: false, testName: 'customReports3', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '3'},
+        {onlyBasicCheck: true, testName: 'customReports3_flat', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '3', 'flat': 1},
+        {onlyBasicCheck: true, testName: 'customReports4', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '4', 'flat': 1},
+        {onlyBasicCheck: true, testName: 'customReports5', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '5', 'flat': 1},
+        {onlyBasicCheck: true, testName: 'customReports6', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '6', 'flat': 1},
+        {onlyBasicCheck: true, testName: 'customReports7', 'moduleToWidgetize':'CustomReports','actionToWidgetize':'getCustomReport', 'idCustomReport': '7', 'flat': 1},
     ];
 
     var i = 0, widgetToCheck;
     for (i; i < widgetsToCheck.length; i++) {
         (function (widgetToCheck) {
-            if (widgetToCheck.moduleToWidgetize === 'CustomReports' && !CustomReports) {
+            if (widgetToCheck.moduleToWidgetize === 'CustomReports' && !hasCustomReports) {
                 return;
             }
 
@@ -145,10 +148,16 @@ describe("CustomTranslationReporting", function () {
             });
 
             if (!onlyBasicCheck) {
+                var row = 'tr:first-child';
+                if (reportName === 'actionDimension3' || reportName === 'eventActionName') {
+                    row = 'tr:nth-child(2)';
+                } else if (reportName === 'customReports3') {
+                    row = 'tr:nth-child(3)';
+                }
 
                 it('should show row evolution for renamed label', function (done) {
                     captureDialog(done, 'report_' + reportName + '_row_evolution', function (page) {
-                        page.mouseMove('tbody tr:first-child');
+                        page.mouseMove('tbody ' + row);
                         page.mouseMove('a.actionRowEvolution:visible'); // necessary to get popover to display
                         page.click('a.actionRowEvolution:visible');
                     });
@@ -157,12 +166,13 @@ describe("CustomTranslationReporting", function () {
                 it('should show segmented visitor log for renamed label', function (done) {
                     captureDialog(done, 'report_' + reportName + '_segmented_visitor_log', function (page) {
                         page.click('.ui-dialog .ui-dialog-titlebar-close');
-                        page.mouseMove('table.dataTable tbody tr:first-child');
-                        page.evaluate(function(){
-                            var visitorLogLinkSelector = 'table.dataTable tbody tr:first-child a.actionSegmentVisitorLog';
-                            $(visitorLogLinkSelector).click();
+                        page.mouseMove('table.dataTable tbody ' + row);
+                        page.execCallback(function () {
+                            page.webpage.evaluate(function(row) {
+                                $('table.dataTable tbody ' + row + ' a.actionSegmentVisitorLog').click();
+                            }, row);
                         }, 2000);
-                        page.mouseMove('#secondNavBar');
+                        page.mouseMove('body');
                     });
                 });
 

@@ -85,6 +85,7 @@ class CustomReportEntity extends TranslationType
             && $returnedValue instanceof DataTableInterface) {
             $params = ['idSite' => $extraInfo['parameters']['idSite'], 'idCustomReport' => $extraInfo['parameters']['idCustomReport']];
             $customReport = Request::processRequest('CustomReports.getConfiguredReport', $params, []);
+
             if ($customReport['report_type'] === 'table') {
                 $dimensions = $customReport['dimensions'];
                 $renameMap = array();
@@ -98,7 +99,9 @@ class CustomReportEntity extends TranslationType
                         $renameMap[$level + 1] = $this->eventLabel->getTranslations();
                     }
                 }
-
+                if (!empty($_GET['foo'])) {
+var_export($renameMap);var_export($customReport);exit;
+                }
                 $this->translateReportLabel($returnedValue, $renameMap);
             }
         }

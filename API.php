@@ -31,7 +31,15 @@ class API extends \Piwik\Plugin\API
         $this->provider = $provider;
     }
 
-    public function updateTranslations($idType, $languageCode, $translations)
+    /**
+     * Sets (overwrites) the translations for a specific type. Make sure to pass all translations for the given type
+     * / language.
+     * @param string $idType
+     * @param string $languageCode
+     * @param array $translations  An array where (original value => translation)
+     * @throws \Exception If type, language, or translations is not valid
+     */
+    public function setTranslations($idType, $languageCode, $translations)
     {
         Piwik::checkUserHasSuperUserAccess();
 
@@ -41,6 +49,12 @@ class API extends \Piwik\Plugin\API
         $this->storage->set($idType, $languageCode, $translations);
     }
 
+    /**
+     * Get all existing translations for a specific type and language.
+     * @param string $idType
+     * @param string $languageCode
+     * @throws \Exception If type, language, or translations is not valid
+     */
     public function getTranslationsForType($idType, $languageCode)
     {
         Piwik::checkUserHasSuperUserAccess();
@@ -61,6 +75,10 @@ class API extends \Piwik\Plugin\API
         }
     }
 
+    /**
+     * Get a list of all translatable types.
+     * @return array[]
+     */
     public function getTranslatableTypes()
     {
         Piwik::checkUserHasSuperUserAccess();

@@ -80,7 +80,7 @@
                 }
             });
             piwikApi.post({
-                method: 'CustomTranslation.updateTranslations',
+                method: 'CustomTranslation.setTranslations',
                 idType: idType,
                 languageCode: this.languageCode,
             }, {translations:translations}).then(function (languages) {

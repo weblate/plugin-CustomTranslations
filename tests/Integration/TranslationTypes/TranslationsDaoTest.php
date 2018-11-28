@@ -19,8 +19,6 @@ use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
  */
 class TranslationsDaoTest extends IntegrationTestCase
 {
-    private $typeId = 'exampleId';
-
     /**
      * @var TranslationTypeProvider
      */

@@ -12,7 +12,6 @@ use Piwik\Plugins\CustomTranslation\API;
 use Piwik\Plugins\CustomTranslation\tests\Fixtures\CustomTranslationFixture;
 use Piwik\Plugins\CustomTranslation\TranslationTypes\DashboardEntity;
 use Piwik\Plugins\CustomTranslation\TranslationTypes\EventLabel;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
 use Piwik\Tests\Framework\Mock\FakeAccess;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
@@ -50,35 +49,35 @@ class ApiTest extends IntegrationTestCase
      * @expectedException \Exception
      * @expectedExceptionMessage checkUserHasSuperUserAccess
      */
-    public function test_updateTranslations_requiresSuperUserAccess()
+    public function test_setTranslations_requiresSuperUserAccess()
     {
         $this->setAdminUser();
-        $this->api->updateTranslations('foo', 'bar', array('baz' => 'bazz'));
+        $this->api->setTranslations('foo', 'bar', array('baz' => 'bazz'));
     }
 
     /**
      * @expectedException \Exception
      * @expectedExceptionMessageCustomTranslation_TranslationType: General_ValidatorErrorXNotWhitelisted
      */
-    public function test_updateTranslations_validatesType()
+    public function test_setTranslations_validatesType()
     {
-        $this->api->updateTranslations('invalidtype', 'en', array('baz' => 'bazz'));
+        $this->api->setTranslations('invalidtype', 'en', array('baz' => 'bazz'));
     }
 
     /**
      * @expectedException \Exception
      * @expectedExceptionMessage Invalid language code
      */
-    public function test_updateTranslations_validatesLanguage()
+    public function test_setTranslations_validatesLanguage()
     {
-        $this->api->updateTranslations(DashboardEntity::ID, 'fp', array('baz' => 'bazz'));
+        $this->api->setTranslations(DashboardEntity::ID, 'fp', array('baz' => 'bazz'));
     }
 
-    public function test_updateTranslations_success()
+    public function test_setTranslations_success()
     {
-        $this->api->updateTranslations(DashboardEntity::ID, 'en', array('baz' => 'bazz'));
-        $this->api->updateTranslations(DashboardEntity::ID, 'fr', array('foo' => 'bar'));
-        $this->api->updateTranslations(EventLabel::ID, 'fr', array('bar' => 'baz'));
+        $this->api->setTranslations(DashboardEntity::ID, 'en', array('baz' => 'bazz'));
+        $this->api->setTranslations(DashboardEntity::ID, 'fr', array('foo' => 'bar'));
+        $this->api->setTranslations(EventLabel::ID, 'fr', array('bar' => 'baz'));
 
         $values = $this->api->getTranslationsForType(DashboardEntity::ID, 'en');
         $this->assertSame(array('baz' => 'bazz'), $values);

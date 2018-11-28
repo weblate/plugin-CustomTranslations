@@ -17,14 +17,15 @@ class TranslationsDao
     public function get($typeId, $lang)
     {
         $translations = Option::get($this->makeId($typeId, $lang));
+
         if (!empty($translations)) {
             $translations = json_decode($translations, true);
         }
+
         if (empty($translations) || !is_array($translations)) {
             $translations = array();
-        } else {
-            $translations = array_filter($translations);
         }
+
         return $translations;
     }
 
