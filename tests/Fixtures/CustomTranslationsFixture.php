@@ -6,21 +6,21 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\tests\Fixtures;
+namespace Piwik\Plugins\CustomTranslations\tests\Fixtures;
 
 use Piwik\API\Request;
 use Piwik\Date;
 use Piwik\Filesystem;
 use Piwik\Plugin;
-use Piwik\Plugins\CustomTranslation\API;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomDimensionEntity;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomDimensionLabel;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\CustomReportEntity;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\DashboardEntity;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\EventLabel;
+use Piwik\Plugins\CustomTranslations\API;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\CustomDimensionEntity;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\CustomDimensionLabel;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\CustomReportEntity;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\DashboardEntity;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\EventLabel;
 use Piwik\Tests\Framework\Fixture;
 
-class CustomTranslationFixture extends Fixture
+class CustomTranslationsFixture extends Fixture
 {
     public $dateTime = '2013-01-23 01:23:45';
     public $idSite = 1;

@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Piwik;
@@ -17,12 +17,12 @@ class EventLabel extends TranslationType
 
     public function getName()
     {
-        return Piwik::translate('CustomTranslation_EventValue');
+        return Piwik::translate('CustomTranslations_EventValue');
     }
 
     public function getDescription()
     {
-        return Piwik::translate('CustomTranslation_EventValueDescription');
+        return Piwik::translate('CustomTranslations_EventValueDescription');
     }
 
     public function getTranslationKeys()

@@ -6,13 +6,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\Dao;
+namespace Piwik\Plugins\CustomTranslations\Dao;
 
 use Piwik\Option;
 
 class TranslationsDao
 {
-    CONST OPTION_LANG_PREFIX = 'CustomTranslation_lang_';
+    CONST OPTION_LANG_PREFIX = 'CustomTranslations_lang_';
 
     public function get($typeId, $lang)
     {
@@ -44,6 +44,6 @@ class TranslationsDao
 
     private function makeId($typeId, $lang)
     {
-        return sprintf('CustomTranslation_lang_%s_%s', $typeId, $lang);
+        return sprintf('CustomTranslations_lang_%s_%s', $typeId, $lang);
     }
 }

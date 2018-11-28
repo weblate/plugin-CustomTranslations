@@ -6,13 +6,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\tests\Unit\DataTable\Filter;
+namespace Piwik\Plugins\CustomTranslations\tests\Unit\DataTable\Filter;
 
 use Piwik\DataTable;
 use Piwik\DataTable\Row;
 
 /**
- * @group CustomTranslation
+ * @group CustomTranslations
  * @group RenameLabelFilterTest
  * @group Plugins
  */
@@ -162,7 +162,7 @@ class RenameLabelFilterTest extends \PHPUnit_Framework_TestCase
 
     private function filter($map)
     {
-        $this->table->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($map));
+        $this->table->filter('Piwik\Plugins\CustomTranslations\DataTable\Filter\RenameLabelFilter', array($map));
     }
 
 }

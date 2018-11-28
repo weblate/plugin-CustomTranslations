@@ -6,11 +6,11 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\API\Request;
 use Piwik\DataTable\DataTableInterface;
-use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
+use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 use Piwik\Translate;
 
 abstract class TranslationType
@@ -68,6 +68,6 @@ abstract class TranslationType
     {
         // we cannot delay the filter cause it would break like `filter_pattern` (search in reports),
         // possibly pivoting etc
-        $dataTable->filter('Piwik\Plugins\CustomTranslation\DataTable\Filter\RenameLabelFilter', array($translationMap));
+        $dataTable->filter('Piwik\Plugins\CustomTranslations\DataTable\Filter\RenameLabelFilter', array($translationMap));
     }
 }

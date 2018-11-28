@@ -6,13 +6,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\tests\Integration;
+namespace Piwik\Plugins\CustomTranslations\tests\Integration;
 
-use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
+use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
 /**
- * @group CustomTranslation
+ * @group CustomTranslations
  * @group TranslationsDaoTest
  * @group Plugins
  */

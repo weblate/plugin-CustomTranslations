@@ -9,12 +9,12 @@
 describe("CustomTranslationManage", function () {
     this.timeout(0);
 
-    this.fixture = "Piwik\\Plugins\\CustomTranslation\\tests\\Fixtures\\CustomTranslationFixture";
+    this.fixture = "Piwik\\Plugins\\CustomTranslations\\tests\\Fixtures\\CustomTranslationsFixture";
 
-    var url = '?module=CustomTranslation&action=manage&idSite=1&period=day&date=2010-01-03';
+    var url = '?module=CustomTranslations&action=manage&idSite=1&period=day&date=2010-01-03';
 
     before(function () {
-        testEnvironment.pluginsToLoad = ['CustomTranslation', 'CustomReports', 'CustomDimensions'];
+        testEnvironment.pluginsToLoad = ['CustomTranslations', 'CustomReports', 'CustomDimensions'];
         testEnvironment.save();
     });
 

@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\Container\StaticContainer;
 use Piwik\Piwik;
@@ -22,7 +22,7 @@ class TranslationTypeProvider
     {
         $types = array_keys($this->getAllTranslationTypes());
         $params = [new WhitelistedValue($types)];
-        BaseValidator::check(Piwik::translate('CustomTranslation_TranslationType'), $idType, $params);
+        BaseValidator::check(Piwik::translate('CustomTranslations_TranslationType'), $idType, $params);
     }
 
     /**

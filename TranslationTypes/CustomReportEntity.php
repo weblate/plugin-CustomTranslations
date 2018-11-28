@@ -6,14 +6,14 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\API\Request;
 use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Db;
 use Piwik\Piwik;
-use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
+use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 
 class CustomReportEntity extends TranslationType
 {
@@ -37,12 +37,12 @@ class CustomReportEntity extends TranslationType
 
     public function getName()
     {
-        return Piwik::translate('CustomTranslation_CustomReportName');
+        return Piwik::translate('CustomTranslations_CustomReportName');
     }
 
     public function getDescription()
     {
-        return Piwik::translate('CustomTranslation_CustomReportDescription');
+        return Piwik::translate('CustomTranslations_CustomReportDescription');
     }
 
     public function getTranslationKeys()
@@ -99,9 +99,7 @@ class CustomReportEntity extends TranslationType
                         $renameMap[$level + 1] = $this->eventLabel->getTranslations();
                     }
                 }
-                if (!empty($_GET['foo'])) {
-var_export($renameMap);var_export($customReport);exit;
-                }
+
                 $this->translateReportLabel($returnedValue, $renameMap);
             }
         }

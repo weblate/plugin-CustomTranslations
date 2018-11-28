@@ -7,26 +7,26 @@
  */
 
 
-namespace Piwik\Plugins\CustomTranslation\tests\System;
+namespace Piwik\Plugins\CustomTranslations\tests\System;
 
 use Piwik\Cache;
 use Piwik\Container\StaticContainer;
 use Piwik\Filesystem;
-use Piwik\Plugins\CustomTranslation\tests\Fixtures\CustomTranslationFixture;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
+use Piwik\Plugins\CustomTranslations\tests\Fixtures\CustomTranslationsFixture;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationTypeProvider;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Tests\Framework\TestingEnvironmentManipulator;
 use Piwik\Plugin;
 
 /**
- * @group CustomTranslation
+ * @group CustomTranslations
  * @group APITest
  * @group Plugins
  */
 class APITest extends SystemTestCase
 {
     /**
-     * @var CustomTranslationFixture
+     * @var CustomTranslationsFixture
      */
     public static $fixture = null; // initialized below class definition
 
@@ -34,7 +34,7 @@ class APITest extends SystemTestCase
     {
         $pluginsToLoad = array();
 
-        if (CustomTranslationFixture::hasCustomReports()) {
+        if (CustomTranslationsFixture::hasCustomReports()) {
             $pluginsToLoad[] = 'CustomReports';
             TestingEnvironmentManipulator::$extraPluginsToLoad = $pluginsToLoad;
             self::$fixture->extraPluginsToLoad = $pluginsToLoad;
@@ -62,7 +62,7 @@ class APITest extends SystemTestCase
             'period' => 'day',
         );
 
-        if (CustomTranslationFixture::hasCustomReports()) {
+        if (CustomTranslationsFixture::hasCustomReports()) {
             Plugin\Manager::getInstance()->deactivatePlugin('CustomReports');
             Plugin\Manager::getInstance()->unloadPlugin('CustomReports');
             $this->clearCaches();
@@ -74,7 +74,7 @@ class APITest extends SystemTestCase
     public function getTestsToRunWithAndWithoutCustomReports()
     {
         return array(
-            array('CustomTranslation.getTranslatableTypes'),
+            array('CustomTranslations.getTranslatableTypes'),
             array('API.getReportMetadata'),
             array('API.getWidgetMetadata'),
             array('API.getReportPagesMetadata'),
@@ -86,7 +86,7 @@ class APITest extends SystemTestCase
      */
     public function test_getTranslatableTypes_withCustomReports($api)
     {
-        if (!CustomTranslationFixture::hasCustomReports()) {
+        if (!CustomTranslationsFixture::hasCustomReports()) {
             $this->markTestSkipped('Custom reports plugin is not available, we skip it');
             return;
         }
@@ -105,7 +105,7 @@ class APITest extends SystemTestCase
 
     private function makeSureToLoadCustomReports()
     {
-        if (CustomTranslationFixture::hasCustomReports()) {
+        if (CustomTranslationsFixture::hasCustomReports()) {
             Plugin\Manager::getInstance()->loadPlugin('CustomReports');
             Plugin\Manager::getInstance()->activatePlugin('CustomReports');
             $this->clearCaches();
@@ -226,7 +226,7 @@ class APITest extends SystemTestCase
             )
         );
 
-        if (CustomTranslationFixture::hasCustomReports()) {
+        if (CustomTranslationsFixture::hasCustomReports()) {
             foreach (range(1,7) as $idCustomReport) {
                 $apiToTest[] = array(
                     array('CustomReports.getCustomReport'),
@@ -277,4 +277,4 @@ class APITest extends SystemTestCase
 
 }
 
-APITest::$fixture = new CustomTranslationFixture();
+APITest::$fixture = new CustomTranslationsFixture();

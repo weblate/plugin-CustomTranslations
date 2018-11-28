@@ -6,13 +6,13 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation;
+namespace Piwik\Plugins\CustomTranslations;
 
 use Piwik\API\Request;
 use Piwik\Piwik;
-use Piwik\Plugins\CustomTranslation\Dao\TranslationsDao;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationType;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
+use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationType;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationTypeProvider;
 
 class API extends \Piwik\Plugin\API
 {

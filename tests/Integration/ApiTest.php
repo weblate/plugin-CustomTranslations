@@ -6,17 +6,17 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\tests\Integration;
+namespace Piwik\Plugins\CustomTranslations\tests\Integration;
 
-use Piwik\Plugins\CustomTranslation\API;
-use Piwik\Plugins\CustomTranslation\tests\Fixtures\CustomTranslationFixture;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\DashboardEntity;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\EventLabel;
+use Piwik\Plugins\CustomTranslations\API;
+use Piwik\Plugins\CustomTranslations\tests\Fixtures\CustomTranslationsFixture;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\DashboardEntity;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\EventLabel;
 use Piwik\Tests\Framework\Mock\FakeAccess;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
 /**
- * @group CustomTranslation
+ * @group CustomTranslations
  * @group TranslationsDaoTest
  * @group Plugins
  */
@@ -33,7 +33,7 @@ class ApiTest extends IntegrationTestCase
     private $api;
 
     /**
-     * @var CustomTranslationFixture
+     * @var CustomTranslationsFixture
      */
     private $theFixture;
 
@@ -42,7 +42,7 @@ class ApiTest extends IntegrationTestCase
         parent::setUp();
 
         $this->api = API::getInstance();
-        $this->theFixture = new CustomTranslationFixture();
+        $this->theFixture = new CustomTranslationsFixture();
     }
 
     /**
@@ -57,7 +57,7 @@ class ApiTest extends IntegrationTestCase
 
     /**
      * @expectedException \Exception
-     * @expectedExceptionMessageCustomTranslation_TranslationType: General_ValidatorErrorXNotWhitelisted
+     * @expectedExceptionMessageCustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted
      */
     public function test_setTranslations_validatesType()
     {
@@ -110,7 +110,7 @@ class ApiTest extends IntegrationTestCase
 
     /**
      * @expectedException \Exception
-     * @expectedExceptionMessageCustomTranslation_TranslationType: General_ValidatorErrorXNotWhitelisted
+     * @expectedExceptionMessageCustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted
      */
     public function test_getTranslationsForType_validatesType()
     {

@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation;
+namespace Piwik\Plugins\CustomTranslations;
 
 use Piwik\Menu\MenuAdmin;
 use Piwik\Piwik;
@@ -17,7 +17,7 @@ class Menu extends \Piwik\Plugin\Menu
     public function configureAdminMenu(MenuAdmin $menu)
     {
         if (Piwik::hasUserSuperUserAccess()) {
-            $menu->addSystemItem('CustomTranslation_CustomTranslation', $this->urlForAction('manage'));
+            $menu->addSystemItem('CustomTranslations_CustomTranslations', $this->urlForAction('manage'));
         }
     }
 }

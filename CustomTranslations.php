@@ -6,15 +6,15 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation;
+namespace Piwik\Plugins\CustomTranslations;
 
 use Piwik\API\Request;
 use Piwik\Container\StaticContainer;
 use Piwik\Piwik;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationTypeProvider;
 use Piwik\SettingsServer;
 
-class CustomTranslation extends \Piwik\Plugin
+class CustomTranslations extends \Piwik\Plugin
 {
     public function registerEvents()
     {
@@ -31,20 +31,20 @@ class CustomTranslation extends \Piwik\Plugin
         $result[] = 'General_Language';
         $result[] = 'General_Value';
         $result[] = 'General_GoTo2';
-        $result[] = 'CustomTranslation_Translation';
-        $result[] = 'CustomTranslation_LanguageInlineHelp';
-        $result[] = 'CustomTranslation_CustomTranslation';
+        $result[] = 'CustomTranslations_Translation';
+        $result[] = 'CustomTranslations_LanguageInlineHelp';
+        $result[] = 'CustomTranslations_CustomTranslations';
     }
 
     public function getStylesheetFiles(&$stylesheets)
     {
-        $stylesheets[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.less";
+        $stylesheets[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.less";
     }
 
     public function getJsFiles(&$jsFiles)
     {
-        $jsFiles[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.controller.js";
-        $jsFiles[] = "plugins/CustomTranslation/angularjs/edittranslations/edittranslations.directive.js";
+        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
+        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
     }
 
     public function isTrackerPlugin()

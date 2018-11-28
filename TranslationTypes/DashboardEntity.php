@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\Common;
 use Piwik\Db;
@@ -18,12 +18,12 @@ class DashboardEntity extends TranslationType
 
     public function getName()
     {
-        return Piwik::translate('CustomTranslation_DashboardName');
+        return Piwik::translate('CustomTranslations_DashboardName');
     }
 
     public function getDescription()
     {
-        return Piwik::translate('CustomTranslation_DashboardDescription');
+        return Piwik::translate('CustomTranslations_DashboardDescription');
     }
 
     public function getTranslationKeys()

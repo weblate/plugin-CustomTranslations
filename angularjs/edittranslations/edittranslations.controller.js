@@ -6,11 +6,11 @@
  */
 
 (function () {
-    angular.module('piwikApp').controller('CustomTranslationEdit', CustomTranslationEdit);
+    angular.module('piwikApp').controller('CustomTranslationsEdit', CustomTranslationsEdit);
 
-    CustomTranslationEdit.$inject = ['piwikApi', 'piwik', '$filter'];
+    CustomTranslationsEdit.$inject = ['piwikApi', 'piwik', '$filter'];
 
-    function CustomTranslationEdit(piwikApi, piwik, $filter) {
+    function CustomTranslationsEdit(piwikApi, piwik, $filter) {
         var translate = $filter('translate');
 
         var self = this;
@@ -18,14 +18,14 @@
         this.translationTypes = [];
         this.languageOptions = [];
         this.isUpdating = {};
-        this.uiControlAttributes = {"field1":{"key":"key","title":translate('General_Value'),"uiControl":"text","availableValues":null},"field2":{"key":"value","title":translate('CustomTranslation_Translation'),"uiControl":"text","availableValues":null}};
+        this.uiControlAttributes = {"field1":{"key":"key","title":translate('General_Value'),"uiControl":"text","availableValues":null},"field2":{"key":"value","title":translate('CustomTranslations_Translation'),"uiControl":"text","availableValues":null}};
 
         function hasTranslationValue(value)
         {
             return value !== '' && value !== false && value !== null;
         }
 
-        var translationTypesPromise = piwikApi.fetch({method: 'CustomTranslation.getTranslatableTypes'});
+        var translationTypesPromise = piwikApi.fetch({method: 'CustomTranslations.getTranslatableTypes'});
 
         this.loadLanguage = function () {
             this.isLoadingTranslation = {};
@@ -40,7 +40,7 @@
                     self.isLoading = false;
                     self.isLoadingTranslation[idType] = true;
                     piwikApi.fetch({
-                        method: 'CustomTranslation.getTranslationsForType',
+                        method: 'CustomTranslations.getTranslationsForType',
                         idType: idType,
                         languageCode: self.languageCode}
                     ).then(function (translations) {
@@ -80,7 +80,7 @@
                 }
             });
             piwikApi.post({
-                method: 'CustomTranslation.setTranslations',
+                method: 'CustomTranslations.setTranslations',
                 idType: idType,
                 languageCode: this.languageCode,
             }, {translations:translations}).then(function (languages) {

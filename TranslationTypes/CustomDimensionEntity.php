@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\TranslationTypes;
+namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\Common;
 use Piwik\Db;
@@ -18,12 +18,12 @@ class CustomDimensionEntity extends TranslationType
 
     public function getName()
     {
-        return Piwik::translate('CustomTranslation_CustomDimensionName');
+        return Piwik::translate('CustomTranslations_CustomDimensionName');
     }
 
     public function getDescription()
     {
-        return Piwik::translate('CustomTranslation_CustomDimensionDescription');
+        return Piwik::translate('CustomTranslations_CustomDimensionDescription');
     }
 
     public function getTranslationKeys()

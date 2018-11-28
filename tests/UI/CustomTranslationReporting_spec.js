@@ -8,7 +8,7 @@
 describe("CustomTranslationReporting", function () {
     this.timeout(0);
 
-    this.fixture = "Piwik\\Plugins\\CustomTranslation\\tests\\Fixtures\\CustomTranslationFixture";
+    this.fixture = "Piwik\\Plugins\\CustomTranslations\\tests\\Fixtures\\CustomTranslationsFixture";
 
     var fs = require('fs');
     var customReportsPath = PIWIK_INCLUDE_PATH + '/plugins/CustomReports/CustomReports.php';
@@ -20,7 +20,7 @@ describe("CustomTranslationReporting", function () {
         widgetBase = '?module=Widgetize&action=iframe&widget=1&disableLink=1&' + generalParams;
 
     before(function () {
-        testEnvironment.pluginsToLoad = ['CustomTranslation', 'CustomDimensions'];
+        testEnvironment.pluginsToLoad = ['CustomTranslations', 'CustomDimensions'];
         if (hasCustomReports) {
             testEnvironment.pluginsToLoad.push('CustomReports');
         }

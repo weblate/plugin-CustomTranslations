@@ -6,14 +6,14 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\CustomTranslation\tests\Integration\TranslationsTypes;
+namespace Piwik\Plugins\CustomTranslations\tests\Integration\TranslationsTypes;
 
-use Piwik\Plugins\CustomTranslation\TranslationTypes\DashboardEntity;
-use Piwik\Plugins\CustomTranslation\TranslationTypes\TranslationTypeProvider;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\DashboardEntity;
+use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationTypeProvider;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
 /**
- * @group CustomTranslation
+ * @group CustomTranslations
  * @group TranslationsDaoTest
  * @group Plugins
  */
