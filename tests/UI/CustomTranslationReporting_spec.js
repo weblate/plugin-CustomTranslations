@@ -16,6 +16,7 @@ describe("CustomTranslationReporting", function () {
     
     var generalParams = 'idSite=1&period=month&date=2013-01-23',
         urlBase = 'module=CoreHome&action=index&' + generalParams,
+        manageBase = "?" + generalParams + '&',
         reportBase = "?" + urlBase + "#?" + generalParams + '&',
         widgetBase = '?module=Widgetize&action=iframe&widget=1&disableLink=1&' + generalParams;
 
@@ -38,6 +39,11 @@ describe("CustomTranslationReporting", function () {
     function captureMenu(done, screenshotName, test)
     {
         captureSelector(done, screenshotName, test, '#secondNavBar .menuTab.active');
+    }
+
+    function capturePageTable(done, screenshotName, test)
+    {
+        captureSelector(done, screenshotName, test, '#content table');
     }
 
     function captureDialog(done, screenshotName, test)
@@ -71,6 +77,8 @@ describe("CustomTranslationReporting", function () {
     it('should load the dashboard menu correctly with translations', function (done) {
         captureMenu(done, 'menu_loaded_dashboards', function (page) {
             page.load(reportBase + "category=Dashboard_Dashboard&subcategory=1");
+            openMenuItem(page, 'Behaviour');
+            openMenuItem(page, 'Dashboard');
         });
     });
 
@@ -102,7 +110,29 @@ describe("CustomTranslationReporting", function () {
     });
 
     /**
-     * REPORTS
+     * MANAGE SCREENS SHOULD SHOW ORIGINAL VALUE, NOT TRANSLATION
+     */
+    if (hasCustomReports) {
+        it('should load the custom reports with their original name in the admin manage screen', function (done) {
+            capturePageTable(done, 'manage_custom_reports_admin', function (page) {
+                page.load(manageBase + "module=CustomReports&action=manage");
+            });
+        });
+        it('should load the custom reports with their original name in the report manage screen', function (done) {
+            capturePageTable(done, 'manage_custom_reports_admin', function (page) {
+                page.load(reportBase + "category=CustomReports_CustomReports&subcategory=CustomReports_ManageReports");
+            });
+        });
+    }
+
+    it('should load the custom dimensions with their original name in the admin manage screen', function (done) {
+        capturePageTable(done, 'manage_custom_dimensions_admin', function (page) {
+            page.load(manageBase + "module=CustomDimensions&action=manage");
+        });
+    });
+
+    /**
+     * REPORTS SHOULD SHOW THE TRANSLATED VALUE
      */
 
     var widgetsToCheck = [

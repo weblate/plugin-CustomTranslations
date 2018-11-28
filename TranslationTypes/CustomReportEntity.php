@@ -47,6 +47,7 @@ class CustomReportEntity extends TranslationType
 
     public function getTranslationKeys()
     {
+        // for performance we access DB directly
         $rows = Db::fetchAll('SELECT DISTINCT `name` from ' . Common::prefixTable('custom_reports') . ' where status = "active"');
         return array_filter(array_unique(array_column($rows, 'name')));
     }
