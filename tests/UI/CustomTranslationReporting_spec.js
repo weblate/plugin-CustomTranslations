@@ -78,7 +78,7 @@ describe("CustomTranslationReporting", function () {
         captureMenu(done, 'menu_loaded_dashboards', function (page) {
             page.load(reportBase + "category=Dashboard_Dashboard&subcategory=1");
             openMenuItem(page, 'Behaviour');
-            openMenuItem(page, 'Dashboard');
+            openMenuItem(page, 'Dashboard');// we make sure dashboard is selected, even though it should be by default
         });
     });
 
