@@ -82,7 +82,7 @@
             this.isUpdating[idType] = true;
             var translations = {};
             angular.forEach(this.translations[idType], function (translation) {
-                if (hasTranslationValue(translation.value)) {
+                if (translation.key && hasTranslationValue(translation.value)) {
                     translations[translation.key] = translation.value;
                 }
             });
