@@ -39,7 +39,7 @@ class API extends \Piwik\Plugin\API
      * @param array $translations  An array where (original value => translation)
      * @throws \Exception If type, language, or translations is not valid
      */
-    public function setTranslations($idType, $languageCode, $translations)
+    public function setTranslations($idType, $languageCode, $translations = array())
     {
         Piwik::checkUserHasSuperUserAccess();
 

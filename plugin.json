@@ -1,6 +1,6 @@
 {
   "name": "CustomTranslations",
-  "description": "Translate entities such as custom dimensions, and some tracked values such as event names, or custom dimension values.",
+  "description": "Translate entities and tracked values into different languages. For example Custom dimensions, dashboard names, custom report names, event values, ...",
   "version": "3.0.0",
   "theme": false,
   "require": {

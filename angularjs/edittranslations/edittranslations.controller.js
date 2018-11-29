@@ -14,7 +14,7 @@
         var translate = $filter('translate');
 
         var self = this;
-        this.languageCode = piwik.language || 'en';
+        this.languageCode = 'en';
         this.translationTypes = [];
         this.languageOptions = [];
         this.isUpdating = {};
@@ -67,7 +67,14 @@
         piwikApi.fetch({method: 'LanguagesManager.getAvailableLanguagesInfo'}).then(function (languages) {
             self.languageOptions = [];
             angular.forEach(languages, function (language) {
-               self.languageOptions.push({key: language.code, value: (language.english_name + ' (' + language.name+ ')')});
+                var title = language.english_name;
+                if (language.english_name !== language.name) {
+                    title += ' (' + language.name + ')';
+                }
+                if (piwik.languageName === language.english_name || piwik.languageName === language.name) {
+                    self.languageCode = language.code;
+                }
+                self.languageOptions.push({key: language.code, value: title});
             });
         });
 
