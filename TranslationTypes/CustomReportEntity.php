@@ -13,6 +13,7 @@ use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Db;
 use Piwik\Piwik;
+use Piwik\Plugin;
 use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 
 class CustomReportEntity extends TranslationType
