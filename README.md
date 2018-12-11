@@ -1,5 +1,7 @@
 # Matomo Custom Translations Plugin
 
+[![Build Status](https://travis-ci.org/innocraft/plugin-CustomTranslations.svg?branch=3.x-dev)](https://travis-ci.org/innocraft/plugin-CustomTranslations)
+
 ## Description
 
 Lets you translate the following entities and tracked values into another language:
