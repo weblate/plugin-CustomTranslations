@@ -9,6 +9,7 @@
 namespace Piwik\Plugins\CustomTranslations\TranslationTypes;
 
 use Piwik\API\Request;
+use Piwik\Container\StaticContainer;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 use Piwik\Translate;
@@ -41,7 +42,9 @@ abstract class TranslationType
 
     public function getTranslations()
     {
-        return $this->storage->get($this->getId(), Translate::getLanguageLoaded());
+        $translator = StaticContainer::get('Piwik\Translation\Translator');
+        $language = $translator->getCurrentLanguage();
+        return $this->storage->get($this->getId(), $language);
     }
 
     public function getTranslationKeys()
