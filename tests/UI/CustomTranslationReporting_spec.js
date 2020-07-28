@@ -35,7 +35,8 @@ describe("CustomTranslationReporting", function () {
     {
         await test();
         await page.waitForNetworkIdle();
-        expect(await page.screenshotSelector(selector)).to.matchImage(screenshotName);
+        const elem = await page.$(selector);
+        expect(await elem.screenshot()).to.matchImage(screenshotName);
     }
 
     async function captureMenu(screenshotName, test)
@@ -45,7 +46,7 @@ describe("CustomTranslationReporting", function () {
 
     async function capturePageTable(screenshotName, test)
     {
-        await captureSelector(screenshotName, test, '#content table');
+        await captureSelector(screenshotName, test, '#content');
     }
 
     async function captureDialog(screenshotName, test)

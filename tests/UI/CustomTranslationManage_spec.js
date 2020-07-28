@@ -45,7 +45,7 @@ describe("CustomTranslationManage", function () {
 
     it('should load manage page', async function () {
         await page.goto(url);
-        expect(await page.screenshotSelector('.pageWrap')).to.matchImage('loaded');
+        expect(await page.screenshotSelector('#content')).to.matchImage('loaded');
     });
 
     it('should be possible to enter values', async function () {
@@ -57,10 +57,11 @@ describe("CustomTranslationManage", function () {
         await setTranslation(page, 'eventLabel', 2, 'eventKey');
         await setTranslation(page, 'eventLabel', 2, 'eventVal2', true);
         await saveTranslation(page, 'eventLabel');
+        expect(await page.screenshotSelector('#content')).to.matchImage('values');
     });
 
     it('should show save values on reload', async function () {
         await page.goto(url);
-        expect(await page.screenshotSelector('.pageWrap')).to.matchImage('values_saved_verify');
+        expect(await page.screenshotSelector('#content')).to.matchImage('values_saved_verify');
     });
 });
