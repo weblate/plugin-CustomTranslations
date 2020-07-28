@@ -24,7 +24,7 @@ class TranslationsDaoTest extends IntegrationTestCase
      */
     private $provider;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -52,12 +52,10 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->provider->checkTypeExists(DashboardEntity::ID);
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage General_ValidatorErrorXNotWhitelisted
-     */
     public function test_checkTypeExists_invalidId()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('General_ValidatorErrorXNotWhitelisted');
         $this->provider->checkTypeExists('foo');
     }
 

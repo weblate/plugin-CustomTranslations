@@ -25,7 +25,7 @@ class TranslationsDaoTest extends IntegrationTestCase
      */
     private $dao;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -110,12 +110,10 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->assertNotEmpty($this->dao->get($this->typeId, 'fr'));
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage $translations needs to be an array
-     */
     public function test_set_throwsExceptionWhenInvalidValues()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('$translations needs to be an array');
         $this->dao->set($this->typeId, 'nz', 'test');
     }
 

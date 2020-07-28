@@ -37,7 +37,7 @@ class ApiTest extends IntegrationTestCase
      */
     private $theFixture;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -45,31 +45,25 @@ class ApiTest extends IntegrationTestCase
         $this->theFixture = new CustomTranslationsFixture();
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage checkUserHasSuperUserAccess
-     */
     public function test_setTranslations_requiresSuperUserAccess()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('checkUserHasSuperUserAccess');
         $this->setAdminUser();
         $this->api->setTranslations('foo', 'bar', array('baz' => 'bazz'));
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessageCustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted
-     */
     public function test_setTranslations_validatesType()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('CustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted');
         $this->api->setTranslations('invalidtype', 'en', array('baz' => 'bazz'));
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage Invalid language code
-     */
     public function test_setTranslations_validatesLanguage()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Invalid language code');
         $this->api->setTranslations(DashboardEntity::ID, 'fp', array('baz' => 'bazz'));
     }
 
@@ -88,41 +82,33 @@ class ApiTest extends IntegrationTestCase
         $this->assertSame(array(), $this->api->getTranslationsForType(EventLabel::ID, 'de'));
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage checkUserHasSuperUserAccess
-     */
     public function test_getTranslatableTypes_requiresSuperUserAccess()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('checkUserHasSuperUserAccess');
         $this->setAdminUser();
         $this->api->getTranslatableTypes();
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage checkUserHasSuperUserAccess
-     */
     public function test_getTranslationsForType_requiresSuperUserAccess()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('checkUserHasSuperUserAccess');
         $this->setAdminUser();
         $this->api->getTranslationsForType('foo', 'bar');
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessageCustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted
-     */
     public function test_getTranslationsForType_validatesType()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('CustomTranslations_TranslationType: General_ValidatorErrorXNotWhitelisted');
         $this->api->getTranslationsForType('invalidtype', 'en');
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage Invalid language code
-     */
     public function test_getTranslationsForType_validatesLanguage()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Invalid language code');
         $this->api->getTranslationsForType(DashboardEntity::ID, 'fp');
     }
 
