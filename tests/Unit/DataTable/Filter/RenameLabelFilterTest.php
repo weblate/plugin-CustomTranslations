@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\CustomTranslations\tests\Unit\DataTable\Filter;
 
+use PHPUnit\Framework\TestCase;
 use Piwik\DataTable;
 use Piwik\DataTable\Row;
 
@@ -16,14 +17,14 @@ use Piwik\DataTable\Row;
  * @group RenameLabelFilterTest
  * @group Plugins
  */
-class RenameLabelFilterTest extends \PHPUnit_Framework_TestCase
+class RenameLabelFilterTest extends TestCase
 {
     /**
      * @var DataTable
      */
     private $table;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->table = new DataTable();
         $this->table->addRowsFromArray(array(

@@ -15,7 +15,7 @@ describe("CustomTranslationReporting", function () {
     
     var fs = require('fs');
     var customReportsPath = PIWIK_INCLUDE_PATH + '/plugins/CustomReports/CustomReports.php';
-    var hasCustomReports = fs.exists(customReportsPath);
+    var hasCustomReports = fs.existsSync(customReportsPath);
     
     var generalParams = 'idSite=1&period=month&date=2013-01-23',
         urlBase = 'module=CoreHome&action=index&' + generalParams,
@@ -31,84 +31,91 @@ describe("CustomTranslationReporting", function () {
         testEnvironment.save();
     });
 
-    function captureSelector(done, screenshotName, test, selector)
+    async function captureSelector(screenshotName, test, selector)
     {
-        if (!selector) {
-            selector = pageSelector;
-        }
-        expect.screenshot(screenshotName).to.be.captureSelector(selector, test, done);
+        await test();
+        await page.waitForNetworkIdle();
+        expect(await page.screenshotSelector(selector)).to.matchImage(screenshotName);
     }
 
-    function captureMenu(done, screenshotName, test)
+    async function captureMenu(screenshotName, test)
     {
-        captureSelector(done, screenshotName, test, '#secondNavBar .menuTab.active');
+        await captureSelector(screenshotName, test, '#secondNavBar .menuTab.active');
     }
 
-    function capturePageTable(done, screenshotName, test)
+    async function capturePageTable(screenshotName, test)
     {
-        captureSelector(done, screenshotName, test, '#content table');
+        await captureSelector(screenshotName, test, '#content');
     }
 
-    function captureDialog(done, screenshotName, test)
+    async function captureDialog(screenshotName, test)
     {
-        captureSelector(done, screenshotName, test, '.ui-dialog');
+        await captureSelector(screenshotName, test, '.ui-dialog');
     }
 
-    function captureModal(done, screenshotName, test)
+    async function captureModal(screenshotName, test)
     {
-        captureSelector(done, screenshotName, test, '.modal.open');
+        await test();
+        await page.waitForNetworkIdle();
+
+        pageWrap = await page.$('.modal.open');
+        expect(await pageWrap.screenshot()).to.matchImage(screenshotName);
     }
 
-    function captureWidget(done, screenshotName, test)
+    async function captureWidget(screenshotName, test)
     {
-        captureSelector(done, screenshotName, test, 'body');
+        await captureSelector(screenshotName, test, 'body');
     }
 
     /**
      * DASHBOARD + MENU
      */
 
-    function openMenuItem(page, menuItem)
+    async function openMenuItem(page, menuItem)
     {
         var selector = '#secondNavBar .navbar a:contains('+ menuItem + '):first';
-        page.click(selector);
+        await (await page.jQuery(selector)).click();
+        await page.waitFor(150);
         if (menuItem === 'Custom Reports') {
-            page.click('#secondNavBar .navbar .menuTab.active .menuDropdown .title');
+            await page.click('#secondNavBar .navbar .menuTab.active .menuDropdown .title');
         }
+        await page.waitFor(150);
+        await page.mouse.move(0, 0);
     }
 
-    it('should load the dashboard menu correctly with translations', function (done) {
-        captureMenu(done, 'menu_loaded_dashboards', function (page) {
-            page.load(reportBase + "category=Dashboard_Dashboard&subcategory=1");
-            openMenuItem(page, 'Behaviour');
-            openMenuItem(page, 'Dashboard');// we make sure dashboard is selected, even though it should be by default
+    it('should load the dashboard menu correctly with translations', async function () {
+        await captureMenu('menu_loaded_dashboards', async function () {
+            await page.goto(reportBase + "category=Dashboard_Dashboard&subcategory=1");
+            await openMenuItem(page, 'Behaviour');
+            await openMenuItem(page, 'Dashboard');// we make sure dashboard is selected, even though it should be by default
         });
     });
 
-    it('should load the visitors menu correctly with translations', function (done) {
-        captureMenu(done, 'menu_loaded_visitors', function (page) {
-            openMenuItem(page, 'Visitors');
+    it('should load the visitors menu correctly with translations', async function () {
+        await captureMenu('menu_loaded_visitors', async function () {
+            await openMenuItem(page, 'Visitors');
         });
     });
 
-    it('should load the behaviour menu correctly with translations', function (done) {
-        captureMenu(done, 'menu_loaded_behaviour', function (page) {
-            openMenuItem(page, 'Behaviour');
+    it('should load the behaviour menu correctly with translations', async function () {
+        await captureMenu('menu_loaded_behaviour', async function () {
+            await openMenuItem(page, 'Behaviour');
         });
     });
 
     if (hasCustomReports) {
-        it('should load the custom reports menu correctly with translations', function (done) {
-            captureSelector(done, 'menu_loaded_customreports', function (page) {
-                openMenuItem(page, 'Custom Reports');
+        it('should load the custom reports menu correctly with translations', async function () {
+            await captureSelector('menu_loaded_customreports', async function () {
+                await openMenuItem(page, 'Custom Reports');
             }, '#secondNavBar .menuTab.active,#secondNavBar .navbar .menuTab.active .menuDropdown .items');
         });
     }
 
-    it("should show the original dashboard name when trying to rename dashboard", function (done) {
-        captureModal(done, 'dashboard_rename', function (page) {
-            page.click('.dashboard-manager .title');
-            page.click('li[data-action=renameDashboard]');
+    it("should show the original dashboard name when trying to rename dashboard", async function () {
+        await captureModal('dashboard_rename', async function () {
+            await page.click('.dashboard-manager .title');
+            await page.click('li[data-action=renameDashboard]');
+            await page.waitFor(300);
         });
     });
 
@@ -116,21 +123,21 @@ describe("CustomTranslationReporting", function () {
      * MANAGE SCREENS SHOULD SHOW ORIGINAL VALUE, NOT TRANSLATION
      */
     if (hasCustomReports) {
-        it('should load the custom reports with their original name in the admin manage screen', function (done) {
-            capturePageTable(done, 'manage_custom_reports_admin', function (page) {
-                page.load(manageBase + "module=CustomReports&action=manage");
+        it('should load the custom reports with their original name in the admin manage screen', async function () {
+            await capturePageTable('manage_custom_reports_admin', async function () {
+                await page.goto(manageBase + "module=CustomReports&action=manage");
             });
         });
-        it('should load the custom reports with their original name in the report manage screen', function (done) {
-            capturePageTable(done, 'manage_custom_reports_admin', function (page) {
-                page.load(reportBase + "category=CustomReports_CustomReports&subcategory=CustomReports_ManageReports");
+        it('should load the custom reports with their original name in the report manage screen', async function () {
+            await capturePageTable('manage_custom_reports_admin', async function () {
+                await page.goto(reportBase + "category=CustomReports_CustomReports&subcategory=CustomReports_ManageReports");
             });
         });
     }
 
-    it('should load the custom dimensions with their original name in the admin manage screen', function (done) {
-        capturePageTable(done, 'manage_custom_dimensions_admin', function (page) {
-            page.load(manageBase + "module=CustomDimensions&action=manage");
+    it('should load the custom dimensions with their original name in the admin manage screen', async function () {
+        await capturePageTable('manage_custom_dimensions_admin', async function () {
+            await page.goto(manageBase + "module=CustomDimensions&action=manage");
         });
     });
 
@@ -174,9 +181,9 @@ describe("CustomTranslationReporting", function () {
                 url += '&' + j + '=' + widgetToCheck[j];
             }
 
-            it('should load table report ' + reportName, function (done) {
-                captureWidget(done, 'report_' + reportName, function (page) {
-                    page.load(url);
+            it('should load table report ' + reportName, async function () {
+                await captureWidget('report_' + reportName, async function () {
+                    await page.goto(url);
                 });
             });
 
@@ -188,51 +195,51 @@ describe("CustomTranslationReporting", function () {
                     row = 'tr:nth-child(3)';
                 }
 
-                it('should show row evolution for renamed label', function (done) {
-                    captureDialog(done, 'report_' + reportName + '_row_evolution', function (page) {
-                        page.mouseMove('tbody ' + row);
-                        page.mouseMove('a.actionRowEvolution:visible'); // necessary to get popover to display
-                        page.click('a.actionRowEvolution:visible');
+                it('should show row evolution for renamed label', async function () {
+                    await captureDialog('report_' + reportName + '_row_evolution', async function () {
+                        await page.hover('tbody ' + row);
+                        await (await page.jQuery('a.actionRowEvolution:visible')).hover(); // necessary to get popover to display
+                        await (await page.jQuery('a.actionRowEvolution:visible')).click();
+                        await page.waitForNetworkIdle();
                     });
                 });
 
-                it('should show segmented visitor log for renamed label', function (done) {
-                    captureDialog(done, 'report_' + reportName + '_segmented_visitor_log', function (page) {
-                        page.click('.ui-dialog .ui-dialog-titlebar-close');
-                        page.mouseMove('table.dataTable tbody ' + row);
-                        page.execCallback(function () {
-                            page.webpage.evaluate(function(row) {
-                                $('table.dataTable tbody ' + row + ' a.actionSegmentVisitorLog').click();
-                            }, row);
-                        }, 2000);
-                        page.mouseMove('body');
+                it('should show segmented visitor log for renamed label', async function () {
+                    await captureDialog('report_' + reportName + '_segmented_visitor_log', async function () {
+                        await page.click('.ui-dialog .ui-dialog-titlebar-close');
+                        await page.hover('table.dataTable tbody ' + row);
+                        await page.evaluate(function(row) {
+                            $('table.dataTable tbody ' + row + ' a.actionSegmentVisitorLog').click();
+                        }, row);
+                        await page.waitForNetworkIdle();
+                        await page.mouse.move(0, 0);
                     });
                 });
 
-                it('should be possible to search for renamed label', function (done) {
-                    captureWidget(done, 'report_' + reportName + '_search', function (page) {
-                        page.click('.ui-dialog .ui-dialog-titlebar-close');
-                        page.click('.dataTableAction.searchAction');
-                        page.sendKeys('.searchAction .dataTableSearchInput', 'ren');
-                        page.click('.searchAction .icon-search');
+                it('should be possible to search for renamed label', async function () {
+                    await captureWidget('report_' + reportName + '_search', async function () {
+                        await page.click('.ui-dialog .ui-dialog-titlebar-close');
+                        await page.click('.dataTableAction.searchAction');
+                        await page.type('.searchAction .dataTableSearchInput', 'ren');
+                        await page.click('.searchAction .icon-search');
                     });
                 });
 
-                it('should load bar report' + reportName, function (done) {
-                    captureWidget(done, 'report_' + reportName + '_bar', function (page) {
-                        page.load(url + '&viewDataTable=graphVerticalBar');
+                it('should load bar report' + reportName, async function () {
+                    await captureWidget('report_' + reportName + '_bar', async function () {
+                        await page.goto(url + '&viewDataTable=graphVerticalBar');
                     });
                 });
-                it('should load pie report' + reportName, function (done) {
-                    captureWidget(done, 'report_' + reportName + '_pie', function (page) {
-                        page.load(url + '&viewDataTable=graphPie');
+                it('should load pie report' + reportName, async function () {
+                    await captureWidget('report_' + reportName + '_pie', async function () {
+                        await page.goto(url + '&viewDataTable=graphPie');
                     });
                 });
 
                 if (reportName === 'eventActionName') {
-                    it('should load pivot report ' + reportName, function (done) {
-                        captureWidget(done, 'report_' + reportName + '_pivoted', function (page) {
-                            page.load(url + '&pivotBy=Events.EventName&pivotByColumn=nb_events');
+                    it('should load pivot report ' + reportName, async function () {
+                        await captureWidget('report_' + reportName + '_pivoted', async function () {
+                            await page.goto(url + '&pivotBy=Events.EventName&pivotByColumn=nb_events');
                         });
                     });
                 }
@@ -240,5 +247,4 @@ describe("CustomTranslationReporting", function () {
 
         })(widgetsToCheck[i]);
     }
-
 });

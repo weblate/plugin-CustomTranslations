@@ -27,7 +27,7 @@ class CustomTranslationsFixture extends Fixture
     public $idSite2 = 2;
     public $idSite3 = 3;
 
-    public function setUp()
+    public function setUp(): void
     {
         Fixture::createSuperUser();
 
@@ -46,7 +46,7 @@ class CustomTranslationsFixture extends Fixture
         $this->trackFirstVisit();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         // empty
     }

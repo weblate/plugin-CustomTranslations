@@ -3,18 +3,19 @@
 language: php
 
 php:
-  - 5.6
-  - 5.5
+  - 7.2
+  - 7.4
 #  - hhvm
 
 services:
   - redis-server
+  - mysql
 
 addons:
   apt:
     packages:
       - nginx
-      - realpath
+      - coreutils
       - lftp
 
 git:
@@ -24,13 +25,13 @@ git:
 env:
   global:
     - PLUGIN_NAME=CustomTranslations
-    - PIWIK_ROOT_DIR=$TRAVIS_BUILD_DIR/piwik
-    # this variable controls the version of Piwik your tests will run against.
+    - PIWIK_ROOT_DIR=$TRAVIS_BUILD_DIR/matomo
+    # this variable controls the version of Matomo your tests will run against.
     # by default it will run against the maximum support version read from plugin.json
     # (PIWIK_TEST_TARGET=maximum_supported_piwik).
     # You can also specify a specific Piwik version
     # (PIWIK_TEST_TARGET=2.16.0-b1).
-    - PIWIK_TEST_TARGET=maximum_supported_piwik
+    - PIWIK_TEST_TARGET=4.x-dev
     - secure: "q0jWrwIWkHOTKWdqv+tr6OnA5ZfupPtGzaDAo6GFT6jwEa4hps9Bnf/YIzr/qrfQocy+o6bJzW7g7Fc9nNoxEQmndHSFoJQtsd4o8ZBpPmU0oG3tV525MbmGupum/pOZBIxtUZImYsmakkszVKCGEbr6ybSQwKhGe2Dm4eI+17tS5z7ingv03v/TgCaUPrh5zA4QO3/C5b8WmRcV78ulUj3h3pFu0GFwSzrTTkaOzU6BblNrgfTPYjWVCzsX1NdYEYOat2psko3i+4GiYP4Iw8zkr2q3BDgXSg97pQ8+N3UtqXTU4kfNoLjJ/aubmXmOsyCnG0Av0RLdisFyc+8ZgLHQ3wKaskiA4SDIxgq7a0VNXxzelpB+EJaUsjOBtlRQFSFI1yqxWGrIY1iajl46yi3skcmyj1mPH8mFBlsn1J0V6eAneBM9j74DFQtpSHkczahvDDpbE2bZfssY6w92F/LjOoXNbL7HZeaSHffm7Q5QnMOPLML3Bcx18hfyotJoVCQqarh8d99gRh6gZUOgY/IQxFLdiR37+c4IsdEoHvdNZ28FYUUYgXLpsZ0DOSmfrQjhF+b1Vyu1AaiUCX6JWdQHyWS7A6zjecphoTF86bz0Aj8CFRYuy0JX8hnAFMhcWEEd6J+K5kCZnFQLvPIRf93tNRRDX1sxzmsNQ7DIHZc="
   matrix:
     - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_PIWIK_BRANCH=$PIWIK_TEST_TARGET
@@ -40,13 +41,13 @@ env:
 matrix:
   exclude:
     # execute latest stable tests only w/ PHP 5.6
-    - php: 5.5
+    - php: 7.2
       env: TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_CORE=minimum_required_piwik
     # execute UI tests only w/ PHP 5.6
-    - php: 5.5
+    - php: 7.4
       env: TEST_SUITE=UITests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_PIWIK_BRANCH=$PIWIK_TEST_TARGET
 
-dist: trusty
+dist: bionic
 
 sudo: false
 
@@ -60,17 +61,17 @@ install:
   - cp -R !($PLUGIN_NAME) $PLUGIN_NAME
   - cp -R .git/ $PLUGIN_NAME/
   - cp .travis.yml $PLUGIN_NAME
-  # checkout piwik in the current directory
-  - git clone -q https://github.com/piwik/piwik.git piwik
-  - cd piwik
+  # checkout matomo in the current directory
+  - git clone -q https://github.com/matomo-org/matomo.git matomo
+  - cd matomo
   - git fetch -q --all
   - git submodule update
 
   # make sure travis-scripts repo is latest for initial travis setup
-  - '[ -d ./tests/travis/.git ] || sh -c "rm -rf ./tests/travis && git clone https://github.com/piwik/travis-scripts.git ./tests/travis"'
+  - '[ -d ./tests/travis/.git ] || sh -c "rm -rf ./tests/travis && git clone https://github.com/matomo-org/travis-scripts.git ./tests/travis"'
   - cd ./tests/travis ; git checkout master ; cd ../..
 
-  - export GENERATE_TRAVIS_YML_COMMAND="php ./tests/travis/generator/main.php generate:travis-yml --plugin=\"CustomTranslations\" --dist-trusty --sudo-false --verbose"
+  - export GENERATE_TRAVIS_YML_COMMAND="php ./tests/travis/generator/main.php generate:travis-yml --plugin=\"CustomTranslations\" --php-versions=\"7.2,7.4\" --distribution=\"bionic\" --sudo-false --verbose"
   - '[[ "$TRAVIS_JOB_NUMBER" != *.1 || "$TRAVIS_PULL_REQUEST" != "false" ]] || ./tests/travis/autoupdate_travis_yml.sh'
 
   - ./tests/travis/checkout_test_against_branch.sh
@@ -82,7 +83,6 @@ install:
   # travis now complains about this failing 9 times out of 10, so removing it
   #- travis_retry composer self-update
   - '[ "$SKIP_COMPOSER_INSTALL" == "1" ] || travis_retry composer install' 
- 
 
   # move plugin contents to folder in the plugins subdirectory
   - rm -rf plugins/$PLUGIN_NAME
@@ -116,7 +116,7 @@ after_script:
   # output contents of files w/ debugging info to screen
   - cat $PIWIK_ROOT_DIR/tests/travis/error.log
   - cat $PIWIK_ROOT_DIR/tmp/php-fpm.log
-  - cat $PIWIK_ROOT_DIR/tmp/logs/piwik.log
+  - cat $PIWIK_ROOT_DIR/tmp/logs/matomo.log
   - cat $PIWIK_ROOT_DIR/config/config.ini.php
 
   # upload test artifacts (for debugging travis failures)

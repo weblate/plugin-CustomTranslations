@@ -25,7 +25,7 @@ class TranslationsDaoTest extends IntegrationTestCase
      */
     private $dao;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -88,7 +88,7 @@ class TranslationsDaoTest extends IntegrationTestCase
         $nz = array('nz1' => 'nz2');
 
         $this->dao->set($this->typeId, 'nz', $nz);
-        $this->assertNotEmpty($nz, $this->dao->get($this->typeId, 'nz'));
+        $this->assertSame($nz, $this->dao->get($this->typeId, 'nz'));
 
         // clear value with empty array
         $this->dao->set($this->typeId, 'nz', array());
@@ -110,12 +110,10 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->assertNotEmpty($this->dao->get($this->typeId, 'fr'));
     }
 
-    /**
-     * @expectedException \Exception
-     * @expectedExceptionMessage $translations needs to be an array
-     */
     public function test_set_throwsExceptionWhenInvalidValues()
     {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('$translations needs to be an array');
         $this->dao->set($this->typeId, 'nz', 'test');
     }
 

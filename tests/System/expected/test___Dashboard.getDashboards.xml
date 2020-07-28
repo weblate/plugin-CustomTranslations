@@ -10,7 +10,7 @@
 			</row>
 			<row>
 				<module>CoreHome</module>
-				<action>getDonateForm</action>
+				<action>getPromoVideo</action>
 			</row>
 			<row>
 				<module>VisitsSummary</module>
@@ -21,8 +21,16 @@
 				<action>promoServices</action>
 			</row>
 			<row>
+				<module>Insights</module>
+				<action>getOverallMoversAndShakers</action>
+			</row>
+			<row>
 				<module>VisitsSummary</module>
 				<action>get</action>
+			</row>
+			<row>
+				<module>Tour</module>
+				<action>getEngagement</action>
 			</row>
 			<row>
 				<module>UserCountryMap</module>
@@ -48,7 +56,7 @@
 			</row>
 			<row>
 				<module>CoreHome</module>
-				<action>getDonateForm</action>
+				<action>getPromoVideo</action>
 			</row>
 			<row>
 				<module>VisitsSummary</module>
@@ -59,8 +67,16 @@
 				<action>promoServices</action>
 			</row>
 			<row>
+				<module>Insights</module>
+				<action>getOverallMoversAndShakers</action>
+			</row>
+			<row>
 				<module>VisitsSummary</module>
 				<action>get</action>
+			</row>
+			<row>
+				<module>Tour</module>
+				<action>getEngagement</action>
 			</row>
 			<row>
 				<module>UserCountryMap</module>
@@ -86,7 +102,7 @@
 			</row>
 			<row>
 				<module>CoreHome</module>
-				<action>getDonateForm</action>
+				<action>getPromoVideo</action>
 			</row>
 			<row>
 				<module>VisitsSummary</module>
@@ -97,8 +113,16 @@
 				<action>promoServices</action>
 			</row>
 			<row>
+				<module>Insights</module>
+				<action>getOverallMoversAndShakers</action>
+			</row>
+			<row>
 				<module>VisitsSummary</module>
 				<action>get</action>
+			</row>
+			<row>
+				<module>Tour</module>
+				<action>getEngagement</action>
 			</row>
 			<row>
 				<module>UserCountryMap</module>
