@@ -88,7 +88,7 @@ class TranslationsDaoTest extends IntegrationTestCase
         $nz = array('nz1' => 'nz2');
 
         $this->dao->set($this->typeId, 'nz', $nz);
-        $this->assertNotEmpty($nz, $this->dao->get($this->typeId, 'nz'));
+        $this->assertSame($nz, $this->dao->get($this->typeId, 'nz'));
 
         // clear value with empty array
         $this->dao->set($this->typeId, 'nz', array());

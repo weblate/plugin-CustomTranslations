@@ -50,6 +50,7 @@ class TranslationsDaoTest extends IntegrationTestCase
     public function test_checkTypeExists_validId()
     {
         $this->provider->checkTypeExists(DashboardEntity::ID);
+        $this->assertTrue(true); // test ok if no exception
     }
 
     public function test_checkTypeExists_invalidId()
