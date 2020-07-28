@@ -35,8 +35,7 @@ describe("CustomTranslationReporting", function () {
     {
         await test();
         await page.waitForNetworkIdle();
-        const elem = await page.$(selector);
-        expect(await elem.screenshot()).to.matchImage(screenshotName);
+        expect(await page.screenshotSelector(selector)).to.matchImage(screenshotName);
     }
 
     async function captureMenu(screenshotName, test)
@@ -56,7 +55,11 @@ describe("CustomTranslationReporting", function () {
 
     async function captureModal(screenshotName, test)
     {
-        await captureSelector(screenshotName, test, '.modal.open');
+        await test();
+        await page.waitForNetworkIdle();
+
+        pageWrap = await page.$('.modal.open');
+        expect(await pageWrap.screenshot()).to.matchImage(screenshotName);
     }
 
     async function captureWidget(screenshotName, test)
@@ -72,9 +75,12 @@ describe("CustomTranslationReporting", function () {
     {
         var selector = '#secondNavBar .navbar a:contains('+ menuItem + '):first';
         await (await page.jQuery(selector)).click();
+        await page.waitFor(150);
         if (menuItem === 'Custom Reports') {
             await page.click('#secondNavBar .navbar .menuTab.active .menuDropdown .title');
         }
+        await page.waitFor(150);
+        await page.mouse.move(0, 0);
     }
 
     it('should load the dashboard menu correctly with translations', async function () {
