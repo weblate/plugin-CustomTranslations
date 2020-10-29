@@ -129,7 +129,7 @@ describe("CustomTranslationReporting", function () {
             });
         });
         it('should load the custom reports with their original name in the report manage screen', async function () {
-            await capturePageTable('manage_custom_reports_admin', async function () {
+            await capturePageTable('manage_custom_reports_admin2', async function () {
                 await page.goto(reportBase + "category=CustomReports_CustomReports&subcategory=CustomReports_ManageReports");
             });
         });
