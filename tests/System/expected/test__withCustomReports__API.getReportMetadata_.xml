@@ -103,7 +103,7 @@
 		<name>Performance overview</name>
 		<module>PagePerformance</module>
 		<action>get</action>
-		<onlineGuideUrl>https://matomo.org/docs/page-performance/</onlineGuideUrl>
+		<onlineGuideUrl>https://matomo.org/faq/how-to/how-do-i-see-page-performance-reports/</onlineGuideUrl>
 		<metrics>
 			<avg_time_network>Avg. network time</avg_time_network>
 			<avg_time_server>Avg. server time</avg_time_server>
@@ -256,6 +256,7 @@
 		<module>UserLanguage</module>
 		<action>getLanguage</action>
 		<dimension>Language</dimension>
+		<documentation>This report shows which language the visitor's browsers are using. (e.g. "English")</documentation>
 		<metrics>
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
@@ -334,6 +335,7 @@
 		<module>UserLanguage</module>
 		<action>getLanguageCode</action>
 		<dimension>Language</dimension>
+		<documentation>This report shows which exact language code the visitor's browsers is set to. (e.g. "German - Austria (de-at)")</documentation>
 		<metrics>
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
