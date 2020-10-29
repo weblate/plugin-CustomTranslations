@@ -32,6 +32,8 @@ env:
     # You can also specify a specific Piwik version
     # (PIWIK_TEST_TARGET=2.16.0-b1).
     - PIWIK_TEST_TARGET=4.x-dev
+    - DEPENDENT_PLUGINS="innocraft/plugin-CustomReports"
+    - secure: "q0jWrwIWkHOTKWdqv+tr6OnA5ZfupPtGzaDAo6GFT6jwEa4hps9Bnf/YIzr/qrfQocy+o6bJzW7g7Fc9nNoxEQmndHSFoJQtsd4o8ZBpPmU0oG3tV525MbmGupum/pOZBIxtUZImYsmakkszVKCGEbr6ybSQwKhGe2Dm4eI+17tS5z7ingv03v/TgCaUPrh5zA4QO3/C5b8WmRcV78ulUj3h3pFu0GFwSzrTTkaOzU6BblNrgfTPYjWVCzsX1NdYEYOat2psko3i+4GiYP4Iw8zkr2q3BDgXSg97pQ8+N3UtqXTU4kfNoLjJ/aubmXmOsyCnG0Av0RLdisFyc+8ZgLHQ3wKaskiA4SDIxgq7a0VNXxzelpB+EJaUsjOBtlRQFSFI1yqxWGrIY1iajl46yi3skcmyj1mPH8mFBlsn1J0V6eAneBM9j74DFQtpSHkczahvDDpbE2bZfssY6w92F/LjOoXNbL7HZeaSHffm7Q5QnMOPLML3Bcx18hfyotJoVCQqarh8d99gRh6gZUOgY/IQxFLdiR37+c4IsdEoHvdNZ28FYUUYgXLpsZ0DOSmfrQjhF+b1Vyu1AaiUCX6JWdQHyWS7A6zjecphoTF86bz0Aj8CFRYuy0JX8hnAFMhcWEEd6J+K5kCZnFQLvPIRf93tNRRDX1sxzmsNQ7DIHZc="
   matrix:
     - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_PIWIK_BRANCH=$PIWIK_TEST_TARGET
     - TEST_SUITE=PluginTests MYSQL_ADAPTER=PDO_MYSQL TEST_AGAINST_CORE=minimum_required_piwik
