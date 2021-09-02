@@ -3,6 +3,9 @@
         "DashboardName": "Dashboard Name",
         "CustomReportName": "Custom Report Name",
         "TranslationType": "Übersetzungstyp",
-        "Translation": "Übersetzung"
+        "Translation": "Übersetzung",
+        "LanguageInlineHelp": "Wählen Sie die Sprache, die Sie übersetzen möchten.",
+        "CustomTranslations": "Benutzerdefinierte Übersetzungen",
+        "PluginDescription": "Übersetzen von Entitäten und Berichtswerten in verschiedene Sprachen"
     }
 }
