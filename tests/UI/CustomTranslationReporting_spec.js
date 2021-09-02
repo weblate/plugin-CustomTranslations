@@ -75,11 +75,11 @@ describe("CustomTranslationReporting", function () {
     {
         var selector = '#secondNavBar .navbar a:contains('+ menuItem + '):first';
         await (await page.jQuery(selector)).click();
-        await page.waitFor(150);
+        await page.waitForTimeout(150);
         if (menuItem === 'Custom Reports') {
             await page.click('#secondNavBar .navbar .menuTab.active .menuDropdown .title');
         }
-        await page.waitFor(150);
+        await page.waitForTimeout(150);
         await page.mouse.move(0, 0);
     }
 
@@ -115,7 +115,7 @@ describe("CustomTranslationReporting", function () {
         await captureModal('dashboard_rename', async function () {
             await page.click('.dashboard-manager .title');
             await page.click('li[data-action=renameDashboard]');
-            await page.waitFor(300);
+            await page.waitForTimeout(300);
         });
     });
 
