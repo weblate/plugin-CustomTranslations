@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Μετάφραση του ονόματος των οντοτήτων προσαρμοσμένης διάστασης",
+        "CustomDimensionName": "Όνομα Προσαρμοσμένης Διάστασης",
+        "CustomDimensionValue": "Τιμή Προσαρμοσμένης Διάστασης",
+        "CustomDimensionValueDescription": "Μετάφραση του ονόματος των ιχνηλατούμενων τιμών συμβάντος",
+        "CustomReportDescription": "Μετάφραση του ονόματος των οντοτήτων προσαρμοσμένης αναφοράς",
+        "CustomReportName": "Προσαρμοσμένο Όνομα Αναφοράς",
+        "CustomTranslations": "Προσαρμοσμένες Μεταφράσεις",
+        "DashboardDescription": "Μετάφραση των ονομάτων των οντοτήτων του κεντρικού πίνακα",
+        "DashboardName": "Όνομα Κεντρικού Πίνακα",
+        "EventValue": "Τιμή Συμβάντος",
+        "EventValueDescription": "Μετάφραση του ονόματος των ιχνηλατούμενων τιμών συμβάντος",
+        "LanguageInlineHelp": "Επιλέξτε την γλώσσα στην οποία θέλετε να μεταφράσετε.",
+        "PluginDescription": "Μετάφραση οντοτήτων και τιμών αναφορών σε διάφορες γλώσσες",
+        "Translation": "Μετάφραση",
+        "TranslationType": "Τύπος Μετάφρασης"
+    }
+}

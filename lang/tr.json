@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Özel boyut varlıklarının adını çevirin",
+        "CustomDimensionName": "Özel boyut adı",
+        "CustomDimensionValue": "Özel boyut değeri",
+        "CustomDimensionValueDescription": "İzlenen işlem değerlerinin adını çevirin",
+        "CustomReportDescription": "Özel rapor varlıklarının adını çevirin",
+        "CustomReportName": "Özel rapor adı",
+        "CustomTranslations": "Özel çeviriler",
+        "DashboardDescription": "Pano varlıklarının adını çevirin",
+        "DashboardName": "Pano adı",
+        "EventValue": "İşlem değeri",
+        "EventValueDescription": "izlenen işlem değerlerinin adını çevirin",
+        "LanguageInlineHelp": "Çevirmek istediğiniz dili seçin.",
+        "PluginDescription": "Varlık ve rapor değerlerini farklı dillere çevirin",
+        "Translation": "Çeviri",
+        "TranslationType": "Çeviri türü"
+    }
+}
