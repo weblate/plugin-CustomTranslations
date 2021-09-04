@@ -1,11 +1,19 @@
 {
     "CustomTranslations": {
-        "DashboardName": "Dashboard Name",
+        "CustomDimensionDescription": "Übersetze den Namen von benutzerdefinierten Dimensionseinheiten",
+        "CustomDimensionName": "Benutzerdefinierter Dimensionsname",
+        "CustomDimensionValue": "Benutzerdefinierter Dimensionswert",
+        "CustomDimensionValueDescription": "Übersetze den Namen von aufgezeichneten Ereigniswerten",
+        "CustomReportDescription": "Übersetze den Namen von benutzerdefinierten Berichtseinheiten",
         "CustomReportName": "Custom Report Name",
-        "TranslationType": "Übersetzungstyp",
-        "Translation": "Übersetzung",
-        "LanguageInlineHelp": "Wählen Sie die Sprache, die Sie übersetzen möchten.",
         "CustomTranslations": "Benutzerdefinierte Übersetzungen",
-        "PluginDescription": "Übersetzen von Entitäten und Berichtswerten in verschiedene Sprachen"
+        "DashboardDescription": "Übersetze den Namen von Dashboard Einheiten",
+        "DashboardName": "Dashboard Name",
+        "EventValue": "Ereigniswert",
+        "EventValueDescription": "Übersetze den Namen von aufgezeichneten Ereigniswerten",
+        "LanguageInlineHelp": "Wählen Sie die Sprache, die Sie übersetzen möchten.",
+        "PluginDescription": "Übersetzen von Entitäten und Berichtswerten in verschiedene Sprachen",
+        "Translation": "Übersetzung",
+        "TranslationType": "Übersetzungstyp"
     }
 }
