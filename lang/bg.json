@@ -1,1 +1,8 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomTranslations": "Потребителски преводи",
+        "LanguageInlineHelp": "Изберете езика на който искате да преведете.",
+        "Translation": "Превод",
+        "TranslationType": "Тип на превода"
+    }
+}
