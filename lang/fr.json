@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Traduire le nom des entités des dimensions personnalisées",
+        "CustomDimensionName": "Nom de la dimension personnalisée",
+        "CustomDimensionValue": "Valeur de la dimension personnalisée",
+        "CustomDimensionValueDescription": "Traduire le nom des valeurs des événements suivis",
+        "CustomReportDescription": "Traduire le nom des entités du rapport personnalisé",
+        "CustomReportName": "Nom de rapport personnalisé",
+        "CustomTranslations": "Traductions personnalisées",
+        "DashboardDescription": "Traduire le nom des entités du tableau de bord",
+        "DashboardName": "Nom du tableau de bord",
+        "EventValue": "Valeur d'événement",
+        "EventValueDescription": "Traduire le nom des valeurs des événements suivis",
+        "LanguageInlineHelp": "Sélectionner la langue que vous souhaitez traduire.",
+        "PluginDescription": "Traduire les entités et les valeurs des rapports dans différentes langues",
+        "Translation": "Traduction",
+        "TranslationType": "Type de traduction"
+    }
+}
