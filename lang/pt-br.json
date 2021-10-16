@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Traduzir o nome de entidades de dimensão personalizada",
+        "CustomDimensionName": "Nome da dimensão personalizada",
+        "CustomDimensionValue": "Valor de dimensão personalizada",
+        "CustomDimensionValueDescription": "Traduzir o nome dos valores de eventos rastreados",
+        "CustomReportDescription": "Traduzir o nome de entidades de relatório personalizado",
+        "CustomReportName": "Nome do relatório personalizado",
+        "CustomTranslations": "Traduções Personalizadas",
+        "DashboardDescription": "Traduzir o nome das entidades do painel",
+        "DashboardName": "Nome do painel",
+        "EventValue": "Valor do Evento",
+        "EventValueDescription": "Traduzir o nome dos valores de eventos rastreados",
+        "LanguageInlineHelp": "Selecione o idioma que deseja traduzir.",
+        "PluginDescription": "Traduzir entidades e valores de relatório em diferentes idiomas",
+        "Translation": "Tradução",
+        "TranslationType": "Tipo de Tradução"
+    }
+}
