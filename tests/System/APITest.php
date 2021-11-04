@@ -17,6 +17,7 @@ use Piwik\Plugins\CustomTranslations\TranslationTypes\TranslationTypeProvider;
 use Piwik\Tests\Framework\TestCase\SystemTestCase;
 use Piwik\Tests\Framework\TestingEnvironmentManipulator;
 use Piwik\Plugin;
+use Piwik\Version;
 
 /**
  * @group CustomTranslations
@@ -73,6 +74,12 @@ class APITest extends SystemTestCase
 
     public function getTestsToRunWithAndWithoutCustomReports()
     {
+        if (version_compare(Version::VERSION, '4.4.0-b1', '<')) {
+            return array(
+                array('CustomTranslations.getTranslatableTypes')
+            );
+        }
+
         return array(
             array('CustomTranslations.getTranslatableTypes'),
             array('API.getReportMetadata'),
