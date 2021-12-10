@@ -1,1 +1,7 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomReportName": "カスタムレポートの名前",
+        "Translation": "翻訳",
+        "TranslationType": "翻訳タイプ"
+    }
+}
