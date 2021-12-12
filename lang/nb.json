@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Oversett navnet på egendefinerte dimensjonsoppføringer",
+        "CustomDimensionName": "Egendefinert dimenasjonsnavn",
+        "CustomDimensionValue": "Egendefinert dimensjonsverdi",
+        "CustomDimensionValueDescription": "Oversett navnet på sporede hendelsesverdier",
+        "CustomReportDescription": "Oversett navnet på egendefinerte rapportoppføringer",
+        "CustomReportName": "Egendefinert rapportnavn",
+        "CustomTranslations": "Egendefinerte oversettelser",
+        "DashboardDescription": "Oversett navnet på oversiktsoppføringer",
+        "DashboardName": "Oversiktsnavn",
+        "EventValue": "Hendelsesverdi",
+        "EventValueDescription": "Oversett navnet på sporede hendelsesverdier",
+        "LanguageInlineHelp": "Velg språket du ønsker å oversette til.",
+        "PluginDescription": "Oversett oppfringer og rapporter verdier på flere språk",
+        "Translation": "Oversettelse",
+        "TranslationType": "Oversettelsestype"
+    }
+}
