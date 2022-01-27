@@ -1,6 +1,18 @@
 {
     "CustomTranslations": {
+        "CustomDimensionDescription": "カスタムディメンションの名のエンティティを翻訳する",
+        "CustomDimensionName": "カスタムディメンションの名",
+        "CustomDimensionValue": "カスタムディメンションの値",
+        "CustomDimensionValueDescription": "追跡されたイベントの値の名前を翻訳する",
+        "CustomReportDescription": "カスタムのレポートのエンティティ名を翻訳する",
         "CustomReportName": "カスタムレポートの名前",
+        "CustomTranslations": "カスタムの翻訳",
+        "DashboardDescription": "エンティティのダッシュボードの名前を翻訳する",
+        "DashboardName": "ダッシュボードの名前",
+        "EventValue": "イベントの値",
+        "EventValueDescription": "追跡されたイベントの値の名前を翻訳する",
+        "LanguageInlineHelp": "翻訳したい言語を選んでください。",
+        "PluginDescription": "エンティティとレポート値を各国語へ翻訳をする",
         "Translation": "翻訳",
         "TranslationType": "翻訳タイプ"
     }
