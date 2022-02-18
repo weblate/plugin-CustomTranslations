@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Përktheni emrin e njësive të raportit vetjak",
+        "CustomDimensionName": "Emër Përmase Vetjake",
+        "CustomDimensionValue": "Vlerë Përmase Vetjake",
+        "CustomDimensionValueDescription": "Përktheni emrin e vlerave të akteve të ndjekur",
+        "CustomReportDescription": "Përktheni emrin e njësive të raportit vetjak",
+        "CustomReportName": "Emër Raporti Vetjak",
+        "CustomTranslations": "Përkthime Vetjake",
+        "DashboardDescription": "Përktheni emrin e njësive të pultit",
+        "DashboardName": "Emër Pulti",
+        "EventValue": "Vlerë Akti",
+        "EventValueDescription": "Përktheni emrin e vlerave të akteve të ndjekur",
+        "LanguageInlineHelp": "Përzgjidhni gjuhën në të cilën doni të përktheni.",
+        "PluginDescription": "Përktheni në gjuhë të ndryshme njësitë dhe vlerat e raporteve",
+        "Translation": "Përkthim",
+        "TranslationType": "Lloj Përkthimi"
+    }
+}
