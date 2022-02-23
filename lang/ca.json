@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Tradueix el nom de les entitats de les dimensions personalitzades",
+        "CustomDimensionName": "Nom de la dimensió personalitzada",
+        "CustomDimensionValue": "Valor de la dimensió personalitzada",
+        "CustomDimensionValueDescription": "Tradueix el nom dels valors dels esdeveniments seguits",
+        "CustomReportDescription": "Tradueix el nom de les entitats de l'informe personalitzat",
+        "CustomReportName": "Nom de l'informe personalitzat",
+        "CustomTranslations": "Traduccions personalitzades",
+        "DashboardDescription": "Tradueix el nom de les entitats del tauler",
+        "DashboardName": "Nom del tauler",
+        "EventValue": "Valor de l'esdeveniment",
+        "EventValueDescription": "Tradueix el nom dels valors dels esdeveniments seguits",
+        "LanguageInlineHelp": "Tria l'idioma que vols traduir.",
+        "PluginDescription": "Tradueix entitats i valors d'informes a diferents idiomes",
+        "Translation": "Traducció",
+        "TranslationType": "Tipus de traducció"
+    }
+}
