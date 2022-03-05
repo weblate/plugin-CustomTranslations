@@ -1,1 +1,12 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionName": "Nama Dimensi Khusus",
+        "CustomReportDescription": "Terjemahkan nama entitas laporan khusus",
+        "CustomReportName": "Nama Laporan Khusus",
+        "CustomTranslations": "Terjemahan Khusus",
+        "LanguageInlineHelp": "Pilih bahasa yang ingin Anda terjemahkan.",
+        "PluginDescription": "Terjemahkan entitas dan nilai laporan ke dalam berbagai bahasa",
+        "Translation": "Terjemahan",
+        "TranslationType": "Jenis Terjemahan"
+    }
+}
