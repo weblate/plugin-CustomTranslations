@@ -1,9 +1,16 @@
 {
     "CustomTranslations": {
+        "CustomDimensionDescription": "Terjemahkan nama entitas dimensi khusus",
         "CustomDimensionName": "Nama Dimensi Khusus",
+        "CustomDimensionValue": "Nilai Dimensi Khusus",
+        "CustomDimensionValueDescription": "Terjemahkan nama dari nilai peristiwa yang dilacak",
         "CustomReportDescription": "Terjemahkan nama entitas laporan khusus",
         "CustomReportName": "Nama Laporan Khusus",
         "CustomTranslations": "Terjemahan Khusus",
+        "DashboardDescription": "Terjemahkan nama entitas dasbor",
+        "DashboardName": "Nama Dasbor",
+        "EventValue": "Nilai Kejadian",
+        "EventValueDescription": "Terjemahkan nama dari nilai peristiwa yang dilacak",
         "LanguageInlineHelp": "Pilih bahasa yang ingin Anda terjemahkan.",
         "PluginDescription": "Terjemahkan entitas dan nilai laporan ke dalam berbagai bahasa",
         "Translation": "Terjemahan",
