@@ -6,11 +6,11 @@
  */
 
 (function () {
-    angular.module('piwikApp').controller('CustomTranslationsEdit', CustomTranslationsEdit);
+    angular.module('piwikApp').controller('CustomTranslationsEdit', CustomTranslationsEditController);
 
-    CustomTranslationsEdit.$inject = ['piwikApi', 'piwik', '$filter'];
+  CustomTranslationsEditController.$inject = ['piwikApi', 'piwik', '$filter'];
 
-    function CustomTranslationsEdit(piwikApi, piwik, $filter) {
+    function CustomTranslationsEditController(piwikApi, piwik, $filter) {
         var translate = $filter('translate');
 
         var self = this;

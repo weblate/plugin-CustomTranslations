@@ -20,7 +20,6 @@ class CustomTranslations extends \Piwik\Plugin
     {
         return array(
             'API.Request.dispatch.end' => 'updateEvents',
-            'AssetManager.getJavaScriptFiles' => 'getJsFiles',
             'AssetManager.getStylesheetFiles' => 'getStylesheetFiles',
             'Translate.getClientSideTranslationKeys' => 'getClientSideTranslationKeys',
         );
@@ -38,13 +37,7 @@ class CustomTranslations extends \Piwik\Plugin
 
     public function getStylesheetFiles(&$stylesheets)
     {
-        $stylesheets[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.less";
-    }
-
-    public function getJsFiles(&$jsFiles)
-    {
-        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.controller.js";
-        $jsFiles[] = "plugins/CustomTranslations/angularjs/edittranslations/edittranslations.directive.js";
+        $stylesheets[] = "plugins/CustomTranslations/vue/src/EditCustomTranslations/EditCustomTranslations.less";
     }
 
     public function isTrackerPlugin()
