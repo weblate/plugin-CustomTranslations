@@ -1,7 +1,18 @@
 {
     "CustomTranslations": {
+        "CustomDimensionDescription": "Преведете името на обектите по персонализирана величина",
+        "CustomDimensionName": "Име на персонализирана величина",
+        "CustomDimensionValue": "Стойност на персонализирана величина",
+        "CustomDimensionValueDescription": "Преведете името на проследяваните стойности на събития",
+        "CustomReportDescription": "Преведете името на персонализирани отчетни обекти",
+        "CustomReportName": "Име на персонализиран отчет",
         "CustomTranslations": "Потребителски преводи",
+        "DashboardDescription": "Преведете името на обектите на таблото за управление",
+        "DashboardName": "Име на таблото",
+        "EventValue": "Стойност на събитието",
+        "EventValueDescription": "Преведете името на проследяваните стойности на събития",
         "LanguageInlineHelp": "Изберете езика на който искате да преведете.",
+        "PluginDescription": "Превеждайте обекти и стойности на различни езици",
         "Translation": "Превод",
         "TranslationType": "Тип на превода"
     }
