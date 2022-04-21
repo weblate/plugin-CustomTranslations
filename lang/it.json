@@ -9,6 +9,7 @@
         "EventValue": "Valore evento",
         "EventValueDescription": "Traduci i nomi dei valori degli eventi tracciati",
         "LanguageInlineHelp": "Seleziona la lingua che vuoi tradurre.",
+        "PluginDescription": "Traduci entità e riporta i valori in diverse lingue",
         "Translation": "Traduzione",
         "TranslationType": "Tipo di traduzione"
     }
