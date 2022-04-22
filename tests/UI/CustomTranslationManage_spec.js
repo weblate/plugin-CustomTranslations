@@ -36,11 +36,13 @@ describe("CustomTranslationManage", function () {
         await page.webpage.evaluate(function(selector, text) {
             $(selector).val(text).change();
         }, selector, translation);
+
+        await page.waitForTimeout(200);
     }
 
     async function saveTranslation(page, type)
     {
-        await page.click('.translationType' + type + ' [piwik-save-button] .btn');
+        await page.click('.translationType' + type + ' .matomo-save-button .btn');
     }
 
     it('should load manage page', async function () {
