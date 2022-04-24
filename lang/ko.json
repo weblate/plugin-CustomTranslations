@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "사용자 지정 치수 엔터티의 이름 번역하기",
+        "CustomDimensionName": "사용자 지정 치수 이름",
+        "CustomDimensionValue": "사용자 지정 치수 값",
+        "CustomDimensionValueDescription": "추적된 이벤트 값의 이름 번역하기",
+        "CustomReportDescription": "사용자 지정 보고서 엔터티의 이름 번역하기",
+        "CustomReportName": "사용자 지정 보고서 이름",
+        "CustomTranslations": "사용자 지정 변환",
+        "DashboardDescription": "대시보드 엔터티 이름 번역하기",
+        "DashboardName": "대시보드 이름",
+        "EventValue": "이벤트 값",
+        "EventValueDescription": "추적된 이벤트 값의 이름 번역하기",
+        "LanguageInlineHelp": "변역할 언어를 선택합니다.",
+        "PluginDescription": "엔터티와 보고서 값을 자국어로 번역하기",
+        "Translation": "번역",
+        "TranslationType": "번역 유형"
+    }
+}
