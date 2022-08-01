@@ -1,5 +1,9 @@
 ## Changelog
 
+### 4.1.1
+
+- Translation updates
+
 ### 4.1.0
 
 - Migrate from AngularJS to Vue.
