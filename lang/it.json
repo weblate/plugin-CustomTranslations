@@ -1,10 +1,13 @@
 {
     "CustomTranslations": {
+        "CustomDimensionDescription": "Tradurre il nome delle dimensioni report personalizzate",
         "CustomDimensionName": "Nome della dimensione custom",
         "CustomDimensionValue": "Valore della dimensione custom",
         "CustomDimensionValueDescription": "Traduci i nomi dei valori degli eventi tracciati",
+        "CustomReportDescription": "Traduci il nome delle entità report personalizzate",
         "CustomReportName": "Nome del reporto personalizzato",
         "CustomTranslations": "Traduzioni custom",
+        "DashboardDescription": "Tradurre il nome delle entità della dashboard",
         "DashboardName": "Nome Dashboard",
         "EventValue": "Valore evento",
         "EventValueDescription": "Traduci i nomi dei valori degli eventi tracciati",
