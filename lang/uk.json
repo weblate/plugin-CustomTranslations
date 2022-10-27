@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Перекладіть назви сутностей користувацьких одиниць вимірювання",
+        "CustomDimensionName": "Назва користувацького вимірювання",
+        "CustomDimensionValue": "Значення користувацького вимірювання",
+        "CustomDimensionValueDescription": "Перекладіть назви значень відстежуваних подій",
+        "CustomReportDescription": "Перекладіть назви сутностей користувацького звіту",
+        "CustomReportName": "Користувацька назва звіту",
+        "CustomTranslations": "Користувацькі переклади",
+        "DashboardDescription": "Перекладіть назву сутностей інформаційної панелі",
+        "DashboardName": "Назва інформаційної панелі",
+        "EventValue": "Значення події",
+        "EventValueDescription": "Перекладіть назви значень відстежуваних подій",
+        "LanguageInlineHelp": "Виберіть мову, якою хочете перекласти.",
+        "PluginDescription": "Перекладіть сутності та значення звітів різними мовами",
+        "Translation": "Переклад",
+        "TranslationType": "Тип перекладу"
+    }
+}
