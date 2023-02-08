@@ -80,12 +80,19 @@ class APITest extends SystemTestCase
             );
         }
 
-        return array(
+        $tests = array(
             array('CustomTranslations.getTranslatableTypes'),
             array('API.getReportMetadata'),
             array('API.getWidgetMetadata'),
             array('API.getReportPagesMetadata'),
         );
+        if (version_compare(Version::VERSION, '4.11.0', '<=')) {
+            $tests = array(
+                array('CustomTranslations.getTranslatableTypes'),
+            );
+        }
+
+        return $tests;
     }
 
     /**
