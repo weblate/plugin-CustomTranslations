@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Översätt namnet på de anpassade dimensionsposterna",
+        "CustomDimensionName": "Anpassat dimensionsnamn",
+        "CustomDimensionValue": "Anpassat dimensionsvärde",
+        "CustomDimensionValueDescription": "Översätt namnet på spårade händelsevärden",
+        "CustomReportDescription": "Översätt namnet för anpassade rapportposter",
+        "CustomReportName": "Anpassat rapportnamn",
+        "CustomTranslations": "Anpassade översättningar",
+        "DashboardDescription": "Översätt namn för instrumentpanelens poster",
+        "DashboardName": "Instrumentpanelsnamn",
+        "EventValue": "Händelsevärde",
+        "EventValueDescription": "Översätt namnet på spårade händelsevärden",
+        "LanguageInlineHelp": "Välj det språk du vill översätta.",
+        "PluginDescription": "Översätt poster och rapportera värden till olika språk",
+        "Translation": "Översättning",
+        "TranslationType": "Översättningstyp"
+    }
+}
