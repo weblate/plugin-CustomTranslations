@@ -1,6 +1,6 @@
 # Matomo Custom Translations Plugin
 
-[![Build Status](https://travis-ci.com/innocraft/plugin-CustomTranslations.svg?branch=4.x-dev)](https://travis-ci.com/innocraft/plugin-CustomTranslations)
+[![Build Status](https://github.com/innocraft/plugin-CustomTranslations/actions/workflows/matomo-tests.yml/badge.svg?branch=4.x-dev)](https://github.com/innocraft/plugin-CustomTranslations/actions/workflows/matomo-tests.yml)
 
 ## Description
 
