@@ -69,7 +69,10 @@ class APITest extends SystemTestCase
             $this->clearCaches();
         }
 
-        $this->runAnyApiTest($api, '', $params, array('testSuffix' => '', 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
+        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
+        $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
+
+        $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 
     public function getTestsToRunWithAndWithoutCustomReports()
@@ -105,6 +108,8 @@ class APITest extends SystemTestCase
             return;
         }
 
+        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
+
         $this->clearCaches();
         $this->makeSureToLoadCustomReports();
 
@@ -114,7 +119,8 @@ class APITest extends SystemTestCase
             'period' => 'day',
         );
 
-        $this->runAnyApiTest($api, '', $params, array('testSuffix' => 'withCustomReports', 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
+        $testSuffix = 'withCustomReports' . ('API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '');
+        $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 
     private function makeSureToLoadCustomReports()
@@ -145,6 +151,7 @@ class APITest extends SystemTestCase
 
     public function getApiForTesting()
     {
+        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
         $apiToTest = array();
 
         foreach (range(1,4) as $idDimension) {
@@ -164,7 +171,7 @@ class APITest extends SystemTestCase
 
         $apiToTest[] = array(array('API.getProcessedReport'), array(
             'idSite' => self::$fixture->idSite,
-            'testSuffix' => '_getCustomDimensionProcessedReport',
+            'testSuffix' => '_getCustomDimensionProcessedReport' . ($apiOutputIsMissingMetricTypes ? '_Old' : ''),
             'otherRequestParameters' => array(
                 'apiModule' => 'CustomDimensions',
                 'apiAction' => 'getCustomDimension',
@@ -221,7 +228,7 @@ class APITest extends SystemTestCase
 
         $apiToTest[] = array(array('API.getProcessedReport'), array(
             'idSite' => self::$fixture->idSite,
-            'testSuffix' => '_eventsProcessedReport',
+            'testSuffix' => '_eventsProcessedReport' . ($apiOutputIsMissingMetricTypes ? '_Old' : ''),
             'otherRequestParameters' => array(
                 'apiModule' => 'Events',
                 'apiAction' => 'getAction',
