@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Vertaal de naam van aangepaste dimensies",
+        "CustomDimensionName": "Naam aangepaste dimensie",
+        "CustomDimensionValue": "Waarde aangepaste dimensie",
+        "CustomDimensionValueDescription": "Vertaal de naam van gevolgde gebeurteniswaarden",
+        "CustomReportDescription": "Vertaal de naam van aangepaste rapporten",
+        "CustomReportName": "Naam aangepast rapport",
+        "CustomTranslations": "Aangepaste vertalingen",
+        "DashboardDescription": "Vertaal de naam van dashboards",
+        "DashboardName": "Naam dashboard",
+        "EventValue": "Gebeurteniswaarde",
+        "EventValueDescription": "Vertaal de naam van gevolgde gebeurteniswaarden",
+        "LanguageInlineHelp": "Selecteer de taal die u wenst te vertalen.",
+        "PluginDescription": "Vertaal entiteiten en rapporteer waarden in verschillende talen",
+        "Translation": "Vertaling",
+        "TranslationType": "Vertaal type"
+    }
+}
