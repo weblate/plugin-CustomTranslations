@@ -69,7 +69,7 @@ class APITest extends SystemTestCase
             $this->clearCaches();
         }
 
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
+        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.0.0-b1', '<=');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
