@@ -30,8 +30,24 @@
 			<orders_evolution>Ecommerce Orders Evolution</orders_evolution>
 			<ecommerce_revenue_evolution>Product Revenue Evolution</ecommerce_revenue_evolution>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_actions>number</nb_actions>
+			<nb_pageviews>number</nb_pageviews>
+			<revenue>money</revenue>
+			<nb_conversions>number</nb_conversions>
+			<orders>number</orders>
+			<ecommerce_revenue>money</ecommerce_revenue>
+			<visits_evolution>percent</visits_evolution>
+			<actions_evolution>percent</actions_evolution>
+			<pageviews_evolution>percent</pageviews_evolution>
+			<revenue_evolution>percent</revenue_evolution>
+			<nb_conversions_evolution>percent</nb_conversions_evolution>
+			<orders_evolution>percent</orders_evolution>
+			<ecommerce_revenue_evolution>percent</ecommerce_revenue_evolution>
+		</metricTypes>
+
+
 		<uniqueId>MultiSites_getAll</uniqueId>
 	</row>
 	<row>
@@ -64,8 +80,24 @@
 			<orders_evolution>Ecommerce Orders Evolution</orders_evolution>
 			<ecommerce_revenue_evolution>Product Revenue Evolution</ecommerce_revenue_evolution>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_actions>number</nb_actions>
+			<nb_pageviews>number</nb_pageviews>
+			<revenue>money</revenue>
+			<nb_conversions>number</nb_conversions>
+			<orders>number</orders>
+			<ecommerce_revenue>money</ecommerce_revenue>
+			<visits_evolution>percent</visits_evolution>
+			<actions_evolution>percent</actions_evolution>
+			<pageviews_evolution>percent</pageviews_evolution>
+			<revenue_evolution>percent</revenue_evolution>
+			<nb_conversions_evolution>percent</nb_conversions_evolution>
+			<orders_evolution>percent</orders_evolution>
+			<ecommerce_revenue_evolution>percent</ecommerce_revenue_evolution>
+		</metricTypes>
+
+
 		<uniqueId>MultiSites_getOne</uniqueId>
 	</row>
 	<row>
@@ -96,8 +128,18 @@
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
 			<avg_time_on_site>Avg. Visit Duration (in seconds)</avg_time_on_site>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_visits>number</nb_visits>
+			<nb_users>number</nb_users>
+			<nb_actions>number</nb_actions>
+			<max_actions>number</max_actions>
+			<bounce_rate>percent</bounce_rate>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+		</metricTypes>
+
+
 		<uniqueId>VisitsSummary_get</uniqueId>
 	</row>
 	<row>
@@ -127,6 +169,15 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -134,8 +185,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>UserCountry_getCountry</uniqueId>
 	</row>
 	<row>
@@ -165,6 +222,15 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -172,8 +238,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>UserCountry_getContinent</uniqueId>
 	</row>
 	<row>
@@ -203,6 +275,15 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -210,8 +291,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>UserCountry_getRegion</uniqueId>
 	</row>
 	<row>
@@ -244,6 +331,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Language code</name>
@@ -251,8 +348,8 @@
 				<action>getLanguageCode</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>UserLanguage_getLanguage</uniqueId>
 	</row>
 	<row>
@@ -282,6 +379,15 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -289,8 +395,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>UserCountry_getCity</uniqueId>
 	</row>
 	<row>
@@ -323,6 +435,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Web-browser language</name>
@@ -330,8 +452,8 @@
 				<action>getLanguage</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>UserLanguage_getLanguageCode</uniqueId>
 	</row>
 	<row>
@@ -363,6 +485,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -370,8 +502,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>DevicesDetection_getType</uniqueId>
 	</row>
 	<row>
@@ -403,6 +541,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -410,8 +558,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>DevicesDetection_getModel</uniqueId>
 	</row>
 	<row>
@@ -443,6 +597,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
 			<revenue>Revenue</revenue>
@@ -450,8 +614,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>DevicesDetection_getBrand</uniqueId>
 	</row>
 	<row>
@@ -484,6 +654,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Configurations</name>
@@ -491,8 +671,8 @@
 				<action>getConfiguration</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Resolution_getResolution</uniqueId>
 	</row>
 	<row>
@@ -525,6 +705,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Operating System families</name>
@@ -532,8 +722,8 @@
 				<action>getOsFamilies</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>DevicesDetection_getOsVersions</uniqueId>
 	</row>
 	<row>
@@ -565,6 +755,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Browser version</name>
@@ -579,8 +779,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>DevicesDetection_getBrowsers</uniqueId>
 	</row>
 	<row>
@@ -613,6 +819,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Browsers</name>
@@ -620,8 +836,8 @@
 				<action>getBrowsers</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>DevicesDetection_getBrowserVersions</uniqueId>
 	</row>
 	<row>
@@ -654,6 +870,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Screen Resolution</name>
@@ -661,8 +887,8 @@
 				<action>getResolution</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Resolution_getConfiguration</uniqueId>
 	</row>
 	<row>
@@ -695,6 +921,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Operating System versions</name>
@@ -702,8 +938,8 @@
 				<action>getOsVersions</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>DevicesDetection_getOsFamilies</uniqueId>
 	</row>
 	<row>
@@ -736,8 +972,18 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>DevicesDetection_getBrowserEngines</uniqueId>
 	</row>
 	<row>
@@ -757,8 +1003,12 @@
 		<processedMetrics>
 			<nb_visits_percentage>% Visits</nb_visits_percentage>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_visits_percentage>percent</nb_visits_percentage>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>DevicePlugins_getPlugin</uniqueId>
 	</row>
 	<row>
@@ -791,6 +1041,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<relatedReports>
 			<row>
@@ -799,7 +1059,7 @@
 				<action>getByDayOfWeek</action>
 			</row>
 		</relatedReports>
-		
+
 		<uniqueId>VisitTime_getVisitInformationPerLocalTime</uniqueId>
 	</row>
 	<row>
@@ -831,6 +1091,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -839,7 +1109,13 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
 		<uniqueId>VisitTime_getVisitInformationPerServerTime</uniqueId>
 	</row>
 	<row>
@@ -872,6 +1148,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<relatedReports>
 			<row>
@@ -880,7 +1166,7 @@
 				<action>getVisitInformationPerLocalTime</action>
 			</row>
 		</relatedReports>
-		
+
 		<uniqueId>VisitTime_getByDayOfWeek</uniqueId>
 	</row>
 	<row>
@@ -912,8 +1198,17 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_actions>number</nb_actions>
+			<nb_visits_converted>number</nb_visits_converted>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>UserId_getUsers</uniqueId>
 	</row>
 	<row>
@@ -950,6 +1245,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getCustomVariablesValuesFromNameId</actionToLoadSubTables>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -958,8 +1263,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>CustomVariables_getCustomVariables</uniqueId>
 	</row>
 	<row>
@@ -988,9 +1299,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_actions>number</nb_actions>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+		</metricTypes>
 		<actionToLoadSubTables>getCustomDimension</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>CustomDimensions_getCustomDimension_idDimension--2</uniqueId>
 	</row>
 	<row>
@@ -1019,9 +1337,16 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_actions>number</nb_actions>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+		</metricTypes>
 		<actionToLoadSubTables>getCustomDimension</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>CustomDimensions_getCustomDimension_idDimension--1</uniqueId>
 	</row>
 	<row>
@@ -1053,8 +1378,19 @@
 		<processedMetrics>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_pageviews>number</nb_pageviews>
+			<nb_uniq_pageviews>number</nb_uniq_pageviews>
+			<nb_downloads>number</nb_downloads>
+			<nb_uniq_downloads>number</nb_uniq_downloads>
+			<nb_outlinks>number</nb_outlinks>
+			<nb_uniq_outlinks>number</nb_uniq_outlinks>
+			<nb_searches>number</nb_searches>
+			<nb_keywords>number</nb_keywords>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
+
+
 		<uniqueId>Actions_get</uniqueId>
 	</row>
 	<row>
@@ -1072,8 +1408,13 @@
 			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
 			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_total_overall_bandwidth>number</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>number</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>number</nb_total_download_bandwidth>
+		</metricTypes>
+
+
 		<uniqueId>Bandwidth_get</uniqueId>
 	</row>
 	<row>
@@ -1102,6 +1443,14 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<nb_hits>number</nb_hits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getPageUrls</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1115,8 +1464,8 @@
 				<action>getExitPageUrls</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getPageUrls</uniqueId>
 	</row>
 	<row>
@@ -1141,6 +1490,14 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<entry_nb_visits>number</entry_nb_visits>
+			<entry_bounce_count>number</entry_bounce_count>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getEntryPageUrls</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1149,8 +1506,8 @@
 				<action>getEntryPageTitles</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getEntryPageUrls</uniqueId>
 	</row>
 	<row>
@@ -1175,6 +1532,14 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<entry_nb_visits>number</entry_nb_visits>
+			<entry_bounce_count>number</entry_bounce_count>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getEntryPageTitles</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1188,8 +1553,8 @@
 				<action>getEntryPageUrls</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getEntryPageTitles</uniqueId>
 	</row>
 	<row>
@@ -1216,6 +1581,14 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<exit_nb_visits>number</exit_nb_visits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getExitPageUrls</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1224,8 +1597,8 @@
 				<action>getExitPageTitles</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getExitPageUrls</uniqueId>
 	</row>
 	<row>
@@ -1250,6 +1623,14 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<exit_nb_visits>number</exit_nb_visits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getExitPageTitles</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1263,8 +1644,8 @@
 				<action>getExitPageUrls</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getExitPageTitles</uniqueId>
 	</row>
 	<row>
@@ -1293,6 +1674,14 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<nb_hits>number</nb_hits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getPageTitles</actionToLoadSubTables>
 		<relatedReports>
 			<row>
@@ -1306,8 +1695,8 @@
 				<action>getExitPageTitles</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getPageTitles</uniqueId>
 	</row>
 	<row>
@@ -1331,8 +1720,16 @@
 		<processedMetrics>
 			<exit_rate>% Search Exits</exit_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_pages_per_search>number</nb_pages_per_search>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
+
+
 		<uniqueId>Actions_getSiteSearchKeywords</uniqueId>
 	</row>
 	<row>
@@ -1352,6 +1749,14 @@
 			<nb_hits_following_search>The number of times this Page was visited after a visitor did a search on your website, and clicked on this page in the search results.</nb_hits_following_search>
 			<nb_hits>The number of times this page was visited.</nb_hits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_hits_following_search>number</nb_hits_following_search>
+			<nb_hits>number</nb_hits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Page Titles Following a Site Search</name>
@@ -1359,8 +1764,8 @@
 				<action>getPageTitlesFollowingSiteSearch</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getPageUrlsFollowingSiteSearch</uniqueId>
 	</row>
 	<row>
@@ -1382,8 +1787,15 @@
 		<processedMetrics>
 			<exit_rate>% Search Exits</exit_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
+
+
 		<uniqueId>Actions_getSiteSearchNoResultKeywords</uniqueId>
 	</row>
 	<row>
@@ -1403,6 +1815,14 @@
 			<nb_hits_following_search>The number of times this Page was visited after a visitor did a search on your website, and clicked on this page in the search results.</nb_hits_following_search>
 			<nb_hits>The number of times this page was visited.</nb_hits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_hits_following_search>number</nb_hits_following_search>
+			<nb_hits>number</nb_hits>
+			<avg_time_on_page>duration_s</avg_time_on_page>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<relatedReports>
 			<row>
 				<name>Pages Following a Site Search</name>
@@ -1410,8 +1830,8 @@
 				<action>getPageUrlsFollowingSiteSearch</action>
 			</row>
 		</relatedReports>
-		
-		
+
+
 		<uniqueId>Actions_getPageTitlesFollowingSiteSearch</uniqueId>
 	</row>
 	<row>
@@ -1433,8 +1853,13 @@
 			<nb_pages_per_search>Visitors will search on your website, and sometimes click &quot;next&quot; to view more results. This is the average number of search results pages viewed for this keyword.</nb_pages_per_search>
 			<exit_rate>The percentage of visits that left the website after searching for this Keyword on your Site Search engine.</exit_rate>
 		</metricsDocumentation>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_pages_per_search>number</nb_pages_per_search>
+			<exit_rate>percent</exit_rate>
+		</metricTypes>
+
+
 		<uniqueId>Actions_getSiteSearchCategories</uniqueId>
 	</row>
 	<row>
@@ -1453,9 +1878,13 @@
 			<nb_visits>The number of visits that involved a click on this link. If a link was clicked multiple times during one visit, it is only counted once.</nb_visits>
 			<nb_hits>The number of times this link was clicked.</nb_hits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_hits>number</nb_hits>
+		</metricTypes>
 		<actionToLoadSubTables>getOutlinks</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Actions_getOutlinks</uniqueId>
 	</row>
 	<row>
@@ -1474,9 +1903,13 @@
 			<nb_visits>The number of visits that involved a click on this link. If a link was clicked multiple times during one visit, it is only counted once.</nb_visits>
 			<nb_hits>The number of times this link was clicked.</nb_hits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_hits>number</nb_hits>
+		</metricTypes>
 		<actionToLoadSubTables>getDownloads</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Actions_getDownloads</uniqueId>
 	</row>
 	<row>
@@ -1510,9 +1943,17 @@
 		<processedMetrics>
 			<avg_event_value>The average of all values for this event</avg_event_value>
 		</processedMetrics>
+		<metricTypes>
+			<nb_events>number</nb_events>
+			<sum_event_value>number</sum_event_value>
+			<min_event_value>number</min_event_value>
+			<max_event_value>number</max_event_value>
+			<nb_events_with_value>number</nb_events_with_value>
+			<avg_event_value>number</avg_event_value>
+		</metricTypes>
 		<actionToLoadSubTables>getActionFromCategoryId</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Events_getCategory</uniqueId>
 	</row>
 	<row>
@@ -1546,9 +1987,17 @@
 		<processedMetrics>
 			<avg_event_value>The average of all values for this event</avg_event_value>
 		</processedMetrics>
+		<metricTypes>
+			<nb_events>number</nb_events>
+			<sum_event_value>number</sum_event_value>
+			<min_event_value>number</min_event_value>
+			<max_event_value>number</max_event_value>
+			<nb_events_with_value>number</nb_events_with_value>
+			<avg_event_value>number</avg_event_value>
+		</metricTypes>
 		<actionToLoadSubTables>getNameFromActionId</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Events_getAction</uniqueId>
 	</row>
 	<row>
@@ -1582,9 +2031,17 @@
 		<processedMetrics>
 			<avg_event_value>The average of all values for this event</avg_event_value>
 		</processedMetrics>
+		<metricTypes>
+			<nb_events>number</nb_events>
+			<sum_event_value>number</sum_event_value>
+			<min_event_value>number</min_event_value>
+			<max_event_value>number</max_event_value>
+			<nb_events_with_value>number</nb_events_with_value>
+			<avg_event_value>number</avg_event_value>
+		</metricTypes>
 		<actionToLoadSubTables>getActionFromNameId</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Events_getName</uniqueId>
 	</row>
 	<row>
@@ -1608,9 +2065,14 @@
 		<processedMetrics>
 			<interaction_rate>Interaction Rate</interaction_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_impressions>number</nb_impressions>
+			<nb_interactions>number</nb_interactions>
+			<interaction_rate>percent</interaction_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getContentNames</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Contents_getContentNames</uniqueId>
 	</row>
 	<row>
@@ -1634,9 +2096,14 @@
 		<processedMetrics>
 			<interaction_rate>Interaction Rate</interaction_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_impressions>number</nb_impressions>
+			<nb_interactions>number</nb_interactions>
+			<interaction_rate>percent</interaction_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getContentPieces</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Contents_getContentPieces</uniqueId>
 	</row>
 	<row>
@@ -1653,8 +2120,11 @@
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>VisitorInterest_getNumberOfVisitsPerVisitDuration</uniqueId>
 	</row>
 	<row>
@@ -1671,8 +2141,11 @@
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>VisitorInterest_getNumberOfVisitsPerPage</uniqueId>
 	</row>
 	<row>
@@ -1692,8 +2165,12 @@
 		<processedMetrics>
 			<nb_visits_percentage>% Visits</nb_visits_percentage>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_visits_percentage>percent</nb_visits_percentage>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>VisitorInterest_getNumberOfVisitsByVisitCount</uniqueId>
 	</row>
 	<row>
@@ -1710,8 +2187,11 @@
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 		</metricsDocumentation>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>VisitorInterest_getNumberOfVisitsByDaysSinceLast</uniqueId>
 	</row>
 	<row>
@@ -1741,8 +2221,26 @@
 			<nb_actions_per_visit_new>Avg. Actions per New Visit</nb_actions_per_visit_new>
 			<bounce_rate_new>Bounce Rate for New Visits</bounce_rate_new>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits_returning>number</nb_visits_returning>
+			<nb_actions_returning>number</nb_actions_returning>
+			<nb_uniq_visitors_returning>number</nb_uniq_visitors_returning>
+			<nb_users_returning>number</nb_users_returning>
+			<max_actions_returning>number</max_actions_returning>
+			<nb_visits_new>number</nb_visits_new>
+			<nb_actions_new>number</nb_actions_new>
+			<nb_uniq_visitors_new>number</nb_uniq_visitors_new>
+			<nb_users_new>number</nb_users_new>
+			<max_actions_new>number</max_actions_new>
+			<avg_time_on_site_returning>duration_s</avg_time_on_site_returning>
+			<nb_actions_per_visit_returning>number</nb_actions_per_visit_returning>
+			<bounce_rate_returning>percent</bounce_rate_returning>
+			<avg_time_on_site_new>duration_s</avg_time_on_site_new>
+			<nb_actions_per_visit_new>number</nb_actions_per_visit_new>
+			<bounce_rate_new>percent</bounce_rate_new>
+		</metricTypes>
+
+
 		<uniqueId>VisitFrequency_get</uniqueId>
 	</row>
 	<row>
@@ -1780,8 +2278,17 @@
 			<avg_time_on_load>Avg. on load time</avg_time_on_load>
 			<avg_page_load_time>Avg. page load time</avg_page_load_time>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<avg_time_network>duration_s</avg_time_network>
+			<avg_time_server>duration_s</avg_time_server>
+			<avg_time_transfer>duration_s</avg_time_transfer>
+			<avg_time_dom_processing>duration_s</avg_time_dom_processing>
+			<avg_time_dom_completion>duration_s</avg_time_dom_completion>
+			<avg_time_on_load>duration_s</avg_time_on_load>
+			<avg_page_load_time>duration_s</avg_page_load_time>
+		</metricTypes>
+
+
 		<uniqueId>PagePerformance_get</uniqueId>
 	</row>
 	<row>
@@ -1811,9 +2318,17 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<nb_hits>number</nb_hits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_dimension>duration_s</avg_time_on_dimension>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getCustomDimension</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>CustomDimensions_getCustomDimension_idDimension--3</uniqueId>
 	</row>
 	<row>
@@ -1843,9 +2358,17 @@
 			<exit_rate>Exit rate</exit_rate>
 			<avg_time_generation>Avg. generation time</avg_time_generation>
 		</processedMetrics>
+		<metricTypes>
+			<nb_hits>number</nb_hits>
+			<nb_visits>number</nb_visits>
+			<avg_time_on_dimension>duration_s</avg_time_on_dimension>
+			<bounce_rate>percent</bounce_rate>
+			<exit_rate>percent</exit_rate>
+			<avg_time_generation>duration_s</avg_time_generation>
+		</metricTypes>
 		<actionToLoadSubTables>getCustomDimension</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>CustomDimensions_getCustomDimension_idDimension--4</uniqueId>
 	</row>
 	<row>
@@ -1871,8 +2394,25 @@
 			<Referrers_distinctKeywords>Distinct keywords</Referrers_distinctKeywords>
 			<Referrers_distinctCampaigns>Distinct campaigns</Referrers_distinctCampaigns>
 		</metrics>
-		
-		
+		<metricTypes>
+			<Referrers_visitorsFromSearchEngines>number</Referrers_visitorsFromSearchEngines>
+			<Referrers_visitorsFromSearchEngines_percent>percent</Referrers_visitorsFromSearchEngines_percent>
+			<Referrers_visitorsFromSocialNetworks>number</Referrers_visitorsFromSocialNetworks>
+			<Referrers_visitorsFromSocialNetworks_percent>percent</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromDirectEntry>number</Referrers_visitorsFromDirectEntry>
+			<Referrers_visitorsFromDirectEntry_percent>percent</Referrers_visitorsFromDirectEntry_percent>
+			<Referrers_visitorsFromWebsites>number</Referrers_visitorsFromWebsites>
+			<Referrers_visitorsFromWebsites_percent>percent</Referrers_visitorsFromWebsites_percent>
+			<Referrers_visitorsFromCampaigns>number</Referrers_visitorsFromCampaigns>
+			<Referrers_visitorsFromCampaigns_percent>percent</Referrers_visitorsFromCampaigns_percent>
+			<Referrers_distinctSearchEngines>number</Referrers_distinctSearchEngines>
+			<Referrers_distinctSocialNetworks>number</Referrers_distinctSocialNetworks>
+			<Referrers_distinctWebsites>number</Referrers_distinctWebsites>
+			<Referrers_distinctKeywords>number</Referrers_distinctKeywords>
+			<Referrers_distinctCampaigns>number</Referrers_distinctCampaigns>
+		</metricTypes>
+
+
 		<uniqueId>Referrers_get</uniqueId>
 	</row>
 	<row>
@@ -1904,6 +2444,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -1912,8 +2462,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>Referrers_getReferrerType</uniqueId>
 	</row>
 	<row>
@@ -1946,7 +2502,17 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
 		<uniqueId>Referrers_getAll</uniqueId>
 	</row>
 	<row>
@@ -1982,6 +2548,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getSearchEnginesFromKeywordId</actionToLoadSubTables>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -1990,8 +2566,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>Referrers_getKeywords</uniqueId>
 	</row>
 	<row>
@@ -2027,6 +2609,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getKeywordsFromSearchEngineId</actionToLoadSubTables>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -2035,8 +2627,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>Referrers_getSearchEngines</uniqueId>
 	</row>
 	<row>
@@ -2072,6 +2670,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getUrlsFromWebsiteId</actionToLoadSubTables>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -2080,8 +2688,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>Referrers_getWebsites</uniqueId>
 	</row>
 	<row>
@@ -2118,9 +2732,19 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getUrlsForSocial</actionToLoadSubTables>
-		
-		
+
+
 		<uniqueId>Referrers_getSocials</uniqueId>
 	</row>
 	<row>
@@ -2157,6 +2781,16 @@
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
 		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
 		<actionToLoadSubTables>getKeywordsFromCampaignId</actionToLoadSubTables>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -2165,8 +2799,14 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
+
 		<uniqueId>Referrers_getCampaigns</uniqueId>
 	</row>
 	<row>
@@ -2195,8 +2835,19 @@
 		<processedMetrics>
 			<avg_order_revenue>Average Order Value</avg_order_revenue>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+			<nb_visits_converted>number</nb_visits_converted>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+			<revenue_subtotal>money</revenue_subtotal>
+			<revenue_tax>money</revenue_tax>
+			<revenue_shipping>money</revenue_shipping>
+			<revenue_discount>money</revenue_discount>
+			<avg_order_revenue>money</avg_order_revenue>
+		</metricTypes>
+
+
 		<uniqueId>Goals_get_idGoal--ecommerceOrder</uniqueId>
 	</row>
 	<row>
@@ -2212,8 +2863,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getVisitsUntilConversion_idGoal--ecommerceOrder</uniqueId>
 	</row>
 	<row>
@@ -2229,8 +2883,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getDaysToConversion_idGoal--ecommerceOrder</uniqueId>
 	</row>
 	<row>
@@ -2254,8 +2911,15 @@
 		<processedMetrics>
 			<avg_order_revenue>Average Order Value</avg_order_revenue>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+			<items>number</items>
+			<avg_order_revenue>money</avg_order_revenue>
+		</metricTypes>
+
+
 		<uniqueId>Goals_get_idGoal--ecommerceAbandonedCart</uniqueId>
 	</row>
 	<row>
@@ -2271,8 +2935,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getVisitsUntilConversion_idGoal--ecommerceAbandonedCart</uniqueId>
 	</row>
 	<row>
@@ -2288,8 +2955,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getDaysToConversion_idGoal--ecommerceAbandonedCart</uniqueId>
 	</row>
 	<row>
@@ -2311,8 +2981,17 @@
 			<avg_quantity>Average Quantity</avg_quantity>
 			<conversion_rate>Product Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<revenue>money</revenue>
+			<quantity>number</quantity>
+			<orders>number</orders>
+			<nb_visits>number</nb_visits>
+			<avg_price>money</avg_price>
+			<avg_quantity>number</avg_quantity>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>Goals_getItemsName</uniqueId>
 	</row>
 	<row>
@@ -2334,8 +3013,17 @@
 			<avg_quantity>Average Quantity</avg_quantity>
 			<conversion_rate>Product Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<revenue>money</revenue>
+			<quantity>number</quantity>
+			<orders>number</orders>
+			<nb_visits>number</nb_visits>
+			<avg_price>money</avg_price>
+			<avg_quantity>number</avg_quantity>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>Goals_getItemsSku</uniqueId>
 	</row>
 	<row>
@@ -2357,8 +3045,17 @@
 			<avg_quantity>Average Quantity</avg_quantity>
 			<conversion_rate>Product Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<revenue>money</revenue>
+			<quantity>number</quantity>
+			<orders>number</orders>
+			<nb_visits>number</nb_visits>
+			<avg_price>money</avg_price>
+			<avg_quantity>number</avg_quantity>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>Goals_getItemsCategory</uniqueId>
 	</row>
 	<row>
@@ -2379,8 +3076,14 @@
 		<processedMetrics>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+			<nb_visits_converted>number</nb_visits_converted>
+			<revenue>money</revenue>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>Goals_get</uniqueId>
 	</row>
 	<row>
@@ -2394,6 +3097,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -2402,7 +3108,13 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
 		<uniqueId>Goals_getVisitsUntilConversion</uniqueId>
 	</row>
 	<row>
@@ -2416,6 +3128,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
 		<metricsGoal>
 			<nb_conversions>Conversions</nb_conversions>
@@ -2424,7 +3139,13 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+
 		<uniqueId>Goals_getDaysToConversion</uniqueId>
 	</row>
 	<row>
@@ -2448,8 +3169,14 @@
 		<processedMetrics>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+			<nb_visits_converted>number</nb_visits_converted>
+			<revenue>money</revenue>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>Goals_get_idGoal--0</uniqueId>
 	</row>
 	<row>
@@ -2466,8 +3193,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getVisitsUntilConversion_idGoal--0</uniqueId>
 	</row>
 	<row>
@@ -2484,8 +3214,11 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricTypes>
+			<nb_conversions>number</nb_conversions>
+		</metricTypes>
 		<constantRowsCount>1</constantRowsCount>
-		
+
 		<uniqueId>Goals_getDaysToConversion_idGoal--0</uniqueId>
 	</row>
 	<row>
@@ -2517,8 +3250,18 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>ExampleUI_getTemperatures</uniqueId>
 	</row>
 	<row>
@@ -2549,8 +3292,18 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>ExampleUI_getTemperaturesEvolution</uniqueId>
 	</row>
 	<row>
@@ -2582,8 +3335,18 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>ExampleUI_getPlanetRatios</uniqueId>
 	</row>
 	<row>
@@ -2615,8 +3378,18 @@
 			<bounce_rate>Bounce Rate</bounce_rate>
 			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+
+
 		<uniqueId>ExampleUI_getPlanetRatiosWithLogos</uniqueId>
 	</row>
 	<row>
@@ -2726,8 +3499,72 @@
 			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
 			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
 		</processedMetrics>
-		
-		
+		<metricTypes>
+			<nb_pageviews>number</nb_pageviews>
+			<nb_uniq_pageviews>number</nb_uniq_pageviews>
+			<nb_downloads>number</nb_downloads>
+			<nb_uniq_downloads>number</nb_uniq_downloads>
+			<nb_outlinks>number</nb_outlinks>
+			<nb_uniq_outlinks>number</nb_uniq_outlinks>
+			<nb_searches>number</nb_searches>
+			<nb_keywords>number</nb_keywords>
+			<Referrers_visitorsFromSearchEngines>number</Referrers_visitorsFromSearchEngines>
+			<Referrers_visitorsFromSearchEngines_percent>percent</Referrers_visitorsFromSearchEngines_percent>
+			<Referrers_visitorsFromSocialNetworks>number</Referrers_visitorsFromSocialNetworks>
+			<Referrers_visitorsFromSocialNetworks_percent>percent</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromDirectEntry>number</Referrers_visitorsFromDirectEntry>
+			<Referrers_visitorsFromDirectEntry_percent>percent</Referrers_visitorsFromDirectEntry_percent>
+			<Referrers_visitorsFromWebsites>number</Referrers_visitorsFromWebsites>
+			<Referrers_visitorsFromWebsites_percent>percent</Referrers_visitorsFromWebsites_percent>
+			<Referrers_visitorsFromCampaigns>number</Referrers_visitorsFromCampaigns>
+			<Referrers_visitorsFromCampaigns_percent>percent</Referrers_visitorsFromCampaigns_percent>
+			<Referrers_distinctSearchEngines>number</Referrers_distinctSearchEngines>
+			<Referrers_distinctSocialNetworks>number</Referrers_distinctSocialNetworks>
+			<Referrers_distinctWebsites>number</Referrers_distinctWebsites>
+			<Referrers_distinctKeywords>number</Referrers_distinctKeywords>
+			<Referrers_distinctCampaigns>number</Referrers_distinctCampaigns>
+			<nb_conversions>number</nb_conversions>
+			<nb_visits_converted>number</nb_visits_converted>
+			<revenue>money</revenue>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_visits>number</nb_visits>
+			<nb_users>number</nb_users>
+			<nb_actions>number</nb_actions>
+			<max_actions>number</max_actions>
+			<nb_visits_returning>number</nb_visits_returning>
+			<nb_actions_returning>number</nb_actions_returning>
+			<nb_uniq_visitors_returning>number</nb_uniq_visitors_returning>
+			<nb_users_returning>number</nb_users_returning>
+			<max_actions_returning>number</max_actions_returning>
+			<nb_visits_new>number</nb_visits_new>
+			<nb_actions_new>number</nb_actions_new>
+			<nb_uniq_visitors_new>number</nb_uniq_visitors_new>
+			<nb_users_new>number</nb_users_new>
+			<max_actions_new>number</max_actions_new>
+			<avg_time_network>duration_s</avg_time_network>
+			<avg_time_server>duration_s</avg_time_server>
+			<avg_time_transfer>duration_s</avg_time_transfer>
+			<avg_time_dom_processing>duration_s</avg_time_dom_processing>
+			<avg_time_dom_completion>duration_s</avg_time_dom_completion>
+			<avg_time_on_load>duration_s</avg_time_on_load>
+			<avg_page_load_time>duration_s</avg_page_load_time>
+			<nb_total_overall_bandwidth>number</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>number</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>number</nb_total_download_bandwidth>
+			<avg_time_generation>duration_s</avg_time_generation>
+			<conversion_rate>percent</conversion_rate>
+			<bounce_rate>percent</bounce_rate>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<avg_time_on_site_returning>duration_s</avg_time_on_site_returning>
+			<nb_actions_per_visit_returning>number</nb_actions_per_visit_returning>
+			<bounce_rate_returning>percent</bounce_rate_returning>
+			<avg_time_on_site_new>duration_s</avg_time_on_site_new>
+			<nb_actions_per_visit_new>number</nb_actions_per_visit_new>
+			<bounce_rate_new>percent</bounce_rate_new>
+		</metricTypes>
+
+
 		<uniqueId>API_get</uniqueId>
 	</row>
 </result>
