@@ -1,1 +1,5 @@
-{}
+{
+    "CustomTranslations": {
+        "PluginDescription": "Перевод сущностей и значений отчетов на разные языки"
+    }
+}
