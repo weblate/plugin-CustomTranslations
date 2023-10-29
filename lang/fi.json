@@ -1,1 +1,9 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomReportName": "Mukautettu raportin nimi",
+        "CustomTranslations": "Mukautetut käännökset",
+        "LanguageInlineHelp": "Valitse kieli, jonka haluat kääntää.",
+        "Translation": "Käännös",
+        "TranslationType": "Käännöksen tyyppi"
+    }
+}
