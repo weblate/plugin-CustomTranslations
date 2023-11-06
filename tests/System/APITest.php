@@ -71,6 +71,7 @@ class APITest extends SystemTestCase
 
         $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.0.0-b1', '<=');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
+        $testSuffix = 'API.getReportPagesMetadata' == $api && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
