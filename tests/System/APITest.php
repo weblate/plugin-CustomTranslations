@@ -72,6 +72,7 @@ class APITest extends SystemTestCase
         $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.0.0-b1', '<=');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
         $testSuffix = 'API.getReportPagesMetadata' == $api && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
+        $testSuffix = 'API.getWidgetMetadata' == $api && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
@@ -104,12 +105,12 @@ class APITest extends SystemTestCase
      */
     public function test_getTranslatableTypes_withCustomReports($api)
     {
-        if (!CustomTranslationsFixture::hasCustomReports()) {
+        if (!CustomTranslationsFixture::hasCustomReports() || version_compare(Version::VERSION, '5.0.0-b1', '<=')) {
             $this->markTestSkipped('Custom reports plugin is not available, we skip it');
             return;
         }
 
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
+        version_compare(Version::VERSION, '4.13.4-b1', '<');
 
         $this->clearCaches();
         $this->makeSureToLoadCustomReports();
@@ -120,7 +121,7 @@ class APITest extends SystemTestCase
             'period' => 'day',
         );
 
-        $testSuffix = 'withCustomReports' . ('API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '');
+        $testSuffix = 'withCustomReports';
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 

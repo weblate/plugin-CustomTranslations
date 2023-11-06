@@ -1467,38 +1467,6 @@
 		</widgets>
 	</row>
 	<row>
-		<uniqueId>General_Visitors.CustomVariables_CustomVariables</uniqueId>
-		<category>
-			<id>General_Visitors</id>
-			<name>Visitors</name>
-			<order>5</order>
-			<icon>icon-reporting-visitors</icon>
-			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
-		</category>
-		<subcategory>
-			<id>CustomVariables_CustomVariables</id>
-			<name>Custom Variables</name>
-			<order>45</order>
-			<help>&lt;p&gt;This report contains information about your Custom Variables. Click on a variable name to see the distribution of the values.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://matomo.org/docs/custom-variables/&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Read more about this topic in the online guide.&lt;/a&gt;&lt;/p&gt;</help>
-		</subcategory>
-		<widgets>
-			<row>
-				<name>Custom Variables</name>
-				<module>CustomVariables</module>
-				<action>getCustomVariables</action>
-				<order>110</order>
-				<parameters>
-					<module>CustomVariables</module>
-					<action>getCustomVariables</action>
-				</parameters>
-				<uniqueId>widgetCustomVariablesgetCustomVariables</uniqueId>
-				<isWide>0</isWide>
-				<viewDataTable>table</viewDataTable>
-				<isReport>1</isReport>
-			</row>
-		</widgets>
-	</row>
-	<row>
 		<uniqueId>Dashboard_Dashboard.1</uniqueId>
 		<category>
 			<id>Dashboard_Dashboard</id>
@@ -2310,37 +2278,6 @@
 						<isReport>1</isReport>
 					</row>
 					<row>
-						<name>Custom Variables</name>
-						<category>
-							<id>Goals by User attribute</id>
-							<name>Goals by User attribute</name>
-							<order>99</order>
-							<icon />
-							<help />
-						</category>
-						<subcategory>
-							<id>Goals by User attribute</id>
-							<name>Goals by User attribute</name>
-							<order>99</order>
-							<help />
-						</subcategory>
-						<module>CustomVariables</module>
-						<action>getCustomVariables</action>
-						<order>402</order>
-						<parameters>
-							<forceView>1</forceView>
-							<viewDataTable>tableGoals</viewDataTable>
-							<module>CustomVariables</module>
-							<action>getCustomVariables</action>
-							<documentationForGoalsPage>1</documentationForGoalsPage>
-							<idGoal>0</idGoal>
-						</parameters>
-						<uniqueId>widgetCustomVariablesgetCustomVariablesforceView1viewDataTabletableGoalsdocumentationForGoalsPage1idGoal0</uniqueId>
-						<isWide>0</isWide>
-						<viewDataTable>tableGoals</viewDataTable>
-						<isReport>1</isReport>
-					</row>
-					<row>
 						<name>RenamedDimVisit1</name>
 						<category>
 							<id>Goals by User attribute</id>
@@ -2357,7 +2294,7 @@
 						</subcategory>
 						<module>CustomDimensions</module>
 						<action>getCustomDimension</action>
-						<order>403</order>
+						<order>402</order>
 						<parameters>
 							<forceView>1</forceView>
 							<viewDataTable>tableGoals</viewDataTable>
@@ -2389,7 +2326,7 @@
 						</subcategory>
 						<module>CustomDimensions</module>
 						<action>getCustomDimension</action>
-						<order>404</order>
+						<order>403</order>
 						<parameters>
 							<forceView>1</forceView>
 							<viewDataTable>tableGoals</viewDataTable>
@@ -3344,38 +3281,6 @@
 						<isReport>1</isReport>
 					</row>
 					<row>
-						<name>Custom Variables</name>
-						<category>
-							<id>Sales by User attribute</id>
-							<name>Sales by User attribute</name>
-							<order>99</order>
-							<icon />
-							<help />
-						</category>
-						<subcategory>
-							<id>Sales by User attribute</id>
-							<name>Sales by User attribute</name>
-							<order>99</order>
-							<help />
-						</subcategory>
-						<module>CustomVariables</module>
-						<action>getCustomVariables</action>
-						<order>402</order>
-						<parameters>
-							<forceView>1</forceView>
-							<viewDataTable>tableGoals</viewDataTable>
-							<module>CustomVariables</module>
-							<action>getCustomVariables</action>
-							<documentationForGoalsPage>1</documentationForGoalsPage>
-							<idGoal>ecommerceOrder</idGoal>
-							<segmented_visitor_log_segment_suffix>visitEcommerceStatus==ordered</segmented_visitor_log_segment_suffix>
-						</parameters>
-						<uniqueId>widgetCustomVariablesgetCustomVariablesforceView1viewDataTabletableGoalsdocumentationForGoalsPage1idGoalecommerceOrdersegmented_visitor_log_segment_suffixvisitEcommerceStatus3D3Dordered</uniqueId>
-						<isWide>0</isWide>
-						<viewDataTable>tableGoals</viewDataTable>
-						<isReport>1</isReport>
-					</row>
-					<row>
 						<name>RenamedDimVisit1</name>
 						<category>
 							<id>Sales by User attribute</id>
@@ -3392,7 +3297,7 @@
 						</subcategory>
 						<module>CustomDimensions</module>
 						<action>getCustomDimension</action>
-						<order>403</order>
+						<order>402</order>
 						<parameters>
 							<forceView>1</forceView>
 							<viewDataTable>tableGoals</viewDataTable>
@@ -3425,7 +3330,7 @@
 						</subcategory>
 						<module>CustomDimensions</module>
 						<action>getCustomDimension</action>
-						<order>404</order>
+						<order>403</order>
 						<parameters>
 							<forceView>1</forceView>
 							<viewDataTable>tableGoals</viewDataTable>
