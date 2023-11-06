@@ -185,12 +185,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getCountry</uniqueId>
@@ -238,12 +232,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getContinent</uniqueId>
@@ -291,12 +279,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getRegion</uniqueId>
@@ -395,12 +377,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getCity</uniqueId>
@@ -502,12 +478,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getType</uniqueId>
@@ -558,12 +528,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getModel</uniqueId>
@@ -614,12 +578,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getBrand</uniqueId>
@@ -779,12 +737,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getBrowsers</uniqueId>
@@ -1109,12 +1061,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		<uniqueId>VisitTime_getVisitInformationPerServerTime</uniqueId>
 	</row>
@@ -1263,12 +1209,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>CustomVariables_getCustomVariables</uniqueId>
@@ -1464,23 +1404,6 @@
 				<action>getExitPageUrls</action>
 			</row>
 		</relatedReports>
-		<metricsGoal>
-			<nb_conversions>Conversions</nb_conversions>
-			<nb_conversions_attrib>Conversions</nb_conversions_attrib>
-			<revenue_attrib>Revenue</revenue_attrib>
-		</metricsGoal>
-		<processedMetricsGoal>
-			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
-			<nb_conversions_page_rate>Viewed before conversion rate</nb_conversions_page_rate>
-		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<nb_conversions_attrib>number</nb_conversions_attrib>
-			<revenue_attrib>money</revenue_attrib>
-			<nb_conversions_page_rate>percent</nb_conversions_page_rate>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getPageUrls</uniqueId>
@@ -1523,25 +1446,6 @@
 				<action>getEntryPageTitles</action>
 			</row>
 		</relatedReports>
-		<metricsGoal>
-			<nb_conversions>Conversions</nb_conversions>
-			<nb_conversions_entry>Conversions</nb_conversions_entry>
-			<revenue_entry>Revenue</revenue_entry>
-		</metricsGoal>
-		<processedMetricsGoal>
-			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
-			<revenue_per_entry>Revenue per Entry</revenue_per_entry>
-			<nb_conversions_entry_rate>Conversion Rate</nb_conversions_entry_rate>
-		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<nb_conversions_entry>number</nb_conversions_entry>
-			<revenue_entry>money</revenue_entry>
-			<revenue_per_entry>number</revenue_per_entry>
-			<nb_conversions_entry_rate>percent</nb_conversions_entry_rate>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getEntryPageUrls</uniqueId>
@@ -1589,25 +1493,6 @@
 				<action>getEntryPageUrls</action>
 			</row>
 		</relatedReports>
-		<metricsGoal>
-			<nb_conversions>Conversions</nb_conversions>
-			<nb_conversions_entry>Conversions</nb_conversions_entry>
-			<revenue_entry>Revenue</revenue_entry>
-		</metricsGoal>
-		<processedMetricsGoal>
-			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
-			<revenue_per_entry>Revenue per Entry</revenue_per_entry>
-			<nb_conversions_entry_rate>Conversion Rate</nb_conversions_entry_rate>
-		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<nb_conversions_entry>number</nb_conversions_entry>
-			<revenue_entry>money</revenue_entry>
-			<revenue_per_entry>number</revenue_per_entry>
-			<nb_conversions_entry_rate>percent</nb_conversions_entry_rate>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getEntryPageTitles</uniqueId>
@@ -1750,23 +1635,6 @@
 				<action>getExitPageTitles</action>
 			</row>
 		</relatedReports>
-		<metricsGoal>
-			<nb_conversions>Conversions</nb_conversions>
-			<nb_conversions_attrib>Conversions</nb_conversions_attrib>
-			<revenue_attrib>Revenue</revenue_attrib>
-		</metricsGoal>
-		<processedMetricsGoal>
-			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
-			<nb_conversions_page_rate>Viewed before conversion rate</nb_conversions_page_rate>
-		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<nb_conversions_attrib>number</nb_conversions_attrib>
-			<revenue_attrib>money</revenue_attrib>
-			<nb_conversions_page_rate>percent</nb_conversions_page_rate>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getPageTitles</uniqueId>
@@ -2534,12 +2402,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getReferrerType</uniqueId>
@@ -2638,12 +2500,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getKeywords</uniqueId>
@@ -2699,12 +2555,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getSearchEngines</uniqueId>
@@ -2760,12 +2610,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getWebsites</uniqueId>
@@ -2871,12 +2715,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getCampaigns</uniqueId>
@@ -3180,12 +3018,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		<uniqueId>Goals_getVisitsUntilConversion</uniqueId>
 	</row>
@@ -3211,12 +3043,6 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
-		<metricTypesGoal>
-			<revenue_per_visit>money</revenue_per_visit>
-			<nb_conversions>number</nb_conversions>
-			<conversion_rate>percent</conversion_rate>
-			<revenue>money</revenue>
-		</metricTypesGoal>
 		
 		<uniqueId>Goals_getDaysToConversion</uniqueId>
 	</row>
