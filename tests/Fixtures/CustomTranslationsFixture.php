@@ -19,7 +19,6 @@ use Piwik\Plugins\CustomTranslations\TranslationTypes\CustomReportEntity;
 use Piwik\Plugins\CustomTranslations\TranslationTypes\DashboardEntity;
 use Piwik\Plugins\CustomTranslations\TranslationTypes\EventLabel;
 use Piwik\Tests\Framework\Fixture;
-use Piwik\Version;
 
 class CustomTranslationsFixture extends Fixture
 {
@@ -79,7 +78,7 @@ class CustomTranslationsFixture extends Fixture
 
     private function createCustomReports()
     {
-        if (!self::hasCustomReports() || version_compare(Version::VERSION, '5.0.0-b1', '<=')) {
+        if (!self::hasCustomReports()) {
             return;
         }
         Filesystem::deleteAllCacheOnUpdate(); // make sure custom dimensions are not cached etc
@@ -153,7 +152,7 @@ class CustomTranslationsFixture extends Fixture
             'MyCategory' => 'RenamedCategory',
             'foobar' => 'baz',
         ));
-        if (self::hasCustomReports() && version_compare(Version::VERSION, '5.0.0-b1', '>')) {
+        if (self::hasCustomReports()) {
             API::getInstance()->setTranslations(CustomReportEntity::ID, 'en', array(
                 'CustomReport1' => 'RenamedReport1',
                 'CustomReport3' => 'RenamedReport3',

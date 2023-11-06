@@ -1213,6 +1213,68 @@
 	</row>
 	<row>
 		<category>Visitors</category>
+		<subcategory>Custom Variables</subcategory>
+		<name>Custom Variables</name>
+		<module>CustomVariables</module>
+		<action>getCustomVariables</action>
+		<dimension>Custom Variable name</dimension>
+		<documentation>This report contains information about your Custom Variables. Click on a variable name to see the distribution of the values. &lt;br /&gt; For more information about Custom Variables in general, read the &lt;a href=&quot;https://matomo.org/docs/custom-variables/&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Custom Variables documentation on matomo.org&lt;/a&gt;</documentation>
+		<onlineGuideUrl>https://matomo.org/docs/custom-variables/</onlineGuideUrl>
+		<dimensions>
+			<CustomVariables_CustomVariableName>Custom Variable name</CustomVariables_CustomVariableName>
+			<CustomVariables_CustomVariableValue>Custom Variable value</CustomVariables_CustomVariableValue>
+		</dimensions>
+		<metrics>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
+			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
+		</metrics>
+		<metricsDocumentation>
+			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
+			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
+			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
+			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
+			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
+			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+		</metricsDocumentation>
+		<processedMetrics>
+			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
+			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
+			<bounce_rate>Bounce Rate</bounce_rate>
+		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+		<actionToLoadSubTables>getCustomVariablesValuesFromNameId</actionToLoadSubTables>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<revenue>Revenue</revenue>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+		
+		
+		<uniqueId>CustomVariables_getCustomVariables</uniqueId>
+	</row>
+	<row>
+		<category>Visitors</category>
 		<subcategory>customdimension2</subcategory>
 		<name>DimensionVisit2</name>
 		<module>CustomDimensions</module>
@@ -1330,6 +1392,30 @@
 		
 		
 		<uniqueId>Actions_get</uniqueId>
+	</row>
+	<row>
+		<category>Actions</category>
+		<name>Bandwidth - Main metrics</name>
+		<module>Bandwidth</module>
+		<action>get</action>
+		<metrics>
+			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>Bytes transferred downloads</nb_total_download_bandwidth>
+		</metrics>
+		<processedMetrics>
+			<nb_total_download_bandwidth>Bytes transferred downloads</nb_total_download_bandwidth>
+			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
+			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
+		</processedMetrics>
+		<metricTypes>
+			<nb_total_overall_bandwidth>number</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>number</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>number</nb_total_download_bandwidth>
+		</metricTypes>
+		
+		
+		<uniqueId>Bandwidth_get</uniqueId>
 	</row>
 	<row>
 		<category>Actions</category>
@@ -3361,6 +3447,9 @@
 			<avg_time_dom_completion>Avg. DOM completion time</avg_time_dom_completion>
 			<avg_time_on_load>Avg. on load time</avg_time_on_load>
 			<avg_page_load_time>Avg. page load time</avg_page_load_time>
+			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>Bytes transferred downloads</nb_total_download_bandwidth>
 		</metrics>
 		<metricsDocumentation>
 			<nb_pageviews>The number of times this page was visited.</nb_pageviews>
@@ -3406,6 +3495,9 @@
 			<avg_time_dom_completion>Avg. DOM completion time</avg_time_dom_completion>
 			<avg_time_on_load>Avg. on load time</avg_time_on_load>
 			<avg_page_load_time>Avg. page load time</avg_page_load_time>
+			<nb_total_download_bandwidth>Bytes transferred downloads</nb_total_download_bandwidth>
+			<nb_total_pageview_bandwidth>Bytes transferred pageviews</nb_total_pageview_bandwidth>
+			<nb_total_overall_bandwidth>Bytes transferred overall</nb_total_overall_bandwidth>
 		</processedMetrics>
 		<metricTypes>
 			<nb_pageviews>number</nb_pageviews>
@@ -3456,6 +3548,9 @@
 			<avg_time_dom_completion>duration_s</avg_time_dom_completion>
 			<avg_time_on_load>duration_s</avg_time_on_load>
 			<avg_page_load_time>duration_s</avg_page_load_time>
+			<nb_total_overall_bandwidth>number</nb_total_overall_bandwidth>
+			<nb_total_pageview_bandwidth>number</nb_total_pageview_bandwidth>
+			<nb_total_download_bandwidth>number</nb_total_download_bandwidth>
 			<avg_time_generation>duration_s</avg_time_generation>
 			<conversion_rate>percent</conversion_rate>
 			<bounce_rate>percent</bounce_rate>
