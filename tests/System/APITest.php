@@ -71,32 +71,19 @@ class APITest extends SystemTestCase
 
         $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.0.0-b1', '<=');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
-        $testSuffix = 'API.getReportPagesMetadata' == $api && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
+        $testSuffix = in_array($api, ['API.getReportPagesMetadata', 'API.getWidgetMetadata']) && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 
     public function getTestsToRunWithAndWithoutCustomReports()
     {
-        if (version_compare(Version::VERSION, '4.4.0-b1', '<')) {
-            return array(
-                array('CustomTranslations.getTranslatableTypes')
-            );
-        }
-
-        $tests = array(
-            array('CustomTranslations.getTranslatableTypes'),
-            array('API.getReportMetadata'),
-            array('API.getWidgetMetadata'),
-            array('API.getReportPagesMetadata'),
-        );
-        if (version_compare(Version::VERSION, '4.11.0', '<=')) {
-            $tests = array(
-                array('CustomTranslations.getTranslatableTypes'),
-            );
-        }
-
-        return $tests;
+        return [
+            ['CustomTranslations.getTranslatableTypes'],
+            ['API.getReportMetadata'],
+            ['API.getWidgetMetadata'],
+            ['API.getReportPagesMetadata'],
+        ];
     }
 
     /**
