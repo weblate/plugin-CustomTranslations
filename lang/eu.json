@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Itzuli dimentsio pertsonalizatuetako entitateen izenak",
+        "CustomDimensionName": "Dimentsio pertsonalizatuaren izena",
+        "CustomDimensionValue": "Dimentsio pertsonalizatuaren balioa",
+        "CustomDimensionValueDescription": "Itzuli jarraipen-gertaeren balioen izenak",
+        "CustomReportDescription": "Itzuli txosten pertsonalizatuko entitateen izenak",
+        "CustomReportName": "Txosten-izen pertsonalizatua",
+        "CustomTranslations": "Itzulpen pertsonalizatuak",
+        "DashboardDescription": "Itzuli paneleko entitateen izenak",
+        "DashboardName": "Panelaren izena",
+        "EventValue": "Gertaeraren balioa",
+        "EventValueDescription": "Itzuli jarraipen-gertaeren balioen izenak",
+        "LanguageInlineHelp": "Hautatu itzuli nahi duzun hizkuntza.",
+        "PluginDescription": "Itzuli entitateak eta txostenen balioak hainbat hizkuntzatara",
+        "Translation": "Itzulpena",
+        "TranslationType": "Itzulpen mota"
+    }
+}
