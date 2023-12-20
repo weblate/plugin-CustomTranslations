@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "કસ્ટમ ડાયમેન્શન એન્ટિટીના નામનો અનુવાદ કરો",
+        "CustomDimensionName": "કસ્ટમ ડાયમેન્શન નામ",
+        "CustomDimensionValue": "કસ્ટમ ડાયમેન્શન મૂલ્ય",
+        "CustomDimensionValueDescription": "ટ્રેક કરેલ ઇવેન્ટ મૂલ્યોના નામનો અનુવાદ કરો",
+        "CustomReportDescription": "કસ્ટમ રિપોર્ટ એન્ટિટીના નામનો અનુવાદ કરો",
+        "CustomReportName": "કસ્ટમ રિપોર્ટ નામ",
+        "CustomTranslations": "કસ્ટમ અનુવાદો",
+        "DashboardDescription": "ડેશબોર્ડ એકમોના નામનો અનુવાદ કરો",
+        "DashboardName": "ડેશબોર્ડ નામ",
+        "EventValue": "ઇવેન્ટ મૂલ્ય",
+        "EventValueDescription": "ટ્રેક કરેલ ઇવેન્ટ મૂલ્યોના નામનો અનુવાદ કરો",
+        "LanguageInlineHelp": "તમે અનુવાદ કરવા માંગો છો તે ભાષા પસંદ કરો.",
+        "PluginDescription": "વિવિધ ભાષાઓમાં એકમોનો અનુવાદ કરો અને મૂલ્યોની જાણ કરો",
+        "Translation": "અનુવાદ",
+        "TranslationType": "અનુવાદનો પ્રકાર"
+    }
+}
