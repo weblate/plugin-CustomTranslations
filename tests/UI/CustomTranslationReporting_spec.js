@@ -12,11 +12,11 @@ describe("CustomTranslationReporting", function () {
     this.optionsOverride = {
         'persist-fixture-data': false
     };
-    
+
     var fs = require('fs');
     var customReportsPath = PIWIK_INCLUDE_PATH + '/plugins/CustomReports/CustomReports.php';
     var hasCustomReports = fs.existsSync(customReportsPath);
-    
+
     var generalParams = 'idSite=1&period=month&date=2013-01-23',
         urlBase = 'module=CoreHome&action=index&' + generalParams,
         manageBase = "?" + generalParams + '&',
@@ -181,7 +181,7 @@ describe("CustomTranslationReporting", function () {
                 url += '&' + j + '=' + widgetToCheck[j];
             }
 
-            it('should load table report ' + reportName, async function () {
+            it(`should load table report ${reportName}`, async function () {
                 await captureWidget('report_' + reportName, async function () {
                     await page.goto(url);
                 });
@@ -195,7 +195,7 @@ describe("CustomTranslationReporting", function () {
                     row = 'tr:nth-child(3)';
                 }
 
-                it('should show row evolution for renamed label', async function () {
+                it(`should show row evolution for renamed label for report ${reportName}`, async function () {
                     await captureDialog('report_' + reportName + '_row_evolution', async function () {
                         await page.hover('tbody ' + row);
                         await (await page.jQuery('a.actionRowEvolution:visible')).hover(); // necessary to get popover to display
@@ -204,7 +204,7 @@ describe("CustomTranslationReporting", function () {
                     });
                 });
 
-                it('should show segmented visitor log for renamed label', async function () {
+                it(`should show segmented visitor log for renamed label for report ${reportName}`, async function () {
                     await captureDialog('report_' + reportName + '_segmented_visitor_log', async function () {
                         await page.click('.ui-dialog .ui-dialog-titlebar-close');
                         await page.hover('table.dataTable tbody ' + row);
@@ -216,7 +216,7 @@ describe("CustomTranslationReporting", function () {
                     });
                 });
 
-                it('should be possible to search for renamed label', async function () {
+                it(`should be possible to search for renamed label for report ${reportName}`, async function () {
                     await captureWidget('report_' + reportName + '_search', async function () {
                         await page.click('.ui-dialog .ui-dialog-titlebar-close');
                         await page.click('.dataTableAction.searchAction');
@@ -225,19 +225,19 @@ describe("CustomTranslationReporting", function () {
                     });
                 });
 
-                it('should load bar report' + reportName, async function () {
+                it(`should load bar report ${reportName}`, async function () {
                     await captureWidget('report_' + reportName + '_bar', async function () {
                         await page.goto(url + '&viewDataTable=graphVerticalBar');
                     });
                 });
-                it('should load pie report' + reportName, async function () {
+                it(`should load pie report ${reportName}`, async function () {
                     await captureWidget('report_' + reportName + '_pie', async function () {
                         await page.goto(url + '&viewDataTable=graphPie');
                     });
                 });
 
                 if (reportName === 'eventActionName') {
-                    it('should load pivot report ' + reportName, async function () {
+                    it(`should load pivot report ${reportName}`, async function () {
                         await captureWidget('report_' + reportName + '_pivoted', async function () {
                             await page.goto(url + '&pivotBy=Events.EventName&pivotByColumn=nb_events');
                         });
