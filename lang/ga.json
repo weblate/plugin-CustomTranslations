@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Aistrigh ainm aonáin toise saincheaptha",
+        "CustomDimensionName": "Ainm Toise Saincheaptha",
+        "CustomDimensionValue": "Luach Toise an Chustaim",
+        "CustomDimensionValueDescription": "Aistrigh ainm luachanna an imeachta rianaithe",
+        "CustomReportDescription": "Aistrigh ainm aonán tuairiscithe saincheaptha",
+        "CustomReportName": "Ainm na Tuairisce Saincheaptha",
+        "CustomTranslations": "Aistriúcháin Saincheaptha",
+        "DashboardDescription": "Aistrigh ainm aonáin an deais",
+        "DashboardName": "Ainm an Deais",
+        "EventValue": "Luach Imeachta",
+        "EventValueDescription": "Aistrigh ainm luachanna an imeachta rianaithe",
+        "LanguageInlineHelp": "Roghnaigh an teanga is mian leat a aistriú.",
+        "PluginDescription": "Aistrigh aonáin agus tuairiscigh luachanna go teangacha éagsúla",
+        "Translation": "Aistriúchán",
+        "TranslationType": "Cineál Aistriúcháin"
+    }
+}
