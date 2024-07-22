@@ -139,7 +139,6 @@ class APITest extends SystemTestCase
 
     public function getApiForTesting()
     {
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
         $apiToTest = array();
 
         foreach (range(1,4) as $idDimension) {
@@ -159,7 +158,7 @@ class APITest extends SystemTestCase
 
         $apiToTest[] = array(array('API.getProcessedReport'), array(
             'idSite' => self::$fixture->idSite,
-            'testSuffix' => '_getCustomDimensionProcessedReport' . ($apiOutputIsMissingMetricTypes ? '_Old' : ''),
+            'testSuffix' => '_getCustomDimensionProcessedReport',
             'otherRequestParameters' => array(
                 'apiModule' => 'CustomDimensions',
                 'apiAction' => 'getCustomDimension',
@@ -214,9 +213,10 @@ class APITest extends SystemTestCase
             )
         );
 
+        $matomo52Alpha = version_compare(Version::VERSION, '5.2.0-alpha', '<');
         $apiToTest[] = array(array('API.getProcessedReport'), array(
             'idSite' => self::$fixture->idSite,
-            'testSuffix' => '_eventsProcessedReport' . ($apiOutputIsMissingMetricTypes ? '_Old' : ''),
+            'testSuffix' => ($matomo52Alpha ? '_52a' : '') . '_eventsProcessedReport',
             'otherRequestParameters' => array(
                 'apiModule' => 'Events',
                 'apiAction' => 'getAction',
