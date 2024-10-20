@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -12,11 +13,10 @@ use Piwik\API\Request;
 use Piwik\Container\StaticContainer;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
-use Piwik\Translate;
 
 abstract class TranslationType
 {
-    const ID = '';
+    public const ID = '';
 
     /**
      * @var TranslationsDao
@@ -55,9 +55,11 @@ abstract class TranslationType
     protected function isRequestingAPIwithinUI($method)
     {
         if (Request::getRootApiRequestMethod() === $method) {
-            if (!empty($_SERVER['HTTP_REFERER'])
+            if (
+                !empty($_SERVER['HTTP_REFERER'])
                 && strpos($_SERVER['HTTP_REFERER'], 'module=') !== false
-                && strpos($_SERVER['HTTP_REFERER'], 'action=') !== false) {
+                && strpos($_SERVER['HTTP_REFERER'], 'action=') !== false
+            ) {
                 // the API method was requested from within the UI... in this case we usually don't want to apply
                 // the renamings... but we want to apply it when the API was requested directly
                 return true;

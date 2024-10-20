@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -59,5 +60,4 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->expectExceptionMessage('General_ValidatorErrorXNotWhitelisted');
         $this->provider->checkTypeExists('foo');
     }
-
 }

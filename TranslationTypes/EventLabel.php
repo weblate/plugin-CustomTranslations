@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -13,7 +14,7 @@ use Piwik\Piwik;
 
 class EventLabel extends TranslationType
 {
-    const ID = 'eventLabel';
+    public const ID = 'eventLabel';
 
     public function getName()
     {
@@ -38,5 +39,4 @@ class EventLabel extends TranslationType
         }
         return $returnedValue;
     }
-
 }
