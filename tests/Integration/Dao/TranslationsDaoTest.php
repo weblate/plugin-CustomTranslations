@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -116,5 +117,4 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->expectExceptionMessage('$translations needs to be an array');
         $this->dao->set($this->typeId, 'nz', 'test');
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -195,5 +196,4 @@ class CustomTranslationsFixture extends Fixture
     {
         return file_exists(PIWIK_DOCUMENT_ROOT . '/plugins/CustomReports/CustomReports.php');
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -14,7 +15,7 @@ use Piwik\Piwik;
 
 class CustomDimensionEntity extends TranslationType
 {
-    const ID = 'customDimensionEntity';
+    public const ID = 'customDimensionEntity';
 
     public function getName()
     {
@@ -35,9 +36,10 @@ class CustomDimensionEntity extends TranslationType
 
     public function translate($returnedValue, $method, $extraInfo)
     {
-        if ($method === 'CustomDimensions.getConfiguredCustomDimensions'
-            && is_array($returnedValue)) {
-
+        if (
+            $method === 'CustomDimensions.getConfiguredCustomDimensions'
+            && is_array($returnedValue)
+        ) {
             if ($this->isRequestingAPIwithinUI('CustomDimensions.getConfiguredCustomDimensions')) {
                 // make sure in manage custom dimensions the correct names are shown
                 return $returnedValue;
@@ -53,5 +55,4 @@ class CustomDimensionEntity extends TranslationType
         }
         return $returnedValue;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -13,7 +14,7 @@ use Piwik\Piwik;
 
 class CustomDimensionLabel extends TranslationType
 {
-    const ID = 'customDimensionLabel';
+    public const ID = 'customDimensionLabel';
 
     public function getName()
     {
@@ -38,5 +39,4 @@ class CustomDimensionLabel extends TranslationType
         }
         return $returnedValue;
     }
-
 }

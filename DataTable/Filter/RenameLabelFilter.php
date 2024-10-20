@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -52,7 +53,6 @@ class RenameLabelFilter extends BaseFilter
         }
 
         foreach ($table->getRowsWithoutSummaryRow() as $row) {
-
             $label = $row->getColumn('label');
             if ($label && isset($map[$label])) {
                 $row->setColumn('label', $map[$label]);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -14,7 +15,7 @@ use Piwik\Piwik;
 
 class DashboardEntity extends TranslationType
 {
-    const ID = 'dashboardEntity';
+    public const ID = 'dashboardEntity';
 
     public function getName()
     {
@@ -36,7 +37,6 @@ class DashboardEntity extends TranslationType
     public function translate($returnedValue, $method, $extraInfo)
     {
         if ($method === 'Dashboard.getDashboards' && is_array($returnedValue)) {
-
             if ($this->isRequestingAPIwithinUI('Dashboard.getDashboards')) {
                 // we make sure that when using renaming Dashboard feature, to show the original dashboard name, and also
                 // that when moving around a dashboard, to keep the original name
@@ -52,5 +52,4 @@ class DashboardEntity extends TranslationType
         }
         return $returnedValue;
     }
-
 }

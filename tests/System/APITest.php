@@ -1,11 +1,11 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
  * @link https://www.innocraft.com
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
-
 
 namespace Piwik\Plugins\CustomTranslations\tests\System;
 
@@ -59,7 +59,7 @@ class APITest extends SystemTestCase
     {
         $params = array(
             'idSite' => 1,
-            'date' => substr(self::$fixture->dateTime,0 ,10),
+            'date' => substr(self::$fixture->dateTime, 0, 10),
             'period' => 'day',
         );
 
@@ -103,7 +103,7 @@ class APITest extends SystemTestCase
 
         $params = array(
             'idSite' => 1,
-            'date' => substr(self::$fixture->dateTime,0 ,10),
+            'date' => substr(self::$fixture->dateTime, 0, 10),
             'period' => 'day',
         );
 
@@ -141,7 +141,7 @@ class APITest extends SystemTestCase
     {
         $apiToTest = array();
 
-        foreach (range(1,4) as $idDimension) {
+        foreach (range(1, 4) as $idDimension) {
             $apiToTest[] = array(
                 array('CustomDimensions.getCustomDimension'),
                 array(
@@ -236,7 +236,7 @@ class APITest extends SystemTestCase
         );
 
         if (CustomTranslationsFixture::hasCustomReports()) {
-            foreach (range(1,7) as $idCustomReport) {
+            foreach (range(1, 7) as $idCustomReport) {
                 $apiToTest[] = array(
                     array('CustomReports.getCustomReport'),
                     array(
@@ -283,7 +283,6 @@ class APITest extends SystemTestCase
     {
         return dirname(__FILE__);
     }
-
 }
 
 APITest::$fixture = new CustomTranslationsFixture();

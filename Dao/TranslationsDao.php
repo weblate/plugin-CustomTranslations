@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -12,7 +13,7 @@ use Piwik\Option;
 
 class TranslationsDao
 {
-    CONST OPTION_LANG_PREFIX = 'CustomTranslations_lang_';
+    public const OPTION_LANG_PREFIX = 'CustomTranslations_lang_';
 
     public function get($typeId, $lang)
     {

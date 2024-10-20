@@ -1,4 +1,5 @@
 <?php
+
 /**
  * InnoCraft - the company of the makers of Matomo Analytics, the free/libre analytics platform
  *
@@ -13,12 +14,11 @@ use Piwik\Common;
 use Piwik\DataTable\DataTableInterface;
 use Piwik\Db;
 use Piwik\Piwik;
-use Piwik\Plugin;
 use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 
 class CustomReportEntity extends TranslationType
 {
-    const ID = 'customReportEntity';
+    public const ID = 'customReportEntity';
 
     /**
      * @var CustomDimensionLabel
@@ -55,9 +55,10 @@ class CustomReportEntity extends TranslationType
 
     public function translate($returnedValue, $method, $extraInfo)
     {
-        if ($method === 'CustomReports.getConfiguredReports'
-            && is_array($returnedValue)) {
-
+        if (
+            $method === 'CustomReports.getConfiguredReports'
+            && is_array($returnedValue)
+        ) {
             if ($this->isRequestingAPIwithinUI('CustomReports.getConfiguredReports')) {
                 // make sure in manage reports screen we show original name... but not when API is called independently
                 return $returnedValue;
@@ -71,8 +72,10 @@ class CustomReportEntity extends TranslationType
             }
         }
 
-        if ($method === 'CustomReports.getConfiguredReport'
-            && is_array($returnedValue)) {
+        if (
+            $method === 'CustomReports.getConfiguredReport'
+            && is_array($returnedValue)
+        ) {
             if ($this->isRequestingAPIwithinUI('CustomReports.getConfiguredReport')) {
                 return $returnedValue;
             }
@@ -83,8 +86,10 @@ class CustomReportEntity extends TranslationType
             }
         }
 
-        if ($method === 'CustomReports.getCustomReport'
-            && $returnedValue instanceof DataTableInterface) {
+        if (
+            $method === 'CustomReports.getCustomReport'
+            && $returnedValue instanceof DataTableInterface
+        ) {
             $params = ['idSite' => $extraInfo['parameters']['idSite'], 'idCustomReport' => $extraInfo['parameters']['idCustomReport']];
             $customReport = Request::processRequest('CustomReports.getConfiguredReport', $params, []);
 
@@ -108,5 +113,4 @@ class CustomReportEntity extends TranslationType
 
         return $returnedValue;
     }
-
 }
