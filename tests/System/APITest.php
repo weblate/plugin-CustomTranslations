@@ -69,7 +69,7 @@ class APITest extends SystemTestCase
             $this->clearCaches();
         }
 
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.0.0-b1', '<=');
+        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.2.0-b6', '<');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
         $testSuffix = in_array($api, ['API.getReportPagesMetadata', 'API.getWidgetMetadata']) && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
 
