@@ -1,1 +1,10 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomReportName": "Vlastní název zprávy",
+        "CustomTranslations": "Vlastní překlady",
+        "LanguageInlineHelp": "Vyberte jazyk, který chcete přeložit.",
+        "PluginDescription": "Překlad entit a hodnot hlášení do různých jazyků",
+        "Translation": "Překlad",
+        "TranslationType": "Typ překladu"
+    }
+}
