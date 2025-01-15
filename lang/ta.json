@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "தனிப்பயன் பரிமாண நிறுவனங்களின் பெயரை மொழிபெயர்க்கவும்",
+        "CustomDimensionName": "தனிப்பயன் பரிமாண பெயர்",
+        "CustomDimensionValue": "தனிப்பயன் பரிமாண மதிப்பு",
+        "CustomDimensionValueDescription": "கண்காணிக்கப்பட்ட நிகழ்வு மதிப்புகளின் பெயரை மொழிபெயர்க்கவும்",
+        "CustomReportDescription": "தனிப்பயன் அறிக்கை நிறுவனங்களின் பெயரை மொழிபெயர்க்கவும்",
+        "CustomReportName": "தனிப்பயன் அறிக்கை பெயர்",
+        "CustomTranslations": "தனிப்பயன் மொழிபெயர்ப்புகள்",
+        "DashboardDescription": "டாச்போர்டு நிறுவனங்களின் பெயரை மொழிபெயர்க்கவும்",
+        "DashboardName": "டாச்போர்டு பெயர்",
+        "EventValue": "நிகழ்வு மதிப்பு",
+        "EventValueDescription": "கண்காணிக்கப்பட்ட நிகழ்வு மதிப்புகளின் பெயரை மொழிபெயர்க்கவும்",
+        "LanguageInlineHelp": "நீங்கள் மொழிபெயர்க்க விரும்பும் மொழியைத் தேர்ந்தெடுக்கவும்.",
+        "PluginDescription": "நிறுவனங்கள் மற்றும் மதிப்புகளை வெவ்வேறு மொழிகளில் மொழிபெயர்க்கவும்",
+        "Translation": "மொழிபெயர்ப்பு",
+        "TranslationType": "மொழிபெயர்ப்பு வகை"
+    }
+}
