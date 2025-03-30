@@ -17,6 +17,8 @@
 		</dimensions>
 		<metrics>
 			<nb_events>Events</nb_events>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<sum_event_value>Event value</sum_event_value>
 			<min_event_value>Minimum Event value</min_event_value>
 			<max_event_value>Maximum Event value</max_event_value>
@@ -24,6 +26,8 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_events>Total number of events</nb_events>
+			<nb_visits>The total number of visits where at least one event was triggered.</nb_visits>
+			<nb_uniq_visitors>The number of deduplicated visitors who triggered an event on your website. Every visitor is only counted once, even if they visit or trigger multiple events on the website.</nb_uniq_visitors>
 			<sum_event_value>The sum of event values</sum_event_value>
 			<min_event_value>The minimum value for this event</min_event_value>
 			<max_event_value>The maximum value for this event</max_event_value>
@@ -35,6 +39,8 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_events>number</nb_events>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<sum_event_value>number</sum_event_value>
 			<min_event_value>number</min_event_value>
 			<max_event_value>number</max_event_value>
@@ -49,6 +55,8 @@
 	<columns>
 		<label>Event Action</label>
 		<nb_events>Events</nb_events>
+		<nb_visits>Visits</nb_visits>
+		<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 		<sum_event_value>Event value</sum_event_value>
 		<min_event_value>Minimum Event value</min_event_value>
 		<max_event_value>Maximum Event value</max_event_value>
@@ -58,6 +66,8 @@
 	<reportData>
 		<row>
 			<label>genericValue2</label>
+			<nb_uniq_visitors>1</nb_uniq_visitors>
+			<nb_visits>1</nb_visits>
 			<nb_events>1</nb_events>
 			<nb_events_with_value>1</nb_events_with_value>
 			<sum_event_value>2</sum_event_value>
@@ -67,6 +77,8 @@
 		</row>
 		<row>
 			<label>MyAction3</label>
+			<nb_uniq_visitors>1</nb_uniq_visitors>
+			<nb_visits>1</nb_visits>
 			<nb_events>2</nb_events>
 			<nb_events_with_value>2</nb_events_with_value>
 			<sum_event_value>14</sum_event_value>
@@ -76,6 +88,8 @@
 		</row>
 		<row>
 			<label>RenamedAction</label>
+			<nb_uniq_visitors>1</nb_uniq_visitors>
+			<nb_visits>1</nb_visits>
 			<nb_events>1</nb_events>
 			<nb_events_with_value>1</nb_events_with_value>
 			<sum_event_value>5</sum_event_value>
