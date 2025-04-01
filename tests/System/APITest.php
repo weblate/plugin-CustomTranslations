@@ -156,9 +156,10 @@ class APITest extends SystemTestCase
             );
         }
 
+        $matomo54Alpha = version_compare(Version::VERSION, '5.4.0-alpha', '<');
         $apiToTest[] = array(array('API.getProcessedReport'), array(
             'idSite' => self::$fixture->idSite,
-            'testSuffix' => '_getCustomDimensionProcessedReport',
+            'testSuffix' => ($matomo54Alpha ? '_54a' : '') . '_getCustomDimensionProcessedReport',
             'otherRequestParameters' => array(
                 'apiModule' => 'CustomDimensions',
                 'apiAction' => 'getCustomDimension',
