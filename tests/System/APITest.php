@@ -69,8 +69,8 @@ class APITest extends SystemTestCase
             $this->clearCaches();
         }
 
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '5.2.0-b6', '<');
-        $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '';
+        $apiOutputIsMissingMetricChanges = version_compare(Version::VERSION, '5.2.0-b6', '<');
+        $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricChanges ? '_Old' : '';
         $testSuffix = in_array($api, ['API.getReportPagesMetadata', 'API.getWidgetMetadata']) && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
@@ -96,8 +96,6 @@ class APITest extends SystemTestCase
             return;
         }
 
-        $apiOutputIsMissingMetricTypes = version_compare(Version::VERSION, '4.13.4-b1', '<');
-
         $this->clearCaches();
         $this->makeSureToLoadCustomReports();
 
@@ -107,7 +105,7 @@ class APITest extends SystemTestCase
             'period' => 'day',
         );
 
-        $testSuffix = 'withCustomReports' . ('API.getReportMetadata' == $api && $apiOutputIsMissingMetricTypes ? '_Old' : '');
+        $testSuffix = 'withCustomReports';
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
 

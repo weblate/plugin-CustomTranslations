@@ -2696,7 +2696,7 @@
 		</subcategory>
 		<module>Referrers</module>
 		<action>getCampaigns</action>
-		<order>5</order>
+		<order>6</order>
 		<parameters>
 			<forceView>1</forceView>
 			<viewDataTable>tableGoals</viewDataTable>
@@ -2806,6 +2806,39 @@
 			<segmented_visitor_log_segment_suffix>visitEcommerceStatus==ordered</segmented_visitor_log_segment_suffix>
 		</parameters>
 		<uniqueId>widgetReferrersgetSearchEnginesforceView1viewDataTabletableGoalsdocumentationForGoalsPage1idGoalecommerceOrdersegmented_visitor_log_segment_suffixvisitEcommerceStatus3D3Dordered</uniqueId>
+		<isWide>0</isWide>
+		<viewDataTable>tableGoals</viewDataTable>
+		<isReport>1</isReport>
+	</row>
+	<row>
+		<name>Sales by Referrers: Social Networks</name>
+		<category>
+			<id>Goals_Ecommerce</id>
+			<name>Ecommerce</name>
+			<order>20</order>
+			<icon>icon-reporting-ecommerce</icon>
+			<help />
+			<widget />
+		</category>
+		<subcategory>
+			<id>Ecommerce_Sales</id>
+			<name>Sales</name>
+			<order>15</order>
+			<help>&lt;p&gt;This section contains an extensive collection of reports to help you analyse the different conditions that most commonly lead to sales, such as the traffic and campaign sources, user time and location and devices used to access them.&lt;/p&gt;&lt;p&gt;You can also learn exactly how revenue is associated with each dimension, such as specific traffic types or tracked campaigns.&lt;/p&gt;</help>
+		</subcategory>
+		<module>Referrers</module>
+		<action>getSocials</action>
+		<order>5</order>
+		<parameters>
+			<forceView>1</forceView>
+			<viewDataTable>tableGoals</viewDataTable>
+			<module>Referrers</module>
+			<action>getSocials</action>
+			<documentationForGoalsPage>1</documentationForGoalsPage>
+			<idGoal>ecommerceOrder</idGoal>
+			<segmented_visitor_log_segment_suffix>visitEcommerceStatus==ordered</segmented_visitor_log_segment_suffix>
+		</parameters>
+		<uniqueId>widgetReferrersgetSocialsforceView1viewDataTabletableGoalsdocumentationForGoalsPage1idGoalecommerceOrdersegmented_visitor_log_segment_suffixvisitEcommerceStatus3D3Dordered</uniqueId>
 		<isWide>0</isWide>
 		<viewDataTable>tableGoals</viewDataTable>
 		<isReport>1</isReport>
@@ -3126,33 +3159,5 @@
 				<isReport>1</isReport>
 			</row>
 		</widgets>
-	</row>
-	<row>
-		<name>Pie graph</name>
-		<category>
-			<id>ExampleUI_UiFramework</id>
-			<name>UI Framework</name>
-			<order>90</order>
-			<icon />
-			<help />
-			<widget />
-		</category>
-		<subcategory>
-			<id>Pie graph</id>
-			<name>Pie graph</name>
-			<order>99</order>
-			<help />
-		</subcategory>
-		<module>ExampleUI</module>
-		<action>getPlanetRatios</action>
-		<order>212</order>
-		<parameters>
-			<module>ExampleUI</module>
-			<action>getPlanetRatios</action>
-		</parameters>
-		<uniqueId>widgetExampleUIgetPlanetRatios</uniqueId>
-		<isWide>0</isWide>
-		<viewDataTable>graphPie</viewDataTable>
-		<isReport>1</isReport>
 	</row>
 </result>
