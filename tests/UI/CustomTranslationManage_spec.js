@@ -47,6 +47,7 @@ describe("CustomTranslationManage", function () {
 
     it('should load manage page', async function () {
         await page.goto(url);
+        await page.waitForNetworkIdle();
         expect(await page.screenshotSelector('#content')).to.matchImage('loaded');
     });
 
@@ -59,11 +60,14 @@ describe("CustomTranslationManage", function () {
         await setTranslation(page, 'eventLabel', 2, 'eventKey');
         await setTranslation(page, 'eventLabel', 2, 'eventVal2', true);
         await saveTranslation(page, 'eventLabel');
+        await page.waitForNetworkIdle();
+        await page.waitForSelector('.matomo-save-button');
         expect(await page.screenshotSelector('#content')).to.matchImage('values');
     });
 
     it('should show save values on reload', async function () {
         await page.goto(url);
+        await page.waitForNetworkIdle();
         expect(await page.screenshotSelector('#content')).to.matchImage('values_saved_verify');
     });
 });
