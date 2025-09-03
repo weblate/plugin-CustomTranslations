@@ -1,1 +1,13 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "翻译自定义维度实体的名称",
+        "CustomDimensionName": "自定义维度名称",
+        "CustomDimensionValue": "自定义维度值",
+        "CustomDimensionValueDescription": "翻译跟踪事件值的名称",
+        "CustomReportName": "自定义报告名称",
+        "EventValue": "事件值",
+        "EventValueDescription": "翻译跟踪事件值的名称",
+        "Translation": "翻译",
+        "TranslationType": "翻译类型"
+    }
+}
