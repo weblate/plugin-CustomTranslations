@@ -11,6 +11,7 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_actions>Actions</nb_actions>
 			<nb_pageviews>Pageviews</nb_pageviews>
+			<hits>Hits</hits>
 			<revenue>Revenue</revenue>
 			<nb_conversions>Conversions</nb_conversions>
 			<orders>Ecommerce Orders</orders>
@@ -20,11 +21,13 @@
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
 			<nb_pageviews>The number of times this page was visited.</nb_pageviews>
+			<hits>The total count of all interactions recorded on your website, including page views, link clicks, downloads, and events.</hits>
 		</metricsDocumentation>
 		<processedMetrics>
 			<visits_evolution>Visits Evolution</visits_evolution>
 			<actions_evolution>Actions Evolution</actions_evolution>
 			<pageviews_evolution>Pageviews Evolution</pageviews_evolution>
+			<hits_evolution>Hits Evolution</hits_evolution>
 			<revenue_evolution>Revenue Evolution</revenue_evolution>
 			<nb_conversions_evolution>Conversions Evolution</nb_conversions_evolution>
 			<orders_evolution>Ecommerce Orders Evolution</orders_evolution>
@@ -34,6 +37,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_actions>number</nb_actions>
 			<nb_pageviews>number</nb_pageviews>
+			<hits>number</hits>
 			<revenue>money</revenue>
 			<nb_conversions>number</nb_conversions>
 			<orders>number</orders>
@@ -41,6 +45,7 @@
 			<visits_evolution>percent</visits_evolution>
 			<actions_evolution>percent</actions_evolution>
 			<pageviews_evolution>percent</pageviews_evolution>
+			<hits_evolution>percent</hits_evolution>
 			<revenue_evolution>percent</revenue_evolution>
 			<nb_conversions_evolution>percent</nb_conversions_evolution>
 			<orders_evolution>percent</orders_evolution>
@@ -61,6 +66,7 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_actions>Actions</nb_actions>
 			<nb_pageviews>Pageviews</nb_pageviews>
+			<hits>Hits</hits>
 			<revenue>Revenue</revenue>
 			<nb_conversions>Conversions</nb_conversions>
 			<orders>Ecommerce Orders</orders>
@@ -70,11 +76,13 @@
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
 			<nb_pageviews>The number of times this page was visited.</nb_pageviews>
+			<hits>The total count of all interactions recorded on your website, including page views, link clicks, downloads, and events.</hits>
 		</metricsDocumentation>
 		<processedMetrics>
 			<visits_evolution>Visits Evolution</visits_evolution>
 			<actions_evolution>Actions Evolution</actions_evolution>
 			<pageviews_evolution>Pageviews Evolution</pageviews_evolution>
+			<hits_evolution>Hits Evolution</hits_evolution>
 			<revenue_evolution>Revenue Evolution</revenue_evolution>
 			<nb_conversions_evolution>Conversions Evolution</nb_conversions_evolution>
 			<orders_evolution>Ecommerce Orders Evolution</orders_evolution>
@@ -84,6 +92,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_actions>number</nb_actions>
 			<nb_pageviews>number</nb_pageviews>
+			<hits>number</hits>
 			<revenue>money</revenue>
 			<nb_conversions>number</nb_conversions>
 			<orders>number</orders>
@@ -91,6 +100,7 @@
 			<visits_evolution>percent</visits_evolution>
 			<actions_evolution>percent</actions_evolution>
 			<pageviews_evolution>percent</pageviews_evolution>
+			<hits_evolution>percent</hits_evolution>
 			<revenue_evolution>percent</revenue_evolution>
 			<nb_conversions_evolution>percent</nb_conversions_evolution>
 			<orders_evolution>percent</orders_evolution>
@@ -154,15 +164,17 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -173,6 +185,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
@@ -185,6 +198,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getCountry</uniqueId>
@@ -201,15 +220,17 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -220,6 +241,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
@@ -232,6 +254,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getContinent</uniqueId>
@@ -248,15 +276,17 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -267,6 +297,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
@@ -279,6 +310,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getRegion</uniqueId>
@@ -305,7 +342,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -346,15 +383,17 @@
 			<nb_visits>Visits</nb_visits>
 			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -365,6 +404,7 @@
 			<nb_visits>number</nb_visits>
 			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
@@ -377,6 +417,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>UserCountry_getCity</uniqueId>
@@ -403,7 +449,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -454,7 +500,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -478,6 +524,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getType</uniqueId>
@@ -504,7 +556,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -528,6 +580,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getModel</uniqueId>
@@ -554,7 +612,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -578,6 +636,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getBrand</uniqueId>
@@ -604,7 +668,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -655,7 +719,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -706,7 +770,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -737,6 +801,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>DevicesDetection_getBrowsers</uniqueId>
@@ -763,7 +833,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -814,7 +884,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -865,7 +935,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -916,7 +986,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -951,6 +1021,7 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_visits_percentage>The percentage of total visits where the plugin was detected. A visit may include multiple plugins. The value is rounded down to whole numbers.</nb_visits_percentage>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_visits_percentage>% Visits</nb_visits_percentage>
@@ -985,7 +1056,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -1036,7 +1107,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -1061,6 +1132,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		<uniqueId>VisitTime_getVisitInformationPerServerTime</uniqueId>
 	</row>
@@ -1086,7 +1163,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -1133,10 +1210,11 @@
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_visits_converted>Number of visits where at least one goal was successfully converted.</nb_visits_converted>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -1184,7 +1262,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -1209,6 +1287,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>CustomVariables_getCustomVariables</uniqueId>
@@ -1225,11 +1309,15 @@
 		<dimension>DimensionVisit2</dimension>
 		<metrics>
 			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
@@ -1241,7 +1329,9 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
@@ -1263,11 +1353,15 @@
 		<dimension>RenamedDimVisit1</dimension>
 		<metrics>
 			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
@@ -1279,7 +1373,9 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
 			<avg_time_on_site>duration_s</avg_time_on_site>
 			<bounce_rate>percent</bounce_rate>
 			<nb_actions_per_visit>number</nb_actions_per_visit>
@@ -1304,6 +1400,7 @@
 			<nb_uniq_outlinks>Unique Outlinks</nb_uniq_outlinks>
 			<nb_searches>Searches</nb_searches>
 			<nb_keywords>Unique Keywords</nb_keywords>
+			<hits>Hits</hits>
 		</metrics>
 		<metricsDocumentation>
 			<nb_pageviews>The number of times this page was visited.</nb_pageviews>
@@ -1313,6 +1410,7 @@
 			<nb_outlinks>The number of times this link was clicked.</nb_outlinks>
 			<nb_uniq_outlinks>The number of visits that involved a click on this link. If a link was clicked multiple times during one visit, it is only counted once.</nb_uniq_outlinks>
 			<nb_searches>The number of visits that searched for this keyword on your website's search engine.</nb_searches>
+			<hits>The total count of all interactions recorded on your website, including page views, link clicks, downloads, and events.</hits>
 			<avg_time_generation>The average time it took to generate the page. This metric includes the time it took the server to generate the web page, plus the time it took for the visitor to download the response from the server. A lower 'Avg. generation time' means a faster website for your visitors!</avg_time_generation>
 		</metricsDocumentation>
 		<processedMetrics>
@@ -1327,6 +1425,7 @@
 			<nb_uniq_outlinks>number</nb_uniq_outlinks>
 			<nb_searches>number</nb_searches>
 			<nb_keywords>number</nb_keywords>
+			<hits>number</hits>
 			<avg_time_generation>duration_s</avg_time_generation>
 		</metricTypes>
 		
@@ -1404,6 +1503,23 @@
 				<action>getExitPageUrls</action>
 			</row>
 		</relatedReports>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<nb_conversions_attrib>Conversions</nb_conversions_attrib>
+			<revenue_attrib>Revenue</revenue_attrib>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+			<nb_conversions_page_rate>Viewed before conversion rate</nb_conversions_page_rate>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<nb_conversions_attrib>number</nb_conversions_attrib>
+			<revenue_attrib>money</revenue_attrib>
+			<nb_conversions_page_rate>percent</nb_conversions_page_rate>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getPageUrls</uniqueId>
@@ -1423,7 +1539,7 @@
 		<metricsDocumentation>
 			<entry_nb_visits>Number of visits that started on this page.</entry_nb_visits>
 			<entry_bounce_count>Number of visits that started and ended on this page. This means that the visitor left the website after viewing only this page.</entry_bounce_count>
-			<avg_time_on_page>The average amount of time visitors spent on this page (only the page, not the entire website).</avg_time_on_page>
+			<bounce_rate>The percentage of visits that started on this page and left the website straight away.</bounce_rate>
 			<avg_time_generation>The average time it took to generate the page. This metric includes the time it took the server to generate the web page, plus the time it took for the visitor to download the response from the server. A lower 'Avg. generation time' means a faster website for your visitors!</avg_time_generation>
 		</metricsDocumentation>
 		<processedMetrics>
@@ -1446,6 +1562,25 @@
 				<action>getEntryPageTitles</action>
 			</row>
 		</relatedReports>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<nb_conversions_entry>Conversions</nb_conversions_entry>
+			<revenue_entry>Revenue</revenue_entry>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+			<revenue_per_entry>Revenue per Entry</revenue_per_entry>
+			<nb_conversions_entry_rate>Conversion Rate</nb_conversions_entry_rate>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<nb_conversions_entry>number</nb_conversions_entry>
+			<revenue_entry>money</revenue_entry>
+			<revenue_per_entry>number</revenue_per_entry>
+			<nb_conversions_entry_rate>percent</nb_conversions_entry_rate>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getEntryPageUrls</uniqueId>
@@ -1493,6 +1628,25 @@
 				<action>getEntryPageUrls</action>
 			</row>
 		</relatedReports>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<nb_conversions_entry>Conversions</nb_conversions_entry>
+			<revenue_entry>Revenue</revenue_entry>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+			<revenue_per_entry>Revenue per Entry</revenue_per_entry>
+			<nb_conversions_entry_rate>Conversion Rate</nb_conversions_entry_rate>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<nb_conversions_entry>number</nb_conversions_entry>
+			<revenue_entry>money</revenue_entry>
+			<revenue_per_entry>number</revenue_per_entry>
+			<nb_conversions_entry_rate>percent</nb_conversions_entry_rate>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getEntryPageTitles</uniqueId>
@@ -1635,6 +1789,23 @@
 				<action>getExitPageTitles</action>
 			</row>
 		</relatedReports>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<nb_conversions_attrib>Conversions</nb_conversions_attrib>
+			<revenue_attrib>Revenue</revenue_attrib>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+			<nb_conversions_page_rate>Viewed before conversion rate</nb_conversions_page_rate>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<nb_conversions_attrib>number</nb_conversions_attrib>
+			<revenue_attrib>money</revenue_attrib>
+			<nb_conversions_page_rate>percent</nb_conversions_page_rate>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Actions_getPageTitles</uniqueId>
@@ -1867,6 +2038,8 @@
 		</dimensions>
 		<metrics>
 			<nb_events>Events</nb_events>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<sum_event_value>Event value</sum_event_value>
 			<min_event_value>Minimum Event value</min_event_value>
 			<max_event_value>Maximum Event value</max_event_value>
@@ -1874,6 +2047,8 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_events>Total number of events</nb_events>
+			<nb_visits>The total number of visits where at least one event was triggered.</nb_visits>
+			<nb_uniq_visitors>The number of deduplicated visitors who triggered an event on your website. Every visitor is only counted once, even if they visit or trigger multiple events on the website.</nb_uniq_visitors>
 			<sum_event_value>The sum of event values</sum_event_value>
 			<min_event_value>The minimum value for this event</min_event_value>
 			<max_event_value>The maximum value for this event</max_event_value>
@@ -1885,6 +2060,8 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_events>number</nb_events>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<sum_event_value>number</sum_event_value>
 			<min_event_value>number</min_event_value>
 			<max_event_value>number</max_event_value>
@@ -1911,6 +2088,8 @@
 		</dimensions>
 		<metrics>
 			<nb_events>Events</nb_events>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<sum_event_value>Event value</sum_event_value>
 			<min_event_value>Minimum Event value</min_event_value>
 			<max_event_value>Maximum Event value</max_event_value>
@@ -1918,6 +2097,8 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_events>Total number of events</nb_events>
+			<nb_visits>The total number of visits where at least one event was triggered.</nb_visits>
+			<nb_uniq_visitors>The number of deduplicated visitors who triggered an event on your website. Every visitor is only counted once, even if they visit or trigger multiple events on the website.</nb_uniq_visitors>
 			<sum_event_value>The sum of event values</sum_event_value>
 			<min_event_value>The minimum value for this event</min_event_value>
 			<max_event_value>The maximum value for this event</max_event_value>
@@ -1929,6 +2110,8 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_events>number</nb_events>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<sum_event_value>number</sum_event_value>
 			<min_event_value>number</min_event_value>
 			<max_event_value>number</max_event_value>
@@ -1955,6 +2138,8 @@
 		</dimensions>
 		<metrics>
 			<nb_events>Events</nb_events>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
 			<sum_event_value>Event value</sum_event_value>
 			<min_event_value>Minimum Event value</min_event_value>
 			<max_event_value>Maximum Event value</max_event_value>
@@ -1962,6 +2147,8 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_events>Total number of events</nb_events>
+			<nb_visits>The total number of visits where at least one event was triggered.</nb_visits>
+			<nb_uniq_visitors>The number of deduplicated visitors who triggered an event on your website. Every visitor is only counted once, even if they visit or trigger multiple events on the website.</nb_uniq_visitors>
 			<sum_event_value>The sum of event values</sum_event_value>
 			<min_event_value>The minimum value for this event</min_event_value>
 			<max_event_value>The maximum value for this event</max_event_value>
@@ -1973,6 +2160,8 @@
 		</processedMetrics>
 		<metricTypes>
 			<nb_events>number</nb_events>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
 			<sum_event_value>number</sum_event_value>
 			<min_event_value>number</min_event_value>
 			<max_event_value>number</max_event_value>
@@ -2101,6 +2290,7 @@
 		</metrics>
 		<metricsDocumentation>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_visits_percentage>The percentage of totals visits, where visitors had this amount of visits in total yet.</nb_visits_percentage>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_visits_percentage>% Visits</nb_visits_percentage>
@@ -2248,6 +2438,7 @@
 		<metricsDocumentation>
 			<nb_hits>The number of times this page was visited.</nb_hits>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<avg_time_on_dimension>Avg. Time on custom action dimension is the average time visitors spent on a specific custom action before moving to another tracked action. Calculated by summing the time spent on the action across all visits and dividing it by the number of times the action was performed.</avg_time_on_dimension>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
 			<exit_rate>The percentage of visits that left the website after viewing this page.</exit_rate>
 			<avg_time_generation>The average time it took to generate the page. This metric includes the time it took the server to generate the web page, plus the time it took for the visitor to download the response from the server. A lower 'Avg. generation time' means a faster website for your visitors!</avg_time_generation>
@@ -2288,6 +2479,7 @@
 		<metricsDocumentation>
 			<nb_hits>The number of times this page was visited.</nb_hits>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<avg_time_on_dimension>Avg. Time on custom action dimension is the average time visitors spent on a specific custom action before moving to another tracked action. Calculated by summing the time spent on the action across all visits and dividing it by the number of times the action was performed.</avg_time_on_dimension>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
 			<exit_rate>The percentage of visits that left the website after viewing this page.</exit_rate>
 			<avg_time_generation>The average time it took to generate the page. This metric includes the time it took the server to generate the web page, plus the time it took for the visitor to download the response from the server. A lower 'Avg. generation time' means a faster website for your visitors!</avg_time_generation>
@@ -2322,6 +2514,8 @@
 			<Referrers_visitorsFromSearchEngines_percent>Percent of Visitors from Search Engines</Referrers_visitorsFromSearchEngines_percent>
 			<Referrers_visitorsFromSocialNetworks>Visitors from Social Networks</Referrers_visitorsFromSocialNetworks>
 			<Referrers_visitorsFromSocialNetworks_percent>Percent of Visitors from Social Networks</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromAIAssistants>Visitors from AI Assistants</Referrers_visitorsFromAIAssistants>
+			<Referrers_visitorsFromAIAssistants_percent>Percent of Visitors from AI Assistants</Referrers_visitorsFromAIAssistants_percent>
 			<Referrers_visitorsFromDirectEntry>Visitors from Direct Entry</Referrers_visitorsFromDirectEntry>
 			<Referrers_visitorsFromDirectEntry_percent>Percent of Visitors from Direct Entry</Referrers_visitorsFromDirectEntry_percent>
 			<Referrers_visitorsFromWebsites>Visitors from Websites</Referrers_visitorsFromWebsites>
@@ -2330,6 +2524,7 @@
 			<Referrers_visitorsFromCampaigns_percent>Percent of Visitors from Campaigns</Referrers_visitorsFromCampaigns_percent>
 			<Referrers_distinctSearchEngines>Distinct search engines</Referrers_distinctSearchEngines>
 			<Referrers_distinctSocialNetworks>Distinct social networks</Referrers_distinctSocialNetworks>
+			<Referrers_distinctAIAssistants>Distinct AI assistants</Referrers_distinctAIAssistants>
 			<Referrers_distinctWebsites>Distinct websites</Referrers_distinctWebsites>
 			<Referrers_distinctKeywords>Distinct keywords</Referrers_distinctKeywords>
 			<Referrers_distinctCampaigns>Distinct campaigns</Referrers_distinctCampaigns>
@@ -2339,6 +2534,8 @@
 			<Referrers_visitorsFromSearchEngines_percent>percent</Referrers_visitorsFromSearchEngines_percent>
 			<Referrers_visitorsFromSocialNetworks>number</Referrers_visitorsFromSocialNetworks>
 			<Referrers_visitorsFromSocialNetworks_percent>percent</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromAIAssistants>number</Referrers_visitorsFromAIAssistants>
+			<Referrers_visitorsFromAIAssistants_percent>percent</Referrers_visitorsFromAIAssistants_percent>
 			<Referrers_visitorsFromDirectEntry>number</Referrers_visitorsFromDirectEntry>
 			<Referrers_visitorsFromDirectEntry_percent>percent</Referrers_visitorsFromDirectEntry_percent>
 			<Referrers_visitorsFromWebsites>number</Referrers_visitorsFromWebsites>
@@ -2347,6 +2544,7 @@
 			<Referrers_visitorsFromCampaigns_percent>percent</Referrers_visitorsFromCampaigns_percent>
 			<Referrers_distinctSearchEngines>number</Referrers_distinctSearchEngines>
 			<Referrers_distinctSocialNetworks>number</Referrers_distinctSocialNetworks>
+			<Referrers_distinctAIAssistants>number</Referrers_distinctAIAssistants>
 			<Referrers_distinctWebsites>number</Referrers_distinctWebsites>
 			<Referrers_distinctKeywords>number</Referrers_distinctKeywords>
 			<Referrers_distinctCampaigns>number</Referrers_distinctCampaigns>
@@ -2377,7 +2575,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2402,6 +2600,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getReferrerType</uniqueId>
@@ -2428,7 +2632,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2475,7 +2679,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2500,6 +2704,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getKeywords</uniqueId>
@@ -2530,7 +2740,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2555,6 +2765,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getSearchEngines</uniqueId>
@@ -2585,7 +2801,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2610,6 +2826,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getWebsites</uniqueId>
@@ -2621,7 +2843,7 @@
 		<module>Referrers</module>
 		<action>getSocials</action>
 		<dimension>Social network</dimension>
-		<documentation>In this table, you can see which websites referred visitors to your site. &lt;br /&gt; By clicking on a row in the table, you can see which URLs the links to your website were on.</documentation>
+		<documentation>This report shows which social networks led visitors to your website.&lt;br /&gt;By clicking on a row in the table, you can see from which social network pages visitors came to your website.</documentation>
 		<dimensions>
 			<Referrers_SocialNetwork>Social network</Referrers_SocialNetwork>
 			<Referrers_WebsitePage>Website Page</Referrers_WebsitePage>
@@ -2640,13 +2862,12 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
 			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
 			<bounce_rate>Bounce Rate</bounce_rate>
-			<conversion_rate>Conversion Rate</conversion_rate>
 		</processedMetrics>
 		<metricTypes>
 			<nb_visits>number</nb_visits>
@@ -2659,9 +2880,83 @@
 			<conversion_rate>percent</conversion_rate>
 		</metricTypes>
 		<actionToLoadSubTables>getUrlsForSocial</actionToLoadSubTables>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<revenue>Revenue</revenue>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getSocials</uniqueId>
+	</row>
+	<row>
+		<category>Referrers</category>
+		<subcategory>AI Assistants</subcategory>
+		<name>AI Assistants</name>
+		<module>Referrers</module>
+		<action>getAIAssistants</action>
+		<dimension>AI Assistant</dimension>
+		<documentation>This report shows which AI assistants led visitors to your website.&lt;br /&gt;By clicking on a row in the table, you can see from which AI assistant pages visitors came to your website.</documentation>
+		<dimensions>
+			<Referrers_AIAssistant>AI Assistant</Referrers_AIAssistant>
+			<Referrers_WebsitePage>Website Page</Referrers_WebsitePage>
+		</dimensions>
+		<metrics>
+			<nb_visits>Visits</nb_visits>
+			<nb_uniq_visitors>Unique visitors</nb_uniq_visitors>
+			<nb_actions>Actions</nb_actions>
+			<nb_users>Users</nb_users>
+		</metrics>
+		<metricsDocumentation>
+			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
+			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
+			<nb_actions>The number of actions performed by your visitors. Actions can be page views, internal site searches, downloads or outlinks.</nb_actions>
+			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
+			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
+			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
+			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
+		</metricsDocumentation>
+		<processedMetrics>
+			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
+			<avg_time_on_site>Avg. Time on Website</avg_time_on_site>
+			<bounce_rate>Bounce Rate</bounce_rate>
+		</processedMetrics>
+		<metricTypes>
+			<nb_visits>number</nb_visits>
+			<nb_uniq_visitors>number</nb_uniq_visitors>
+			<nb_actions>number</nb_actions>
+			<nb_users>number</nb_users>
+			<nb_actions_per_visit>number</nb_actions_per_visit>
+			<avg_time_on_site>duration_s</avg_time_on_site>
+			<bounce_rate>percent</bounce_rate>
+			<conversion_rate>percent</conversion_rate>
+		</metricTypes>
+		<actionToLoadSubTables>getUrlsForAIAssistant</actionToLoadSubTables>
+		<metricsGoal>
+			<nb_conversions>Conversions</nb_conversions>
+			<revenue>Revenue</revenue>
+		</metricsGoal>
+		<processedMetricsGoal>
+			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
+		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
+		
+		
+		<uniqueId>Referrers_getAIAssistants</uniqueId>
 	</row>
 	<row>
 		<category>Referrers</category>
@@ -2690,7 +2985,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -2715,6 +3010,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		
 		<uniqueId>Referrers_getCampaigns</uniqueId>
@@ -2740,7 +3041,8 @@
 			<items>Purchased Products</items>
 		</metrics>
 		<metricsDocumentation>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<nb_visits_converted>Number of visits where at least one goal was successfully converted.</nb_visits_converted>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<avg_order_revenue>Average Order Value</avg_order_revenue>
@@ -2816,7 +3118,7 @@
 			<items>Products left in cart</items>
 		</metrics>
 		<metricsDocumentation>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<avg_order_revenue>Average Order Value</avg_order_revenue>
@@ -2886,6 +3188,15 @@
 			<orders>Unique Purchases</orders>
 			<nb_visits>Visits</nb_visits>
 		</metrics>
+		<metricsDocumentation>
+			<revenue>The total revenue generated by Product sales. Excludes tax, shipping and discount.</revenue>
+			<quantity>Quantity is the total number of products sold for each Product Name.</quantity>
+			<orders>The total number of Ecommerce orders which contained this Product Name at least once.</orders>
+			<avg_price>The average price for this Product Name.</avg_price>
+			<avg_quantity>The average quantity of this Product Name sold in Ecommerce orders.</avg_quantity>
+			<nb_visits>The number of visits on the Product/Category page. This is also used to process the Product Name conversion rate. This metric is in the report if Ecommerce view tracking was setup on Product/Category pages.</nb_visits>
+			<conversion_rate>The Product Name conversion rate is the number of orders containing this product divided by number of visits on the product page.</conversion_rate>
+		</metricsDocumentation>
 		<processedMetrics>
 			<avg_price>Average Price</avg_price>
 			<avg_quantity>Average Quantity</avg_quantity>
@@ -2918,6 +3229,15 @@
 			<orders>Unique Purchases</orders>
 			<nb_visits>Visits</nb_visits>
 		</metrics>
+		<metricsDocumentation>
+			<revenue>The total revenue generated by Product sales. Excludes tax, shipping and discount.</revenue>
+			<quantity>Quantity is the total number of products sold for each Product SKU.</quantity>
+			<orders>The total number of Ecommerce orders which contained this Product SKU at least once.</orders>
+			<avg_price>The average price for this Product SKU.</avg_price>
+			<avg_quantity>The average quantity of this Product SKU sold in Ecommerce orders.</avg_quantity>
+			<nb_visits>The number of visits on the Product/Category page. This is also used to process the Product SKU conversion rate. This metric is in the report if Ecommerce view tracking was setup on Product/Category pages.</nb_visits>
+			<conversion_rate>The Product SKU conversion rate is the number of orders containing this product divided by number of visits on the product page.</conversion_rate>
+		</metricsDocumentation>
 		<processedMetrics>
 			<avg_price>Average Price</avg_price>
 			<avg_quantity>Average Quantity</avg_quantity>
@@ -2950,6 +3270,15 @@
 			<orders>Unique Purchases</orders>
 			<nb_visits>Visits</nb_visits>
 		</metrics>
+		<metricsDocumentation>
+			<revenue>The total revenue generated by Product sales. Excludes tax, shipping and discount.</revenue>
+			<quantity>Quantity is the total number of products sold for each Product Category.</quantity>
+			<orders>The total number of Ecommerce orders which contained this Product Category at least once.</orders>
+			<avg_price>The average price for this Product Category.</avg_price>
+			<avg_quantity>The average quantity of this Product Category sold in Ecommerce orders.</avg_quantity>
+			<nb_visits>The number of visits on the Product/Category page. This is also used to process the Product Category conversion rate. This metric is in the report if Ecommerce view tracking was setup on Product/Category pages.</nb_visits>
+			<conversion_rate>The Product Category conversion rate is the number of orders containing this product divided by number of visits on the product page.</conversion_rate>
+		</metricsDocumentation>
 		<processedMetrics>
 			<avg_price>Average Price</avg_price>
 			<avg_quantity>Average Quantity</avg_quantity>
@@ -2981,7 +3310,8 @@
 			<revenue>Revenue</revenue>
 		</metrics>
 		<metricsDocumentation>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<nb_visits_converted>Number of visits where at least one goal was successfully converted.</nb_visits_converted>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<conversion_rate>Conversion Rate</conversion_rate>
@@ -3007,6 +3337,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricsDocumentation>
+			<nb_conversions>The total number of goal conversions that occurred within each visit. Represents how many visits took place before converting.</nb_conversions>
+		</metricsDocumentation>
 		<metricTypes>
 			<nb_conversions>number</nb_conversions>
 		</metricTypes>
@@ -3018,6 +3351,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		<uniqueId>Goals_getVisitsUntilConversion</uniqueId>
 	</row>
@@ -3032,6 +3371,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricsDocumentation>
+			<nb_conversions>The total number of goal conversions that occurred within each time range. Represents how many days passed between a visitor's first interaction and their conversion.</nb_conversions>
+		</metricsDocumentation>
 		<metricTypes>
 			<nb_conversions>number</nb_conversions>
 		</metricTypes>
@@ -3043,6 +3385,12 @@
 		<processedMetricsGoal>
 			<revenue_per_visit>Revenue per Visit</revenue_per_visit>
 		</processedMetricsGoal>
+		<metricTypesGoal>
+			<revenue_per_visit>money</revenue_per_visit>
+			<nb_conversions>number</nb_conversions>
+			<conversion_rate>percent</conversion_rate>
+			<revenue>money</revenue>
+		</metricTypesGoal>
 		
 		<uniqueId>Goals_getDaysToConversion</uniqueId>
 	</row>
@@ -3062,7 +3410,8 @@
 			<revenue>Revenue</revenue>
 		</metrics>
 		<metricsDocumentation>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<nb_visits_converted>Number of visits where at least one goal was successfully converted.</nb_visits_converted>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<conversion_rate>Conversion Rate</conversion_rate>
@@ -3091,6 +3440,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricsDocumentation>
+			<nb_conversions>The total number of goal conversions that occurred within each visit. Represents how many visits took place before converting.</nb_conversions>
+		</metricsDocumentation>
 		<metricTypes>
 			<nb_conversions>number</nb_conversions>
 		</metricTypes>
@@ -3112,6 +3464,9 @@
 		<metrics>
 			<nb_conversions>Conversions</nb_conversions>
 		</metrics>
+		<metricsDocumentation>
+			<nb_conversions>The total number of goal conversions that occurred within each time range. Represents how many days passed between a visitor's first interaction and their conversion.</nb_conversions>
+		</metricsDocumentation>
 		<metricTypes>
 			<nb_conversions>number</nb_conversions>
 		</metricTypes>
@@ -3349,7 +3704,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -3391,7 +3746,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -3434,7 +3789,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -3477,7 +3832,7 @@
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 		</metricsDocumentation>
 		<processedMetrics>
 			<nb_actions_per_visit>Actions per Visit</nb_actions_per_visit>
@@ -3514,10 +3869,13 @@
 			<nb_uniq_outlinks>Unique Outlinks</nb_uniq_outlinks>
 			<nb_searches>Searches</nb_searches>
 			<nb_keywords>Unique Keywords</nb_keywords>
+			<hits>Hits</hits>
 			<Referrers_visitorsFromSearchEngines>Visitors from Search Engines</Referrers_visitorsFromSearchEngines>
 			<Referrers_visitorsFromSearchEngines_percent>Percent of Visitors from Search Engines</Referrers_visitorsFromSearchEngines_percent>
 			<Referrers_visitorsFromSocialNetworks>Visitors from Social Networks</Referrers_visitorsFromSocialNetworks>
 			<Referrers_visitorsFromSocialNetworks_percent>Percent of Visitors from Social Networks</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromAIAssistants>Visitors from AI Assistants</Referrers_visitorsFromAIAssistants>
+			<Referrers_visitorsFromAIAssistants_percent>Percent of Visitors from AI Assistants</Referrers_visitorsFromAIAssistants_percent>
 			<Referrers_visitorsFromDirectEntry>Visitors from Direct Entry</Referrers_visitorsFromDirectEntry>
 			<Referrers_visitorsFromDirectEntry_percent>Percent of Visitors from Direct Entry</Referrers_visitorsFromDirectEntry_percent>
 			<Referrers_visitorsFromWebsites>Visitors from Websites</Referrers_visitorsFromWebsites>
@@ -3526,6 +3884,7 @@
 			<Referrers_visitorsFromCampaigns_percent>Percent of Visitors from Campaigns</Referrers_visitorsFromCampaigns_percent>
 			<Referrers_distinctSearchEngines>Distinct search engines</Referrers_distinctSearchEngines>
 			<Referrers_distinctSocialNetworks>Distinct social networks</Referrers_distinctSocialNetworks>
+			<Referrers_distinctAIAssistants>Distinct AI assistants</Referrers_distinctAIAssistants>
 			<Referrers_distinctWebsites>Distinct websites</Referrers_distinctWebsites>
 			<Referrers_distinctKeywords>Distinct keywords</Referrers_distinctKeywords>
 			<Referrers_distinctCampaigns>Distinct campaigns</Referrers_distinctCampaigns>
@@ -3566,6 +3925,8 @@
 			<nb_outlinks>The number of times this link was clicked.</nb_outlinks>
 			<nb_uniq_outlinks>The number of visits that involved a click on this link. If a link was clicked multiple times during one visit, it is only counted once.</nb_uniq_outlinks>
 			<nb_searches>The number of visits that searched for this keyword on your website's search engine.</nb_searches>
+			<hits>The total count of all interactions recorded on your website, including page views, link clicks, downloads, and events.</hits>
+			<nb_visits_converted>Number of visits where at least one goal was successfully converted.</nb_visits_converted>
 			<nb_uniq_visitors>The number of unduplicated visitors coming to your website. Every user is only counted once, even if they visit the website multiple times a day.</nb_uniq_visitors>
 			<nb_visits>If a visitor comes to your website for the first time or if they visit a page more than 30 minutes after their last page view, this will be recorded as a new visit.</nb_visits>
 			<nb_users>The number of users logged in your website. It is the number of unique active users that have a User ID set (via the Tracking code function 'setUserId').</nb_users>
@@ -3578,7 +3939,7 @@
 			<avg_time_on_load>Average time (in seconds) it takes the browser to execute Javascript code waiting for the window.load event. This event is triggered once the DOM has completely rendered.</avg_time_on_load>
 			<avg_page_load_time>Average time (in seconds) it takes from requesting a page until the page is fully rendered within the browser</avg_page_load_time>
 			<avg_time_generation>The average time it took to generate the page. This metric includes the time it took the server to generate the web page, plus the time it took for the visitor to download the response from the server. A lower 'Avg. generation time' means a faster website for your visitors!</avg_time_generation>
-			<conversion_rate>The percentage of visits that triggered a goal conversion.</conversion_rate>
+			<conversion_rate>The percentage of visits that triggered a conversion. The conversion rate is calculated using the number of visits that converted at least one goal. Visits converting multiple goals are only counted once in the conversion rate.</conversion_rate>
 			<bounce_rate>The percentage of visits that only had a single pageview. This means, that the visitor left the website directly from the entrance page.</bounce_rate>
 			<nb_actions_per_visit>The average number of actions (page views, site searches, downloads or outlinks) that were performed during the visits.</nb_actions_per_visit>
 			<avg_time_on_site>The average duration of a visit.</avg_time_on_site>
@@ -3615,10 +3976,13 @@
 			<nb_uniq_outlinks>number</nb_uniq_outlinks>
 			<nb_searches>number</nb_searches>
 			<nb_keywords>number</nb_keywords>
+			<hits>number</hits>
 			<Referrers_visitorsFromSearchEngines>number</Referrers_visitorsFromSearchEngines>
 			<Referrers_visitorsFromSearchEngines_percent>percent</Referrers_visitorsFromSearchEngines_percent>
 			<Referrers_visitorsFromSocialNetworks>number</Referrers_visitorsFromSocialNetworks>
 			<Referrers_visitorsFromSocialNetworks_percent>percent</Referrers_visitorsFromSocialNetworks_percent>
+			<Referrers_visitorsFromAIAssistants>number</Referrers_visitorsFromAIAssistants>
+			<Referrers_visitorsFromAIAssistants_percent>percent</Referrers_visitorsFromAIAssistants_percent>
 			<Referrers_visitorsFromDirectEntry>number</Referrers_visitorsFromDirectEntry>
 			<Referrers_visitorsFromDirectEntry_percent>percent</Referrers_visitorsFromDirectEntry_percent>
 			<Referrers_visitorsFromWebsites>number</Referrers_visitorsFromWebsites>
@@ -3627,6 +3991,7 @@
 			<Referrers_visitorsFromCampaigns_percent>percent</Referrers_visitorsFromCampaigns_percent>
 			<Referrers_distinctSearchEngines>number</Referrers_distinctSearchEngines>
 			<Referrers_distinctSocialNetworks>number</Referrers_distinctSocialNetworks>
+			<Referrers_distinctAIAssistants>number</Referrers_distinctAIAssistants>
 			<Referrers_distinctWebsites>number</Referrers_distinctWebsites>
 			<Referrers_distinctKeywords>number</Referrers_distinctKeywords>
 			<Referrers_distinctCampaigns>number</Referrers_distinctCampaigns>
