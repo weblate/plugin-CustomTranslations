@@ -1,1 +1,19 @@
-{}
+{
+    "CustomTranslations": {
+        "CustomDimensionDescription": "Prevedi ime entiteta prilagođene dimenzije",
+        "CustomDimensionName": "Ime prilagođene dimenzije",
+        "CustomDimensionValue": "Vrijednost prilagođene dimenzije",
+        "CustomDimensionValueDescription": "Prevedi ime vrijednosti praćenog događaja",
+        "CustomReportDescription": "Prevedi ime prilagođenih entiteta izvještaja",
+        "CustomReportName": "Ime prilagođenog izvještaja",
+        "CustomTranslations": "Prilagođeni prijevodi",
+        "DashboardDescription": "Prevedi ime entiteta nadzorne ploče",
+        "DashboardName": "Ime nadzorne ploče",
+        "EventValue": "Vrijednost događaja",
+        "EventValueDescription": "Prevedi ime vrijednosti praćenog događaja",
+        "LanguageInlineHelp": "Odaberi jezik koji želiš prevesti.",
+        "PluginDescription": "Prevedi entitete i vrijednosti izvještaja na razne jezike",
+        "Translation": "Prijevod",
+        "TranslationType": "Vrsta prijevoda"
+    }
+}
