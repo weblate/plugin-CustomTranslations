@@ -71,7 +71,7 @@ class APITest extends SystemTestCase
 
         $apiOutputIsMissingMetricChanges = version_compare(Version::VERSION, '5.2.0-b6', '<');
         $testSuffix = 'API.getReportMetadata' == $api && $apiOutputIsMissingMetricChanges ? '_Old' : '';
-        $testSuffix = in_array($api, ['API.getReportPagesMetadata', 'API.getWidgetMetadata']) && version_compare(Version::VERSION, '5.0.0-rc5', '<=') ? '_Old' : $testSuffix;
+        $testSuffix = in_array($api, ['API.getReportPagesMetadata', 'API.getWidgetMetadata']) && version_compare(Version::VERSION, '5.9.0-b1', '<') ? '_Old' : $testSuffix;
 
         $this->runAnyApiTest($api, '', $params, array('testSuffix' => $testSuffix, 'xmlFieldsToRemove' => array('imageGraphUrl', 'imageGraphEvolutionUrl')));
     }
