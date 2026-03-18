@@ -52,7 +52,7 @@ jobs:
           test-type: 'PluginTests'
           matomo-test-branch: ${{ matrix.target }}
           artifacts-pass: ${{ secrets.ARTIFACTS_PASS }}
-          upload-artifacts: ${{ matrix.php == 'matomo5_min_php' && matrix.target == 'minimum_required_matomo' }}
+          upload-artifacts: ${{ matrix.php == 'matomo5_min_php' && matrix.target == 'maximum_supported_matomo' }}
           artifacts-protected: true
           dependent-plugins: 'innocraft/plugin-CustomReports'
   UI:
