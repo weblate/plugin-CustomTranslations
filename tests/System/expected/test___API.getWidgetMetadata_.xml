@@ -1527,6 +1527,10 @@
 		</parameters>
 		<uniqueId>widgetTransitionsgetTransitions</uniqueId>
 		<isWide>0</isWide>
+		<clientComponent>
+			<plugin>Transitions</plugin>
+			<name>TransitionsPage</name>
+		</clientComponent>
 	</row>
 	<row>
 		<name>Returning Visits Over Time</name>
