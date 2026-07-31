@@ -83,6 +83,14 @@ class ApiTest extends IntegrationTestCase
         $this->assertSame(array(), $this->api->getTranslationsForType(EventLabel::ID, 'de'));
     }
 
+    public function test_setTranslations_rejectsHtmlValues()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values cannot contain HTML.');
+
+        $this->api->setTranslations(DashboardEntity::ID, 'en', array('baz' => '<img src=x onerror=alert(1)>'));
+    }
+
     public function test_getTranslatableTypes_requiresSuperUserAccess()
     {
         $this->expectException(\Exception::class);

@@ -117,4 +117,20 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->expectExceptionMessage('$translations needs to be an array');
         $this->dao->set($this->typeId, 'nz', 'test');
     }
+
+    public function test_set_throwsExceptionWhenTranslationContainsHtml()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values cannot contain HTML.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => '<script>alert(1)</script>'));
+    }
+
+    public function test_set_throwsExceptionWhenTranslationContainsEncodedHtml()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values cannot contain HTML.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => '&lt;script&gt;alert(1)&lt;/script&gt;'));
+    }
 }

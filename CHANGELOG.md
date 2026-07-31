@@ -1,11 +1,15 @@
 ## Changelog
 
-### 5.0.3 - 27/04/2026
+### 5.0.4 - 2026-08-03
+
+- Added validation rule for translation values 
+
+### 5.0.3 - 2026-04-27
 
 - Updated API documentation
 
 
-### 5.0.2 - 02/03/2026
+### 5.0.2 - 2026-03-02
 
 - Updated API documentation
 

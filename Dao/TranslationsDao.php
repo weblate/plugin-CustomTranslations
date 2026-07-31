@@ -9,6 +9,7 @@
 
 namespace Piwik\Plugins\CustomTranslations\Dao;
 
+use Piwik\Common;
 use Piwik\Option;
 
 class TranslationsDao
@@ -39,7 +40,22 @@ class TranslationsDao
                 throw new \Exception('$translations needs to be an array');
             }
 
+            $this->validateTranslationValues($values);
             Option::set($this->makeId($typeId, $lang), json_encode($values));
+        }
+    }
+
+    private function validateTranslationValues(array $values)
+    {
+        foreach ($values as $value) {
+            if (!is_string($value)) {
+                continue;
+            }
+
+            $decodedValue = html_entity_decode($value, Common::HTML_ENCODING_QUOTE_STYLE, 'UTF-8');
+            if (strpos($decodedValue, '<') !== false || strpos($decodedValue, '>') !== false) {
+                throw new \Exception('Translation values cannot contain HTML.');
+            }
         }
     }
 
