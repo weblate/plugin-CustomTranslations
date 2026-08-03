@@ -9,12 +9,12 @@
 
 namespace Piwik\Plugins\CustomTranslations\Dao;
 
-use Piwik\Common;
 use Piwik\Option;
 
 class TranslationsDao
 {
     public const OPTION_LANG_PREFIX = 'CustomTranslations_lang_';
+    private const ALLOWED_HTML_TAG_PATTERN = '/^<\s*(?:\/\s*(?:b|strong|i|em)|(?:b|strong|i|em)|br\s*\/?)\s*>$/i';
 
     public function get($typeId, $lang)
     {
@@ -48,13 +48,31 @@ class TranslationsDao
     private function validateTranslationValues(array $values)
     {
         foreach ($values as $value) {
-            if (!is_string($value)) {
+            if (!is_string($value) || strpos($value, '<') === false) {
                 continue;
             }
 
-            $decodedValue = html_entity_decode($value, Common::HTML_ENCODING_QUOTE_STYLE, 'UTF-8');
-            if (strpos($decodedValue, '<') !== false || strpos($decodedValue, '>') !== false) {
-                throw new \Exception('Translation values cannot contain HTML.');
+            $this->validateAllowedHtml($value);
+        }
+    }
+
+    private function validateAllowedHtml($value)
+    {
+        if (preg_match_all('/<\s*\/?\s*[a-zA-Z][^>]*>/', $value, $matches)) {
+            foreach ($matches[0] as $tag) {
+                if (!preg_match(self::ALLOWED_HTML_TAG_PATTERN, $tag)) {
+                    if (preg_match('/^<\s*\/?\s*(b|strong|i|em|br)\b/i', $tag)) {
+                        throw new \Exception('Translation values cannot contain HTML attributes.');
+                    }
+
+                    throw new \Exception('Translation values can only contain a small set of formatting tags.');
+                }
+            }
+        }
+
+        if (preg_match('/<\s*!|<\s*\?/', $value)) {
+            if (preg_match('/<\s*(?:!--|\!DOCTYPE|\!\[CDATA\[|\?xml|\?php)/i', $value)) {
+                throw new \Exception('Translation values can only contain a small set of formatting tags.');
             }
         }
     }
