@@ -86,7 +86,7 @@ class ApiTest extends IntegrationTestCase
     public function test_setTranslations_rejectsHtmlValues()
     {
         $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Translation values cannot contain HTML.');
+        $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
 
         $this->api->setTranslations(DashboardEntity::ID, 'en', array('baz' => '<img src=x onerror=alert(1)>'));
     }
