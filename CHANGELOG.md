@@ -1,6 +1,6 @@
 ## Changelog
 
-### 5.0.4 - 2026-08-03
+### 5.0.4 - 2026-08-10
 
 - Added validation rule for translation values 
 
