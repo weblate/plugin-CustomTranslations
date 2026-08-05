@@ -9,6 +9,7 @@
 
 namespace Piwik\Plugins\CustomTranslations\tests\Integration;
 
+use Piwik\API\Request;
 use Piwik\Plugins\CustomTranslations\API;
 use Piwik\Plugins\CustomTranslations\tests\Fixtures\CustomTranslationsFixture;
 use Piwik\Plugins\CustomTranslations\TranslationTypes\DashboardEntity;
@@ -89,6 +90,39 @@ class ApiTest extends IntegrationTestCase
         $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
 
         $this->api->setTranslations(DashboardEntity::ID, 'en', array('baz' => '<img src=x onerror=alert(1)>'));
+    }
+
+    /**
+     * When requested through the API (as the UI does), values are sanitized before they reach the API method,
+     * eg `<script>` is received as `&lt;script&gt;`. Such values need to be rejected as well.
+     */
+    public function test_setTranslations_rejectsHtmlValuesWhenRequestedThroughApi()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
+
+        Request::processRequest('CustomTranslations.setTranslations', array(
+            'idType' => DashboardEntity::ID,
+            'languageCode' => 'en',
+            'translations' => array('baz' => '<img src=x onerror=alert(1)>'),
+        ), array());
+    }
+
+    /**
+     * The value is stored in its sanitized form, the json renderer decodes it again before it is returned to the UI.
+     */
+    public function test_setTranslations_allowsFormattingTagsWhenRequestedThroughApi()
+    {
+        Request::processRequest('CustomTranslations.setTranslations', array(
+            'idType' => DashboardEntity::ID,
+            'languageCode' => 'en',
+            'translations' => array('baz' => '<b>bazz</b>'),
+        ), array());
+
+        $this->assertSame(
+            array('baz' => '&lt;b&gt;bazz&lt;/b&gt;'),
+            $this->api->getTranslationsForType(DashboardEntity::ID, 'en')
+        );
     }
 
     public function test_getTranslatableTypes_requiresSuperUserAccess()
