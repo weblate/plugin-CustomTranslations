@@ -9,6 +9,7 @@
 
 namespace Piwik\Plugins\CustomTranslations\tests\Integration;
 
+use Piwik\Common;
 use Piwik\Plugins\CustomTranslations\Dao\TranslationsDao;
 use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
 
@@ -116,5 +117,82 @@ class TranslationsDaoTest extends IntegrationTestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('$translations needs to be an array');
         $this->dao->set($this->typeId, 'nz', 'test');
+    }
+
+    public function test_set_allowsTranslationContainingHtml()
+    {
+        $example = array('foo' => '<b>Hello</b><br /><i>World</i>');
+
+        $this->dao->set($this->typeId, 'nz', $example);
+
+        $this->assertSame($example, $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_allowsTranslationContainingAngleBracketsAsText()
+    {
+        $example = array('foo' => '1 < 2 and 3 > 2');
+
+        $this->dao->set($this->typeId, 'nz', $example);
+
+        $this->assertSame($example, $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_throwsExceptionWhenTranslationContainsDisallowedHtmlTag()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => '<script>alert(1)</script>'));
+    }
+
+    public function test_set_throwsExceptionWhenTranslationContainsHtmlAttributes()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values cannot contain HTML attributes.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => '<b onclick="alert(1)">Hello</b>'));
+    }
+
+    public function test_set_throwsExceptionWhenTranslationContainsUnclosedHtmlTag()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => '<img src=x onerror=alert(1)'));
+    }
+
+    public function test_set_allowsSanitizedTranslationContainingHtml()
+    {
+        // values passed through the API are sanitized before they reach the dao
+        $example = array('foo' => Common::sanitizeInputValue('<b>Hello</b><br /><i>World</i>'));
+
+        $this->dao->set($this->typeId, 'nz', $example);
+
+        $this->assertSame($example, $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_allowsSanitizedTranslationContainingAngleBracketsAsText()
+    {
+        $example = array('foo' => Common::sanitizeInputValue('1 < 2 and 3 > 2'));
+
+        $this->dao->set($this->typeId, 'nz', $example);
+
+        $this->assertSame($example, $this->dao->get($this->typeId, 'nz'));
+    }
+
+    public function test_set_throwsExceptionWhenSanitizedTranslationContainsDisallowedHtmlTag()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values can only contain a small set of formatting tags.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => Common::sanitizeInputValue('<script>alert(1)</script>')));
+    }
+
+    public function test_set_throwsExceptionWhenSanitizedTranslationContainsHtmlAttributes()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Translation values cannot contain HTML attributes.');
+
+        $this->dao->set($this->typeId, 'nz', array('foo' => Common::sanitizeInputValue('<b onclick="alert(1)">Hello</b>')));
     }
 }
