@@ -4,18 +4,21 @@
 		<label>MyName2</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
+		<nb_visits_percent_of_total>33.3%</nb_visits_percent_of_total>
 		<segment>eventName==MyName2</segment>
 	</row>
 	<row>
 		<label>MyName3</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
+		<nb_visits_percent_of_total>33.3%</nb_visits_percent_of_total>
 		<segment>eventName==MyName3</segment>
 	</row>
 	<row>
 		<label>RenamedEvent1</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
+		<nb_visits_percent_of_total>33.3%</nb_visits_percent_of_total>
 		<segment>eventName==genericValue1</segment>
 	</row>
 </result>
