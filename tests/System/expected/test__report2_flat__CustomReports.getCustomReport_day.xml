@@ -4,6 +4,7 @@
 		<label>8 - MyName2 - visitDim2</label>
 		<nb_visits>1</nb_visits>
 		<level>3</level>
+		<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 		<Actions_VisitTotalActions>8</Actions_VisitTotalActions>
 		<Events_EventName>MyName2</Events_EventName>
 		<CustomDimension_CustomDimension2>visitDim2</CustomDimension_CustomDimension2>
@@ -12,6 +13,7 @@
 		<label>8 - MyName3 - visitDim2</label>
 		<nb_visits>1</nb_visits>
 		<level>3</level>
+		<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 		<Actions_VisitTotalActions>8</Actions_VisitTotalActions>
 		<Events_EventName>MyName3</Events_EventName>
 		<CustomDimension_CustomDimension2>visitDim2</CustomDimension_CustomDimension2>
@@ -20,6 +22,7 @@
 		<label>8 - RenamedEvent1 - visitDim2</label>
 		<nb_visits>1</nb_visits>
 		<level>3</level>
+		<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 		<Actions_VisitTotalActions>8</Actions_VisitTotalActions>
 		<Events_EventName>RenamedEvent1</Events_EventName>
 		<CustomDimension_CustomDimension2>visitDim2</CustomDimension_CustomDimension2>

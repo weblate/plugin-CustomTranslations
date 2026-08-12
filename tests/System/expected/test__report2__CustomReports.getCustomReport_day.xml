@@ -4,17 +4,20 @@
 		<label>8</label>
 		<nb_visits>1</nb_visits>
 		<level>1</level>
+		<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 		<segment>actions==8</segment>
 		<subtable>
 			<row>
 				<label>MyName2</label>
 				<nb_visits>1</nb_visits>
 				<level>2</level>
+				<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 				<subtable>
 					<row>
 						<label>visitDim2</label>
 						<nb_visits>1</nb_visits>
 						<level>3</level>
+						<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 					</row>
 				</subtable>
 			</row>
@@ -22,11 +25,13 @@
 				<label>MyName3</label>
 				<nb_visits>1</nb_visits>
 				<level>2</level>
+				<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 				<subtable>
 					<row>
 						<label>visitDim2</label>
 						<nb_visits>1</nb_visits>
 						<level>3</level>
+						<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 					</row>
 				</subtable>
 			</row>
@@ -34,11 +39,13 @@
 				<label>RenamedEvent1</label>
 				<nb_visits>1</nb_visits>
 				<level>2</level>
+				<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 				<subtable>
 					<row>
 						<label>visitDim2</label>
 						<nb_visits>1</nb_visits>
 						<level>3</level>
+						<nb_visits_percent_of_total>100%</nb_visits_percent_of_total>
 					</row>
 				</subtable>
 			</row>

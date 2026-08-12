@@ -6,14 +6,18 @@
 			<id>General_AIAssistants</id>
 			<name>AI Assistants</name>
 			<order>80</order>
-			<icon>icon-admin-platform</icon>
+			<icon>icon-ai-assistants</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+				<row>CoreHome_AIInsights</row>
+			</groups>
 		</category>
 		<subcategory>
 			<id>AIAgents_AIAgentsOverview</id>
 			<name>AI Agents Overview</name>
-			<order>10</order>
+			<order>20</order>
 			<help>&lt;p&gt;Review how AI agents and human visitors engage with your site at a glance. This overview surfaces combined metrics and trends so you can quickly spot changes before exploring detailed reports.&lt;/p&gt;</help>
 		</subcategory>
 		<widgets>
@@ -34,7 +38,7 @@
 				<isReport>1</isReport>
 			</row>
 			<row>
-				<name>AI Agent Overview</name>
+				<name>AI Agents Overview</name>
 				<module>AIAgents</module>
 				<action>get</action>
 				<order>2</order>
@@ -52,6 +56,291 @@
 		</widgets>
 	</row>
 	<row>
+		<uniqueId>General_AIAssistants.BotTracking_AIChatbotsContentRequests</uniqueId>
+		<category>
+			<id>General_AIAssistants</id>
+			<name>AI Assistants</name>
+			<order>80</order>
+			<icon>icon-ai-assistants</icon>
+			<help />
+			<widget />
+			<groups>
+				<row/>
+				<row>CoreHome_AIInsights</row>
+			</groups>
+		</category>
+		<subcategory>
+			<id>BotTracking_AIChatbotsContentRequests</id>
+			<name>AI Chatbots Content Requests</name>
+			<order>15</order>
+			<help>&lt;p&gt;This reporting page shows which pages and documents on your website have been requested by AI chatbots such as ChatGPT and similar large language model–based bots. These reports detail which HTML pages and downloadable files (like PDFs, Word, or Excel documents) were accessed, along with those that could not be retrieved due to errors. This helps you understand which content AI systems are referencing, identify broken or inaccessible resources, and ensure your website provides reliable access to information used by AI-driven tools.&lt;/p&gt;&lt;p&gt;It’s important to note that none of these pages or documents were actually viewed by humans in the traditional way — all requests originate from AI assistants fetching content automatically.&lt;/p&gt;&lt;p&gt;Currently, these reports only include requests from AI bots that do not execute JavaScript, and exclude traffic from AI crawlers used for model training or AI agents capable of running JavaScript.&lt;/p&gt;</help>
+		</subcategory>
+		<widgets>
+			<row>
+				<name>AI Chatbots - No Recent Requests</name>
+				<module>BotTracking</module>
+				<action>noRecentRequestsMessageContentRequests</action>
+				<order>0</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>noRecentRequestsMessageContentRequests</action>
+				</parameters>
+				<uniqueId>widgetBotTrackingnoRecentRequestsMessageContentRequests</uniqueId>
+				<isWide>1</isWide>
+				<middlewareParameters>
+					<module>BotTracking</module>
+					<action>showNoRecentRequestsMessage</action>
+				</middlewareParameters>
+				<clientComponent>
+					<plugin>BotTracking</plugin>
+					<name>NoRecentRequestsWidget</name>
+				</clientComponent>
+			</row>
+			<row>
+				<name>Pages</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotContentPages</action>
+				<order>110</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotContentPages</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotContentPages</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>Documents</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotContentDocuments</action>
+				<order>120</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotContentDocuments</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotContentDocuments</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>Broken Pages and Documents</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotBrokenContent</action>
+				<order>130</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotBrokenContent</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotBrokenContent</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>Human-Favoured Pages</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotHumanFavouredPages</action>
+				<order>140</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotHumanFavouredPages</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotHumanFavouredPages</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>AI-Favoured Pages</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotAIFavouredPages</action>
+				<order>150</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotAIFavouredPages</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotAIFavouredPages</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+		</widgets>
+	</row>
+	<row>
+		<uniqueId>General_AIAssistants.BotTracking_AIChatbotsOverview</uniqueId>
+		<category>
+			<id>General_AIAssistants</id>
+			<name>AI Assistants</name>
+			<order>80</order>
+			<icon>icon-ai-assistants</icon>
+			<help />
+			<widget />
+			<groups>
+				<row/>
+				<row>CoreHome_AIInsights</row>
+			</groups>
+		</category>
+		<subcategory>
+			<id>BotTracking_AIChatbotsOverview</id>
+			<name>AI Chatbots Overview</name>
+			<order>10</order>
+			<help>&lt;p&gt;The AI Chatbots Overview page provides insights into website traffic originating from AI chatbots such as ChatGPT and other large language model–based assistants. These reports track key metrics including the number of requests made by these bots, the pages and documents they access, and any errors encountered. They also offer detailed breakdowns showing which bots visit specific page URLs, helping you understand how AI chatbots interact with your content and identify opportunities to improve visibility and accessibility for AI-driven users.&lt;/p&gt;&lt;p&gt;It’s important to note that none of these pages were actually viewed by humans in the traditional way — all requests originate from AI chatbots fetching content automatically.&lt;/p&gt;&lt;p&gt;Currently, these reports exclusively include requests from AI chatbots that do not execute JavaScript. They do not include traffic from AI crawlers used for training AI models or from AI agents capable of executing JavaScript.&lt;/p&gt;</help>
+		</subcategory>
+		<widgets>
+			<row>
+				<name>AI Chatbots - No Recent Requests</name>
+				<module>BotTracking</module>
+				<action>noRecentRequestsMessage</action>
+				<order>0</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>noRecentRequestsMessage</action>
+				</parameters>
+				<uniqueId>widgetBotTrackingnoRecentRequestsMessage</uniqueId>
+				<isWide>1</isWide>
+				<middlewareParameters>
+					<module>BotTracking</module>
+					<action>showNoRecentRequestsMessage</action>
+				</middlewareParameters>
+				<clientComponent>
+					<plugin>BotTracking</plugin>
+					<name>NoRecentRequestsWidget</name>
+				</clientComponent>
+			</row>
+			<row>
+				<name>AI Chatbots Over Time</name>
+				<module>BotTracking</module>
+				<action>getEvolutionGraph</action>
+				<order>1</order>
+				<parameters>
+					<forceView>1</forceView>
+					<viewDataTable>graphEvolution</viewDataTable>
+					<module>BotTracking</module>
+					<action>getEvolutionGraph</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetEvolutionGraphforceView1viewDataTablegraphEvolution</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>graphEvolution</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>AI Chatbots Overview</name>
+				<module>BotTracking</module>
+				<action>get</action>
+				<order>2</order>
+				<parameters>
+					<forceView>1</forceView>
+					<viewDataTable>sparklines</viewDataTable>
+					<module>BotTracking</module>
+					<action>get</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetforceView1viewDataTablesparklines</uniqueId>
+				<isWide>0</isWide>
+				<viewDataTable>sparklines</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>AI Chatbots</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotRequests</action>
+				<order>130</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotRequests</action>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotRequests</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+		</widgets>
+	</row>
+	<row>
+		<uniqueId>General_AIAssistants.BotTracking_AIChatbotsRealtime</uniqueId>
+		<category>
+			<id>General_AIAssistants</id>
+			<name>AI Assistants</name>
+			<order>80</order>
+			<icon>icon-ai-assistants</icon>
+			<help />
+			<widget />
+			<groups>
+				<row/>
+				<row>CoreHome_AIInsights</row>
+			</groups>
+		</category>
+		<subcategory>
+			<id>BotTracking_AIChatbotsRealtime</id>
+			<name>AI Chatbots Real-time</name>
+			<order>12</order>
+			<help>&lt;p&gt;The AI Chatbots Real-time page shows recent AI chatbot activity from raw bot tracking data, including chatbot request volume, unique page URLs, and HTTP error counts.&lt;/p&gt;&lt;p&gt;These reports are limited to short real-time windows so they remain fast and predictable on large sites.&lt;/p&gt;</help>
+		</subcategory>
+		<widgets>
+			<row>
+				<name>AI Chatbots - Last 30 Minutes</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotsRealTime</action>
+				<order>10</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotsRealTime</action>
+					<lastMinutes>30</lastMinutes>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotsRealTimelastMinutes30</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>AI Chatbots - Last 8 Hours</name>
+				<module>BotTracking</module>
+				<action>getAIChatbotsRealTime</action>
+				<order>20</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getAIChatbotsRealTime</action>
+					<lastMinutes>480</lastMinutes>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetAIChatbotsRealTimelastMinutes480</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>Top Page URLs - Last 30 minutes</name>
+				<module>BotTracking</module>
+				<action>getTopPageUrlsRealTime</action>
+				<order>30</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getTopPageUrlsRealTime</action>
+					<lastMinutes>30</lastMinutes>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetTopPageUrlsRealTimelastMinutes30</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+			<row>
+				<name>Top Page URLs - Last 8 hours</name>
+				<module>BotTracking</module>
+				<action>getTopPageUrlsRealTime</action>
+				<order>40</order>
+				<parameters>
+					<module>BotTracking</module>
+					<action>getTopPageUrlsRealTime</action>
+					<lastMinutes>480</lastMinutes>
+				</parameters>
+				<uniqueId>widgetBotTrackinggetTopPageUrlsRealTimelastMinutes480</uniqueId>
+				<isWide>1</isWide>
+				<viewDataTable>table</viewDataTable>
+				<isReport>1</isReport>
+			</row>
+		</widgets>
+	</row>
+	<row>
 		<uniqueId>General_Actions.customdimension3</uniqueId>
 		<category>
 			<id>General_Actions</id>
@@ -60,6 +349,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>customdimension3</id>
@@ -94,6 +386,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>customdimension4</id>
@@ -128,6 +423,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>VisitorInterest_Engagement</id>
@@ -235,6 +533,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Transitions_Transitions</id>
@@ -254,6 +555,10 @@
 				</parameters>
 				<uniqueId>widgetTransitionsgetTransitions</uniqueId>
 				<isWide>0</isWide>
+				<clientComponent>
+					<plugin>Transitions</plugin>
+					<name>TransitionsPage</name>
+				</clientComponent>
 			</row>
 		</widgets>
 	</row>
@@ -266,6 +571,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Downloads</id>
@@ -299,6 +607,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Actions_SubmenuPagesEntry</id>
@@ -346,6 +657,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Actions_SubmenuPagesExit</id>
@@ -393,6 +707,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Outlinks</id>
@@ -426,6 +743,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Actions_SubmenuPageTitles</id>
@@ -459,6 +779,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Pages</id>
@@ -492,6 +815,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Actions_SubmenuSitesearch</id>
@@ -581,6 +907,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Events_Events</id>
@@ -613,6 +942,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Events_Events</id>
@@ -642,6 +974,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Events_Events</id>
@@ -671,6 +1006,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Events_Events</id>
@@ -704,6 +1042,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Contents_Contents</id>
@@ -736,6 +1077,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Contents_Contents</id>
@@ -764,6 +1108,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Contents_Contents</id>
@@ -796,6 +1143,9 @@
 			<icon>icon-reporting-actions</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>PagePerformance_Performance</id>
@@ -881,6 +1231,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>customdimension2</id>
@@ -915,6 +1268,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>customdimension1</id>
@@ -949,6 +1305,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>DevicesDetection_Devices</id>
@@ -1024,6 +1383,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>DevicesDetection_Software</id>
@@ -1141,6 +1503,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Overview</id>
@@ -1192,6 +1557,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>UserCountry_SubmenuLocations</id>
@@ -1250,6 +1618,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>UserCountry_SubmenuLocations</id>
@@ -1278,6 +1649,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>UserCountry_SubmenuLocations</id>
@@ -1366,6 +1740,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>VisitTime_SubmenuTimes</id>
@@ -1427,6 +1804,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>UserCountryMap_RealTimeMap</id>
@@ -1458,6 +1838,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_RealTime</id>
@@ -1489,6 +1872,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Live_VisitorLog</id>
@@ -1525,6 +1911,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>UserId_UserReportTitle</id>
@@ -1558,6 +1947,9 @@
 			<icon>icon-reporting-visitors</icon>
 			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>CustomVariables_CustomVariables</id>
@@ -1583,6 +1975,40 @@
 		</widgets>
 	</row>
 	<row>
+		<uniqueId>General_Visitors.CoreHome_Segments</uniqueId>
+		<category>
+			<id>General_Visitors</id>
+			<name>Visitors</name>
+			<order>5</order>
+			<icon>icon-reporting-visitors</icon>
+			<help>&lt;p&gt;The Visitors pages tell you things about who your visitors are. Things like where your visitors came from, what devices and browsers they're using and when they generally visit your website. Understand, in the aggregate, who your audience is, and look for outliers to see how your audience could grow.&lt;/p&gt;&lt;p&gt;In addition to general information about your visitors, you can also use the &lt;a href=&quot;#&quot; onclick=&quot;this.href=broadcast.buildReportingUrl('category=General_Visitors&amp;subcategory=Live_VisitorLog')&quot;&gt;Visits Log&lt;/a&gt; to see what occurred in every individual visit.&lt;/p&gt;</help>
+			<widget />
+			<groups>
+				<row/>
+			</groups>
+		</category>
+		<subcategory>
+			<id>CoreHome_Segments</id>
+			<name>Segments</name>
+			<order>99</order>
+			<help />
+		</subcategory>
+		<widgets>
+			<row>
+				<name>Segments</name>
+				<module>SegmentEditor</module>
+				<action>manageSegments</action>
+				<order>99</order>
+				<parameters>
+					<module>SegmentEditor</module>
+					<action>manageSegments</action>
+				</parameters>
+				<uniqueId>widgetSegmentEditormanageSegments</uniqueId>
+				<isWide>0</isWide>
+			</row>
+		</widgets>
+	</row>
+	<row>
 		<uniqueId>Dashboard_Dashboard.1</uniqueId>
 		<category>
 			<id>Dashboard_Dashboard</id>
@@ -1591,6 +2017,9 @@
 			<icon>icon-reporting-dashboard</icon>
 			<help>&lt;p&gt;This is a dashboard page. Dashboards are a collection of Matomo's widgets that you add yourself to suit your specific needs. Mix and match any of Matomo's widgets to get the data &lt;strong&gt;*you*&lt;/strong&gt; need at a glance.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>1</id>
@@ -1623,6 +2052,9 @@
 			<icon>icon-reporting-dashboard</icon>
 			<help>&lt;p&gt;This is a dashboard page. Dashboards are a collection of Matomo's widgets that you add yourself to suit your specific needs. Mix and match any of Matomo's widgets to get the data &lt;strong&gt;*you*&lt;/strong&gt; need at a glance.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>2</id>
@@ -1655,6 +2087,9 @@
 			<icon>icon-reporting-dashboard</icon>
 			<help>&lt;p&gt;This is a dashboard page. Dashboards are a collection of Matomo's widgets that you add yourself to suit your specific needs. Mix and match any of Matomo's widgets to get the data &lt;strong&gt;*you*&lt;/strong&gt; need at a glance.&lt;/p&gt;</help>
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>3</id>
@@ -1687,6 +2122,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_AIAssistants</id>
@@ -1720,6 +2158,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_WidgetGetAll</id>
@@ -1767,6 +2208,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_URLCampaignBuilder</id>
@@ -1786,6 +2230,13 @@
 				</parameters>
 				<uniqueId>widgetReferrersgetCampaignUrlBuilder</uniqueId>
 				<isWide>0</isWide>
+				<clientComponent>
+					<plugin>Referrers</plugin>
+					<name>CampaignBuilderWidget</name>
+					<props>
+						<hasExtraPlugin>0</hasExtraPlugin>
+					</props>
+				</clientComponent>
 			</row>
 		</widgets>
 	</row>
@@ -1798,6 +2249,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_Campaigns</id>
@@ -1831,6 +2285,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Overview</id>
@@ -1885,6 +2342,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_SubmenuSearchEngines</id>
@@ -1932,6 +2392,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_Socials</id>
@@ -1965,6 +2428,9 @@
 			<icon>icon-reporting-referer</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Referrers_SubmenuWebsitesOnly</id>
@@ -1998,11 +2464,14 @@
 			<icon>icon-reporting-goal</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Goals_AddNewGoal</id>
 			<name>Add a new Goal</name>
-			<order>9999</order>
+			<order>1</order>
 			<help />
 		</subcategory>
 		<widgets>
@@ -2030,6 +2499,9 @@
 			<icon>icon-reporting-goal</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Overview</id>
@@ -2062,6 +2534,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>General_Overview</id>
@@ -2092,6 +2567,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>General_Overview</id>
@@ -2122,6 +2600,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>General_Overview</id>
@@ -2171,6 +2652,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2203,6 +2687,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2235,6 +2722,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2267,6 +2757,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2299,6 +2792,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2331,6 +2827,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2363,6 +2862,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2395,6 +2897,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User location</id>
@@ -2427,6 +2932,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User attribute</id>
@@ -2459,6 +2967,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User attribute</id>
@@ -2491,6 +3002,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User attribute</id>
@@ -2524,6 +3038,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by User attribute</id>
@@ -2557,6 +3074,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Pages</id>
@@ -2589,6 +3109,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Pages</id>
@@ -2621,6 +3144,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Pages</id>
@@ -2653,6 +3179,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Pages</id>
@@ -2685,6 +3214,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2717,6 +3249,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2749,6 +3284,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2781,6 +3319,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2813,6 +3354,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2845,6 +3389,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2877,6 +3424,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals by Referrers</id>
@@ -2909,6 +3459,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals engagement</id>
@@ -2941,6 +3494,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals engagement</id>
@@ -2977,6 +3533,9 @@
 			<icon>icon-reporting-ecommerce</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Goals_EcommerceLog</id>
@@ -3008,6 +3567,9 @@
 			<icon>icon-reporting-ecommerce</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>General_Overview</id>
@@ -3040,6 +3602,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>General_Overview</id>
@@ -3071,6 +3636,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>General_Overview</id>
@@ -3102,6 +3670,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>ecommerceOrder</id>
@@ -3140,6 +3711,9 @@
 			<icon>icon-reporting-ecommerce</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Goals_Products</id>
@@ -3172,6 +3746,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals_Products</id>
@@ -3200,6 +3777,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals_Products</id>
@@ -3228,6 +3808,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Goals_Products</id>
@@ -3260,6 +3843,9 @@
 			<icon>icon-reporting-ecommerce</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Ecommerce_Sales</id>
@@ -3293,6 +3879,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3326,6 +3915,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3359,6 +3951,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3392,6 +3987,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3425,6 +4023,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3458,6 +4059,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3491,6 +4095,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3524,6 +4131,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User location</id>
@@ -3557,6 +4167,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User attribute</id>
@@ -3590,6 +4203,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User attribute</id>
@@ -3623,6 +4239,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User attribute</id>
@@ -3657,6 +4276,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by User attribute</id>
@@ -3691,6 +4313,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Pages</id>
@@ -3724,6 +4349,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Pages</id>
@@ -3757,6 +4385,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Pages</id>
@@ -3790,6 +4421,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Pages</id>
@@ -3823,6 +4457,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -3856,6 +4493,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -3889,6 +4529,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -3922,6 +4565,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -3955,6 +4601,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -3988,6 +4637,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -4021,6 +4673,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales by Referrers</id>
@@ -4054,6 +4709,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales engagement</id>
@@ -4087,6 +4745,9 @@
 							<icon />
 							<help />
 							<widget />
+							<groups>
+								<row/>
+							</groups>
 						</category>
 						<subcategory>
 							<id>Sales engagement</id>
@@ -4124,6 +4785,9 @@
 			<icon />
 			<help />
 			<widget>Marketplace.RichMenuButton</widget>
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Marketplace_Browse</id>
@@ -4156,6 +4820,9 @@
 			<icon />
 			<help />
 			<widget>Marketplace.RichMenuButton</widget>
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Marketplace_PaidPlugins</id>
@@ -4187,6 +4854,9 @@
 			<icon>icon-lab</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoOverview</id>
@@ -4218,6 +4888,9 @@
 			<icon>icon-bug</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoOverview</id>
@@ -4249,6 +4922,9 @@
 			<icon>icon-form</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoOverview</id>
@@ -4280,6 +4956,9 @@
 			<icon>icon-funnel</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoOverview</id>
@@ -4311,6 +4990,9 @@
 			<icon>icon-drop</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoManage</id>
@@ -4342,6 +5024,9 @@
 			<icon>icon-folder-charts</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoOverview</id>
@@ -4373,6 +5058,9 @@
 			<icon>icon-play</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ProfessionalServices_PromoManage</id>
@@ -4404,6 +5092,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>ExampleUI_GetTemperaturesDataTable</id>
@@ -4437,6 +5128,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Bar graph</id>
@@ -4472,6 +5166,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Treemap</id>
@@ -4507,6 +5204,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Sparklines</id>
@@ -4542,6 +5242,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Evolution Graph</id>
@@ -4581,6 +5284,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Pie graph</id>
@@ -4614,6 +5320,9 @@
 			<icon />
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>Tag clouds</id>
@@ -4663,6 +5372,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>2</id>
@@ -4697,6 +5409,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>4</id>
@@ -4731,6 +5446,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>5</id>
@@ -4765,6 +5483,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>6</id>
@@ -4799,6 +5520,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>7</id>
@@ -4833,6 +5557,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>1</id>
@@ -4867,6 +5594,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>3</id>
@@ -4901,6 +5631,9 @@
 			<icon>icon-business</icon>
 			<help />
 			<widget />
+			<groups>
+				<row/>
+			</groups>
 		</category>
 		<subcategory>
 			<id>CustomReports_ManageReports</id>

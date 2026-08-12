@@ -1,5 +1,9 @@
 ## Changelog
 
+### 6.0.0 - 2026-08-11
+
+- Compatibility with Matomo 6
+
 ### 5.0.4 - 2026-08-10
 
 - Added validation rule for translation values 
